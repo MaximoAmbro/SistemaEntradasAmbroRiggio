@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Entrada
+    public partial class Entrada: Evento
     {
-    }
+        public int Precio { get; set; }
+        public int CantidadVendida { get; set; }
+
+    } 
 }

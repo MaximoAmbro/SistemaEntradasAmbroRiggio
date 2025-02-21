@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(10, 330);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(60, 35);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
             // 
             // frmCrearUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 373);
+            this.Controls.Add(this.btnVolver);
             this.Name = "frmCrearUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCrearUsuario";
@@ -43,5 +54,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Pago
+    public partial class Pago
     {
+        public int IDVenta { get; set; }
+        public int Cuotas { get; set; }
     }
 }
