@@ -1,6 +1,6 @@
 ﻿namespace Visual
 {
-    partial class frmInicio
+    partial class frmCambiarContraseña
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // frmInicio
+            // frmCambiarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 373);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmInicio";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmInicio";
+            this.Name = "frmCambiarContraseña";
+            this.Text = "frmCambiarContraseña";
             this.ResumeLayout(false);
 
         }
