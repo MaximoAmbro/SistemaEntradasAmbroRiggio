@@ -19,7 +19,7 @@ namespace Visual
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmInicio frm = new frmInicio();
+            frmMenuUsuario frm = new frmMenuUsuario();
             frm.Show();
             this.Hide();
         }

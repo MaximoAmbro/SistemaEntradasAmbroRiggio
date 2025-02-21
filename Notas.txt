@@ -1,0 +1,4 @@
+Hacer formularios
+Hacer funcionamiento
+Hacer Booleano para el inicio de sesion
+Hacer lista de usuarios para verificar el booleano

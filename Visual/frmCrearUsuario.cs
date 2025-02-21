@@ -16,6 +16,7 @@ namespace Visual
         {
             InitializeComponent();
         }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             frmInicio frm = new frmInicio();

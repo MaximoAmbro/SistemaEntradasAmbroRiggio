@@ -22,5 +22,12 @@ namespace Visual
             frm.Show();
             this.Hide();
         }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            frmMenuUsuario frm = new frmMenuUsuario();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

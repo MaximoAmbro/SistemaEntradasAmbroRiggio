@@ -16,5 +16,12 @@ namespace Visual
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmMenuUsuario frm = new frmMenuUsuario();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
