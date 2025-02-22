@@ -15,18 +15,19 @@ namespace Negocio
     }
     public partial class GestorClientes // Metodos
     {
-        public void CambiarContraseña(Cliente cliente)
+        public void CambiarContraseña()
         {
             foreach (var c in clientes)
             {
                 if (c.Mail == cliente.Mail)
                 {
-                    cliente.Contraseña == c.Contraseña;
+                    string contracambiar = c.Contraseña;
+                    cliente.Contraseña = contracambiar;
                     break;
                 }
             }
         }
-        public void AgregarCliente(Cliente cliente)
+        public void AgregarCliente()
         {
             RevisarClientes();
             if (RevisarClientes() == false)
