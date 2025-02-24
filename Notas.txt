@@ -1,4 +1,3 @@
-Hacer formularios
-Hacer funcionamiento
-Hacer Booleano para el inicio de sesion
+Fijate de corroborar el tema de inicio de sesion, te deje una lista con un par de usuarios.
+Probá con "Ambro" y Contraseña "Vergudo"
 Hacer lista de usuarios para verificar el booleano
