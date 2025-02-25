@@ -28,7 +28,7 @@ namespace Negocio
 
         }
     }
-    public partial class GestorEntradas //Eventos cargados()
+    public partial class GestorEntradas //Eventos cargados
     {
 
     }

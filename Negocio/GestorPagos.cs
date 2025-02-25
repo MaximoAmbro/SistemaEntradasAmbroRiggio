@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public partial class GestorPagos
+    public partial class GestorPagos //Lista
     {
 
     }
