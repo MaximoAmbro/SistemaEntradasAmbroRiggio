@@ -1,3 +1,10 @@
-Fijate de corroborar el tema de inicio de sesion, te deje una lista con un par de usuarios.
-Probá con "Ambro" y Contraseña "Vergudo"
-Hacer lista de usuarios para verificar el booleano
+Che Juan, necesito que probes 3 cosas cuando termines con el inicio de sesion, menu de usuario, agregar
+y cambiar contraseña:
+fijate que en el gestor de clientes está dividido en 3 partes, bueno, en la que dice aca agrego los
+usuarios a la lista tenes una lista de 25 con todos los datos aprox, despues probá esto:
+1) Si funciona el agregar
+2) Si le podes cambiar la contraseña a los agregados
+3) Si podes cambiar la contraseña de un usuario que ya estaba en la lista
+Despues si necesitas ayuda con el tema del codigo interno del form decime o bajate codeium que es 
+bastante intuitivo jajaja.
+Chupala putazo.
