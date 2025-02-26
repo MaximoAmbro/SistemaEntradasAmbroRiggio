@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,15 +18,40 @@ namespace Negocio
     {
         public void AgregarEntrada()
         {
-            
+            if (ChequearDisponibilidad() == true)
+            {
+                entrada.CantidadVendida = entrada.CantidadVendida + 1;
+            }
+            else { throw new Exception("No hay disponibilidad"); }
         }
-        public void ChequearDisponibilidad()
+        public bool ChequearDisponibilidad()
         {
+            Entrada entrada = null;
 
+            foreach (var c in entradas)
+            {
+                if (c.Nombre == entrada.Nombre)
+                {
+                    if (c.Capacidad >= c.CantidadVendida+1)
+                    {
+                        return true;
+                    }
+                    else { return false; }
+                }
+            }
+            return false;
         }
         public void EliminarEntrada()
         {
-
+            foreach (var c in entradas)
+            {
+                if (c.IDEntrada == entrada.IDEntrada)
+                {
+                    entrada.CantidadVendida = entrada.CantidadVendida - 1;
+                }
+                else { throw new Exception("ID no encontrado"); }
+                }
+            }
         }
     }
     public partial class GestorEntradas //Eventos cargados

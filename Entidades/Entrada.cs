@@ -10,6 +10,7 @@ namespace Entidades
     {
         public int Precio { get; set; }
         public int CantidadVendida { get; set; }
+        public int IDEntrada { get; set; }
 
     } 
 }
