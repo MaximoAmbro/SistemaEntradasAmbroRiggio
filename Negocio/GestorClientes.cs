@@ -12,7 +12,6 @@ namespace Negocio
     {
         List<Cliente> clientes = new List<Cliente>();
         Cliente cliente = new Cliente();
-
     }
     public partial class GestorClientes // Metodos
     {
