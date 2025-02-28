@@ -36,9 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkbxShowPass = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -48,11 +47,11 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(33, 289);
+            this.button1.Location = new System.Drawing.Point(36, 303);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 35);
             this.button1.TabIndex = 0;
-            this.button1.Text = "LOGIN";
+            this.button1.Text = "INICIAR SESION ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -61,7 +60,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label1.Location = new System.Drawing.Point(28, 68);
+            this.label1.Location = new System.Drawing.Point(19, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 27);
@@ -72,11 +71,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 146);
+            this.label2.Location = new System.Drawing.Point(33, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Username ";
+            this.label2.Text = "Usuario";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // TxtUsername
@@ -84,7 +83,7 @@
             this.TxtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.TxtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtUsername.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsername.Location = new System.Drawing.Point(36, 166);
+            this.TxtUsername.Location = new System.Drawing.Point(36, 159);
             this.TxtUsername.Multiline = true;
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.Size = new System.Drawing.Size(216, 27);
@@ -95,7 +94,7 @@
             this.TxtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtPassword.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(36, 228);
+            this.TxtPassword.Location = new System.Drawing.Point(36, 221);
             this.TxtPassword.Multiline = true;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(216, 27);
@@ -104,18 +103,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 208);
+            this.label3.Location = new System.Drawing.Point(33, 201);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Password";
+            this.label3.Text = "Contraseña";
             // 
             // checkbxShowPass
             // 
             this.checkbxShowPass.AutoSize = true;
             this.checkbxShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkbxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkbxShowPass.Location = new System.Drawing.Point(133, 262);
+            this.checkbxShowPass.Location = new System.Drawing.Point(133, 255);
             this.checkbxShowPass.Name = "checkbxShowPass";
             this.checkbxShowPass.Size = new System.Drawing.Size(119, 21);
             this.checkbxShowPass.TabIndex = 10;
@@ -128,36 +127,16 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button3.Location = new System.Drawing.Point(33, 330);
+            this.button3.Location = new System.Drawing.Point(36, 344);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(216, 35);
             this.button3.TabIndex = 12;
-            this.button3.Text = "CLEAR";
+            this.button3.Text = "LIMPIAR";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 381);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Dont Have An Account ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label6.Location = new System.Drawing.Point(94, 398);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 17);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Create Account";
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(11, 450);
+            this.btnVolver.Location = new System.Drawing.Point(11, 438);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(59, 28);
@@ -165,15 +144,25 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.label6.Location = new System.Drawing.Point(103, 395);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Crear Cuenta";
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(289, 489);
+            this.ClientSize = new System.Drawing.Size(285, 475);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.checkbxShowPass);
             this.Controls.Add(this.TxtPassword);
@@ -204,8 +193,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkbxShowPass;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label label6;
     }
 }
