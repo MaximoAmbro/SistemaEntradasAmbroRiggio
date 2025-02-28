@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,33 +47,21 @@
             this.btnVolver.Location = new System.Drawing.Point(11, 450);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(45, 28);
+            this.btnVolver.Size = new System.Drawing.Size(89, 28);
             this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "Volver";
+            this.btnVolver.Text = "Volver a incio ";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label6.Location = new System.Drawing.Point(112, 431);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 13);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Back to LOGIN ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(90, 408);
+            this.label5.Location = new System.Drawing.Point(111, 409);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 13);
+            this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 39;
-            this.label5.Text = "Already Have An Account ";
+            this.label5.Text = "Ya tengo cuenta ";
             // 
             // button3
             // 
@@ -87,7 +74,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(252, 35);
             this.button3.TabIndex = 38;
-            this.button3.Text = "CLEAR";
+            this.button3.Text = "LIMPIAR ";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -158,9 +145,9 @@
             this.label3.Location = new System.Drawing.Point(28, 163);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Cambiar contraseña";
+            this.label3.Text = "Cambiar Contraseña";
             // 
             // TxtUsername
             // 
@@ -189,7 +176,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Location = new System.Drawing.Point(14, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 27);
@@ -202,7 +189,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(326, 489);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -228,7 +214,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
