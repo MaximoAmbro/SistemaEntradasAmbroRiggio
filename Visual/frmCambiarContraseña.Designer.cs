@@ -188,7 +188,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolver);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCambiarContraseña";
             this.Text = "frmCambiarContraseña";
