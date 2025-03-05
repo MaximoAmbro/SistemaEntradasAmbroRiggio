@@ -110,7 +110,7 @@
             this.Controls.Add(this.btnHistorial);
             this.Controls.Add(this.btnEventos);
             this.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMenuUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

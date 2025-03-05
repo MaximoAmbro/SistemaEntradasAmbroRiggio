@@ -23,5 +23,10 @@ namespace Visual
             frm.Show();
             this.Hide();
         }
+
+        private void frmEventos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
