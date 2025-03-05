@@ -17,13 +17,6 @@ namespace Visual
             InitializeComponent();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            frmInicio frm = new frmInicio();
-            frm.Show();
-            this.Hide();
-        }
-
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
             frmInicio frm = new frmInicio();
