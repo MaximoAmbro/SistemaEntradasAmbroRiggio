@@ -1,0 +1,7 @@
+Que onda johan
+Fijate que cuando termines los forms de inicio, menu de usuario, modificar y crear necesito que testees
+si funciona todo bien.
+Te deje en el gestorClientes una lista con 25 clientes, proba modificar esos clientes y cambiarles la 
+contra.
+despues proba crear uno nuevo y a ese tambien cambiarsela despues ya estaria. 
+Guardala en una bandeja de polipropileno y cometela de postre puton.

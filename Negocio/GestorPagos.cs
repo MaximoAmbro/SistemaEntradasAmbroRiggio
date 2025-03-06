@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    class GestorPagos
+    public partial class GestorPagos //Lista
     {
+
+    }
+    public partial class GestorPagos //Metodos
+    {
+        public void GestionarPago()
+        {
+
+        }
+        public void GestionarReembolso()
+        {
+
+        }
     }
 }

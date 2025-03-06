@@ -51,6 +51,14 @@ namespace Visual
         {
             
         }
+
+        private void btnconfirmar_Click(object sender, EventArgs e)
+        {
+            frmInicio frm = new frmInicio();
+            frm.Show();
+            this.Hide();
+        }
+
     }
     
 }

@@ -1,0 +1,10 @@
+Gestor de entradas
+Se me habia ocurrido hacer 3 metodos nomas como la gestion para empleados iba a quedar para DAS
+1) AgregarEntrada: En este llamamos al metodo VerificarLista, si da todo ok se agrega una entrada a la 
+lista y se elimina un cupo
+2) EliminarEntrada: En este llamamos al metodo VerificarLista, si da todo ok se elimina una entrada 
+de la lista y se agrega un cupo
+3) VerificarLista: Orden de chequeos:
+1) Si el evento existe: si no directamente controlamos la excepcion
+2) Si el sector tiene lugar: sino controlamos la excepcion mostrando los disponibles
+3) Si ningun sector tiene lugar se maneja la expecion y foee

@@ -44,7 +44,14 @@ namespace Visual
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            frmEventos frm = new frmEventos();
+            frmHistorial frm = new frmHistorial();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmInicio frm = new frmInicio();
             frm.Show();
             this.Hide();
         }

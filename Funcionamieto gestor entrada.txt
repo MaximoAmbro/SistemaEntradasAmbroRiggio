@@ -1,0 +1,6 @@
+Como nomas vamos a meterle para modificar la lista de entradas vamos a hacer asi:
+1) Agregar entrada, se va a chequear que haya lugar en la lista, si hay se va a llamar al gestor de pagos
+donde se va a ejecutar el mismo(por ahora va a dar siempre que si) y se va a agregar la entrada a la lis
+ta de entradas mientras se saque un lugar
+2) Eliminar entrada, se va a habilitar un lugar de la entrada y se va a llamar al gestor de pagos
+donde se ejecuta el reembolso que por ahora va a ser un messagebox nomas.
