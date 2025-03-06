@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.checkbxShowPass = new System.Windows.Forms.CheckBox();
             this.TxtConfirmpassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,6 +37,7 @@
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnconfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -51,32 +50,6 @@
             this.btnVolver.Text = "Volver a incio ";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(109, 367);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "Ya tengo cuenta ";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(31, 319);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(252, 35);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "CONFIRMAR";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkbxShowPass
             // 
@@ -170,14 +143,29 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "NUEVA CONTRASEÑA";
             // 
+            // btnconfirmar
+            // 
+            this.btnconfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btnconfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnconfirmar.FlatAppearance.BorderSize = 0;
+            this.btnconfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnconfirmar.Location = new System.Drawing.Point(31, 337);
+            this.btnconfirmar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnconfirmar.Name = "btnconfirmar";
+            this.btnconfirmar.Size = new System.Drawing.Size(252, 35);
+            this.btnconfirmar.TabIndex = 40;
+            this.btnconfirmar.Text = "CONFIRMAR";
+            this.btnconfirmar.UseVisualStyleBackColor = false;
+            this.btnconfirmar.Click += new System.EventHandler(this.btnconfirmar_Click);
+            // 
             // frmCambiarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(326, 489);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnconfirmar);
             this.Controls.Add(this.checkbxShowPass);
             this.Controls.Add(this.TxtConfirmpassword);
             this.Controls.Add(this.label4);
@@ -201,8 +189,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkbxShowPass;
         private System.Windows.Forms.TextBox TxtConfirmpassword;
         private System.Windows.Forms.Label label4;
@@ -211,5 +197,6 @@
         private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnconfirmar;
     }
 }

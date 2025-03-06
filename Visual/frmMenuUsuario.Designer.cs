@@ -40,7 +40,7 @@
             this.btnEventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.btnEventos.ForeColor = System.Drawing.Color.White;
             this.btnEventos.Location = new System.Drawing.Point(61, 185);
-            this.btnEventos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEventos.Margin = new System.Windows.Forms.Padding(2);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(148, 41);
             this.btnEventos.TabIndex = 5;
@@ -53,7 +53,7 @@
             this.btnHistorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.btnHistorial.ForeColor = System.Drawing.Color.White;
             this.btnHistorial.Location = new System.Drawing.Point(61, 242);
-            this.btnHistorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHistorial.Margin = new System.Windows.Forms.Padding(2);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(148, 41);
             this.btnHistorial.TabIndex = 6;
@@ -66,7 +66,7 @@
             this.btnComprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.btnComprar.ForeColor = System.Drawing.Color.White;
             this.btnComprar.Location = new System.Drawing.Point(61, 125);
-            this.btnComprar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComprar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(148, 41);
             this.btnComprar.TabIndex = 7;
@@ -85,6 +85,7 @@
             this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "Volver a incio ";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // label1
             // 
@@ -111,7 +112,7 @@
             this.Controls.Add(this.btnEventos);
             this.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMenuUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenuUsuario";

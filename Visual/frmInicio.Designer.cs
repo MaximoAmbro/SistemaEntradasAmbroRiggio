@@ -28,39 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnlogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkbxShowPass = new System.Windows.Forms.CheckBox();
-            this.Lblsignup = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Lblcambiarcontra = new System.Windows.Forms.Label();
+            this.lblolividarcontra = new System.Windows.Forms.Label();
+            this.lblcrearcuenta = new System.Windows.Forms.Label();
+            this.btninicio = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnlogin
-            // 
-            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnlogin.FlatAppearance.BorderSize = 0;
-            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Location = new System.Drawing.Point(36, 303);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(216, 35);
-            this.btnlogin.TabIndex = 0;
-            this.btnlogin.Text = "INICIAR SESION ";
-            this.btnlogin.UseVisualStyleBackColor = false;
-            this.btnlogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label1.Location = new System.Drawing.Point(19, 75);
+            this.label1.Location = new System.Drawing.Point(13, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 27);
@@ -123,18 +108,6 @@
             this.checkbxShowPass.UseVisualStyleBackColor = true;
             this.checkbxShowPass.CheckedChanged += new System.EventHandler(this.checkbxShowPass_CheckedChanged);
             // 
-            // Lblsignup
-            // 
-            this.Lblsignup.AutoSize = true;
-            this.Lblsignup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Lblsignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.Lblsignup.Location = new System.Drawing.Point(102, 382);
-            this.Lblsignup.Name = "Lblsignup";
-            this.Lblsignup.Size = new System.Drawing.Size(87, 17);
-            this.Lblsignup.TabIndex = 14;
-            this.Lblsignup.Text = "Crear Cuenta";
-            this.Lblsignup.Click += new System.EventHandler(this.label6_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -144,15 +117,42 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "label4";
             // 
-            // Lblcambiarcontra
+            // lblolividarcontra
             // 
-            this.Lblcambiarcontra.AutoSize = true;
-            this.Lblcambiarcontra.Location = new System.Drawing.Point(66, 355);
-            this.Lblcambiarcontra.Name = "Lblcambiarcontra";
-            this.Lblcambiarcontra.Size = new System.Drawing.Size(166, 17);
-            this.Lblcambiarcontra.TabIndex = 17;
-            this.Lblcambiarcontra.Text = "¿Olvidaste tu contraseña?";
-            this.Lblcambiarcontra.Click += new System.EventHandler(this.label5_Click);
+            this.lblolividarcontra.AutoSize = true;
+            this.lblolividarcontra.Location = new System.Drawing.Point(62, 354);
+            this.lblolividarcontra.Name = "lblolividarcontra";
+            this.lblolividarcontra.Size = new System.Drawing.Size(166, 17);
+            this.lblolividarcontra.TabIndex = 18;
+            this.lblolividarcontra.Text = "¿Olvidaste tu contraseña?";
+            this.lblolividarcontra.Click += new System.EventHandler(this.lblolividarcontra_Click);
+            // 
+            // lblcrearcuenta
+            // 
+            this.lblcrearcuenta.AutoSize = true;
+            this.lblcrearcuenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcrearcuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.lblcrearcuenta.Location = new System.Drawing.Point(103, 387);
+            this.lblcrearcuenta.Name = "lblcrearcuenta";
+            this.lblcrearcuenta.Size = new System.Drawing.Size(87, 17);
+            this.lblcrearcuenta.TabIndex = 19;
+            this.lblcrearcuenta.Text = "Crear Cuenta";
+            this.lblcrearcuenta.Click += new System.EventHandler(this.lblcrearcuenta_Click);
+            // 
+            // btninicio
+            // 
+            this.btninicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btninicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btninicio.FlatAppearance.BorderSize = 0;
+            this.btninicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninicio.ForeColor = System.Drawing.Color.White;
+            this.btninicio.Location = new System.Drawing.Point(36, 307);
+            this.btninicio.Name = "btninicio";
+            this.btninicio.Size = new System.Drawing.Size(216, 35);
+            this.btninicio.TabIndex = 20;
+            this.btninicio.Text = "INICIAR SESION ";
+            this.btninicio.UseVisualStyleBackColor = false;
+            this.btninicio.Click += new System.EventHandler(this.btninicio_Click);
             // 
             // frmInicio
             // 
@@ -160,16 +160,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(285, 475);
-            this.Controls.Add(this.Lblcambiarcontra);
+            this.Controls.Add(this.btninicio);
+            this.Controls.Add(this.lblcrearcuenta);
+            this.Controls.Add(this.lblolividarcontra);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Lblsignup);
             this.Controls.Add(this.checkbxShowPass);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnlogin);
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -183,16 +183,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkbxShowPass;
-        private System.Windows.Forms.Label Lblsignup;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label Lblcambiarcontra;
+        private System.Windows.Forms.Label lblolividarcontra;
+        private System.Windows.Forms.Label lblcrearcuenta;
+        private System.Windows.Forms.Button btninicio;
     }
 }
