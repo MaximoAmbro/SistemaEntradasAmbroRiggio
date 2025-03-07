@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades; using Negocio;
 
 namespace Visual
 {
@@ -37,7 +38,7 @@ namespace Visual
 
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            frmEventos frm = new frmEventos();
+            FormEventos frm = new FormEventos();
             frm.Show();
             this.Hide();
         }
