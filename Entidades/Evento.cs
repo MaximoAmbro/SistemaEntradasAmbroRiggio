@@ -14,5 +14,6 @@ namespace Entidades
         public int Capacidad { get; set; }
         public DateTime Fecha { get; set; }
         public string Locacion { get; set; }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades;
 
 namespace Entidades
 {
@@ -10,6 +11,8 @@ namespace Entidades
     {
         public int Precio { get; set; }
         public int CantidadVendida { get; set; }
+        public int IDEntrada { get; set; }
+        public Cliente Cliente { get; set; }
 
     } 
 }

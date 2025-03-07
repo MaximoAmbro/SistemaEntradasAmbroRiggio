@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades; using Negocio;
 
 namespace Visual
 {
@@ -54,8 +55,6 @@ namespace Visual
             frmCambiarContraseña frm = new frmCambiarContraseña();
             frm.Show();
             this.Hide();
-
-
         }
 
         private void lblcrearcuenta_Click(object sender, EventArgs e)
@@ -100,8 +99,6 @@ namespace Visual
                 }
             }
         }
-            
-
         private bool ValidarCredenciales(string Username, string Password)
         {
 
@@ -110,19 +107,15 @@ namespace Visual
 
             return TxtUsername.Text == UsarnameValido && TxtPassword.Text == PasswordValida;
         }
-
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void frmInicio_Load(object sender, EventArgs e)
         {
             TxtUsername.Text = "";
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
-
         }
     }
     

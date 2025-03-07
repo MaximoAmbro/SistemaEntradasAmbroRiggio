@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Entidades; using Negocio;
 namespace Visual
 {
     public partial class FormEventos : Form
@@ -36,10 +36,6 @@ namespace Visual
             dgveventos.Columns["CuposTotales"].HeaderText = "Cupos Totales";
             dgveventos.Columns["LimiteMaximo"].HeaderText = "Límite Máximo";
         }
-    
-
-        
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             frmMenuUsuario frm = new frmMenuUsuario();
