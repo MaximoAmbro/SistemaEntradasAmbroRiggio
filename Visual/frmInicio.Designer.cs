@@ -28,39 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkbxShowPass = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblolividarcontra = new System.Windows.Forms.Label();
+            this.lblcrearcuenta = new System.Windows.Forms.Label();
+            this.btninicio = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(36, 303);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "INICIAR SESION ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label1.Location = new System.Drawing.Point(19, 75);
+            this.label1.Location = new System.Drawing.Point(13, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 27);
@@ -99,6 +84,7 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(216, 27);
             this.TxtPassword.TabIndex = 7;
+            this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             // 
             // label3
             // 
@@ -120,40 +106,53 @@
             this.checkbxShowPass.TabIndex = 10;
             this.checkbxShowPass.Text = "Show Password";
             this.checkbxShowPass.UseVisualStyleBackColor = true;
+            this.checkbxShowPass.CheckedChanged += new System.EventHandler(this.checkbxShowPass_CheckedChanged);
             // 
-            // button3
+            // label4
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button3.Location = new System.Drawing.Point(36, 344);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(216, 35);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "LIMPIAR";
-            this.button3.UseVisualStyleBackColor = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(283, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "label4";
             // 
-            // btnVolver
+            // lblolividarcontra
             // 
-            this.btnVolver.Location = new System.Drawing.Point(11, 438);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(59, 28);
-            this.btnVolver.TabIndex = 15;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.lblolividarcontra.AutoSize = true;
+            this.lblolividarcontra.Location = new System.Drawing.Point(62, 354);
+            this.lblolividarcontra.Name = "lblolividarcontra";
+            this.lblolividarcontra.Size = new System.Drawing.Size(166, 17);
+            this.lblolividarcontra.TabIndex = 18;
+            this.lblolividarcontra.Text = "¿Olvidaste tu contraseña?";
+            this.lblolividarcontra.Click += new System.EventHandler(this.lblolividarcontra_Click);
             // 
-            // label6
+            // lblcrearcuenta
             // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label6.Location = new System.Drawing.Point(103, 395);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 17);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Crear Cuenta";
+            this.lblcrearcuenta.AutoSize = true;
+            this.lblcrearcuenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcrearcuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.lblcrearcuenta.Location = new System.Drawing.Point(103, 387);
+            this.lblcrearcuenta.Name = "lblcrearcuenta";
+            this.lblcrearcuenta.Size = new System.Drawing.Size(87, 17);
+            this.lblcrearcuenta.TabIndex = 19;
+            this.lblcrearcuenta.Text = "Crear Cuenta";
+            this.lblcrearcuenta.Click += new System.EventHandler(this.lblcrearcuenta_Click);
+            // 
+            // btninicio
+            // 
+            this.btninicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btninicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btninicio.FlatAppearance.BorderSize = 0;
+            this.btninicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninicio.ForeColor = System.Drawing.Color.White;
+            this.btninicio.Location = new System.Drawing.Point(36, 307);
+            this.btninicio.Name = "btninicio";
+            this.btninicio.Size = new System.Drawing.Size(216, 35);
+            this.btninicio.TabIndex = 20;
+            this.btninicio.Text = "INICIAR SESION ";
+            this.btninicio.UseVisualStyleBackColor = false;
+            this.btninicio.Click += new System.EventHandler(this.btninicio_Click);
             // 
             // frmInicio
             // 
@@ -161,19 +160,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(285, 475);
-            this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btninicio);
+            this.Controls.Add(this.lblcrearcuenta);
+            this.Controls.Add(this.lblolividarcontra);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.checkbxShowPass);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInicio";
@@ -184,16 +183,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkbxShowPass;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblolividarcontra;
+        private System.Windows.Forms.Label lblcrearcuenta;
+        private System.Windows.Forms.Button btninicio;
     }
 }
