@@ -61,7 +61,6 @@
             TxtPassword.Name = "TxtPassword";
             TxtPassword.Size = new System.Drawing.Size(216, 27);
             TxtPassword.TabIndex = 7;
-            TxtPassword.TextChanged += TxtPassword_TextChanged;
             // 
             // label3
             // 
