@@ -1,0 +1,6 @@
+
+ Completar el frm Eventos
+ Hacer que el data grid view de eventos muestre la lista de eventos (gestor eventos)
+ Hacer que al tocar compra se pueda ver en un label el nombre del boliche seleccionado (frmCompra)
+ Hacer que al tocar comprar se imprima un "ticket" en notas
+ 

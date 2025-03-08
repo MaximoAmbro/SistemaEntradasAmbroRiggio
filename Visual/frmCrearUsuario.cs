@@ -20,10 +20,11 @@ namespace Visual
         public frmCrearUsuario()
         {
             InitializeComponent();
+
         }
         private void frmCrearUsuario_Load(object sender, EventArgs e)
         {
-            txtmail.Text = "";
+            txtmail.Text="";
             txtnombre.Text = "";
             TxtUsername.Text = "";
             TxtPassword.Text = "";

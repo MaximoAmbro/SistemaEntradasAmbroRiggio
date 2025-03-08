@@ -38,7 +38,7 @@ namespace Visual
 
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            FormEventos frm = new FormEventos();
+            frmEventos frm = new frmEventos();
             frm.Show();
             this.Hide();
         }
