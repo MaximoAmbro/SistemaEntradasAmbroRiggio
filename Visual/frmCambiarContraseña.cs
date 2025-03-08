@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class frmCambiarContraseña: Form
+    public partial class frmCambiarContraseña : Form
     {
         int checkcount = 0;
 
@@ -18,7 +19,7 @@ namespace Visual
         {
             InitializeComponent();
         }
-   
+
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
             frmInicio frm = new frmInicio();
@@ -31,34 +32,66 @@ namespace Visual
             TxtUsername.Text = "";
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
+            TxtConfirmpassword.PasswordChar = '*';
         }
-
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            checkcount++;
-            TxtPassword.PasswordChar = '\0';
-            if (checkcount % 2 == 0)
+            if (checkbxShowPass.Checked == true)
             {
-                TxtPassword.PasswordChar = '*';
+                TxtPassword.PasswordChar = '\0';
+                TxtConfirmpassword.PasswordChar = '\0';
             }
             else
             {
-                TxtPassword.PasswordChar = '\0';
+                TxtPassword.PasswordChar = '*';
+                TxtConfirmpassword.PasswordChar = '*';
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnconfirmar_Click(object sender, EventArgs e)
         {
-            frmInicio frm = new frmInicio();
-            frm.Show();
-            this.Hide();
-        }
+            if (ControlarTxt() == true)
+            {
+                GestorClientes gestorClientes = new GestorClientes();
+                gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
+                MessageBox.Show("Contraseña cambiada con exito");
+                    frmInicio frm = new frmInicio();
+                    frm.Show();
+                    this.Hide();
 
-    }
-    
+            }
+        }
+        public bool ControlarTxt()
+        {
+            if (string.IsNullOrEmpty(TxtUsername.Text))
+            {
+                MessageBox.Show("Ingrese Usuario: ");
+                return false;
+            }
+            if (string.IsNullOrEmpty(TxtPassword.Text))
+            {
+                MessageBox.Show("Ingrese contraseña: ");
+                return false;
+            }
+            if (string.IsNullOrEmpty(TxtConfirmpassword.Text))
+            {
+                MessageBox.Show("Ingrese confirmacion de contraseña: ");
+                return false;
+            }
+            if(string.IsNullOrEmpty(txtMail.Text))
+            {
+                MessageBox.Show("Ingrese Mail: ");
+                return false;
+            }
+            if (TxtPassword.Text != TxtConfirmpassword.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        
+    }  
 }

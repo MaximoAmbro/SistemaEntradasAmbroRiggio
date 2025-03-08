@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades; 
+using Negocio;
 
 namespace Visual
 {
@@ -17,19 +20,13 @@ namespace Visual
         public frmInicio()
         {
             InitializeComponent();
-           
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void frmInicio_Load(object sender, EventArgs e)
         {
-
+            TxtUsername.Text = "";
+            TxtPassword.Text = "";
+            TxtPassword.PasswordChar = '*';
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
             checkcount++;
@@ -42,7 +39,7 @@ namespace Visual
             {
                 TxtPassword.PasswordChar = '\0';
             }
-        }
+        } //ya está
 
         private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
@@ -54,75 +51,60 @@ namespace Visual
             frmCambiarContraseña frm = new frmCambiarContraseña();
             frm.Show();
             this.Hide();
-
-
-        }
+        } //ya está
 
         private void lblcrearcuenta_Click(object sender, EventArgs e)
         {
             frmCrearUsuario frm = new frmCrearUsuario();
             frm.Show();
             this.Hide();
-        }
+        }// ya está
 
         private void btninicio_Click(object sender, EventArgs e)
         {
             {
-                
-                if (string.IsNullOrEmpty(TxtUsername.Text) || string.IsNullOrEmpty(TxtPassword.Text))
+                if (string.IsNullOrEmpty(TxtUsername.Text))
                 {
-                    MessageBox.Show("Por favor, ingrese usuario y contraseña.",
-                                  "Campos vacíos",
+                    MessageBox.Show("Por favor, ingrese usuario",
+                                  "Campo vacíos",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Warning);
                     return;
                 }
-
-                bool credencialesValidas = ValidarCredenciales(TxtUsername.Text, TxtPassword.Text);
-
-                if (credencialesValidas)
+                if (string.IsNullOrEmpty(TxtPassword.Text))
                 {
-
-                    frmInicio frmincio = new frmInicio();
-                    frmincio.Show();
-                    this.Hide();
+                    MessageBox.Show("Por favor, ingrese contraseña",
+                                  "Campo vacíos",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                    return;
                 }
+                
                 else
                 {
-
-                    MessageBox.Show("Usuario o contraseña incorrectos. Por favor, verifica tus datos e intenta de nuevo. En el caso de no tener cuenta crearse una.",
-                                  "Error de inicio de sesión",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error);
-
-                    TxtPassword.Text = "";
-                    TxtUsername.Focus();
+                    ValidarLista(TxtUsername.Text, TxtPassword.Text);
                 }
             }
         }
+        public bool ValidarLista(string usuario, string contraseña)
+        {
+            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
             
-
-        private bool ValidarCredenciales(string Username, string Password)
-        {
-
-            string UsarnameValido = "admin";
-            string PasswordValida = "1234";
-
-            return TxtUsername.Text == UsarnameValido && TxtPassword.Text == PasswordValida;
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmInicio_Load(object sender, EventArgs e)
-        {
-            TxtUsername.Text = "";
-            TxtPassword.Text = "";
-            TxtPassword.PasswordChar = '*';
-
+            if (gestorClientes.RevisarUsuarioYContraseña(usuario, contraseña) == false)
+            {
+                MessageBox.Show("Usuario no encontrado",
+                                  "Hola Pedro",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                return false;
+            }
+            else 
+            {
+                frmMenuUsuario frm = new frmMenuUsuario();
+                frm.Show();
+                this.Hide();
+                return true
+            ;}
         }
     }
     

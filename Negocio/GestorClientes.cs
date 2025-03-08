@@ -10,41 +10,35 @@ namespace Negocio
 {
     public partial class GestorClientes // Lista
     {
-        List<Cliente> clientes = new List<Cliente>();
+       public static List<Cliente> clientes = new List<Cliente>();
         Cliente cliente = new Cliente();
 
     }
     public partial class GestorClientes // Metodos
     {
-        public void CambiarContraseña()
+       
+        public void CambiarContraseña(string usuario, string contraseña)
         {
             foreach (var c in clientes)
             {
-                if (c.Mail == cliente.Mail)
+                if (c.Usuario == usuario)
                 {
-                    string contracambiar = c.Contraseña;
-                    cliente.Contraseña = contracambiar;
+                    c.Contraseña = contraseña;
                     break;
                 }
             }
         }
-        public void AgregarCliente()
+        public void AgregarCliente(string nombre, string usuario, string mail, string contraseña)
         {
-            RevisarClientes();
-            if (RevisarClientes() == false)
-            {
-                clientes.Add(cliente);
-            }
-            else { throw new Exception("El cliente ya existe"); }
+            cliente = new Cliente { NombreYApellido = nombre, Usuario = usuario, Mail = mail, Contraseña = contraseña };
+            clientes.Add(cliente);
         }
-        public bool RevisarClientes()
+        public bool RevisarUsuarioYContraseña(string usuario, string contraseña)
         {
-
             Cliente cliente1 = null;
-
             foreach (var c in clientes)
             {
-                if (c.Mail == cliente.Mail)
+                if (c.Usuario == usuario && c.Contraseña == contraseña)
                 {
                     cliente1 = c;
                     break;
@@ -55,14 +49,42 @@ namespace Negocio
                 return false;
                 throw new Exception("Correo no encontrado");
             }
-            if (cliente1 != null && cliente1.Contraseña == cliente.Contraseña)
+            else
             {
                 return true;
+            }
+        }
+        public bool RevisarMailyUsuario(string usuario, string mail)
+        {
+            Cliente cliente1 = null;
+            foreach (var c in clientes)
+            {
+                if (c.Usuario == usuario)
+                {
+                    cliente1 = c;
+                    return false;
+                    throw new Exception("El usuario ya existe");
+                    break;
+                }
+                if (c.Mail == mail)
+                {
+                    return false;
+                    throw new Exception("El mail ya existe");
+                    break;
+                }
+                else
+                {
+                   return true;
+                }
+            }
+            if (cliente1 == null)
+            {
+                return true;
+                throw new Exception("");
             }
             else
             {
                 return false;
-                throw new Exception("Contraseña incorrecta");
             }
         }
     }
@@ -70,24 +92,25 @@ namespace Negocio
     {
         public GestorClientes()
         {
-            clientes.Add(new Cliente { Nombre = "Juan", Apellido = "Pérez", DNI = 123456, Usuario = "juanperez", Mail = "juanperez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "María", Apellido = "González", DNI = 234567, Usuario = "mariagonzalez", Mail = "mariagonzalez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Carlos", Apellido = "López", DNI = 345678, Usuario = "carloslopez", Mail = "carloslopez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Ana", Apellido = "Díaz", DNI = 456789, Usuario = "anadiaz", Mail = "anadiaz@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Pedro", Apellido = "Martínez", DNI = 567890, Usuario = "pedromartinez", Mail = "pedromartinez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Lucía", Apellido = "García", DNI = 678901, Usuario = "luciagarcia", Mail = "luciagarcia@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Tomás", Apellido = "Rodríguez", DNI = 789012, Usuario = "tomasrodriguez", Mail = "tomasrodriguez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Sofía", Apellido = "Hernández", DNI = 890123, Usuario = "sofiahernandez", Mail = "sofiahernandez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Mateo", Apellido = "Gómez", DNI = 901234, Usuario = "mateogomez", Mail = "mateogomez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Isabel", Apellido = "Sánchez", DNI = 123456, Usuario = "isabelsanchez", Mail = "isabelsanchez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Alejandro", Apellido = "Fernández", DNI = 234567, Usuario = "alejandrofernandez", Mail = "alejandrofernandez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Valeria", Apellido = "Díaz", DNI = 345678, Usuario = "valeriadiaz", Mail = "valeriadiaz@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Gabriel", Apellido = "López", DNI = 456789, Usuario = "gabriellopez", Mail = "gabriellopez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Eva", Apellido = "García", DNI = 567890, Usuario = "evagarcia", Mail = "evagarcia@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Julio", Apellido = "Martínez", DNI = 678901, Usuario = "juliomartinez", Mail = "juliomartinez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Cristina", Apellido = "Hernández", DNI = 789012, Usuario = "cristinahernandez", Mail = "cristinahernandez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Daniel", Apellido = "Gómez", DNI = 890123, Usuario = "danielgomez", Mail = "danielgomez@example.com", Contraseña = "password123" });
-            clientes.Add(new Cliente { Nombre = "Laura", Apellido = "Sánchez", DNI = 901234, Usuario = "laurasanchez", Mail = "laurasanchez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "z", Usuario = "z", Mail = "z", Contraseña = "z" });
+            clientes.Add(new Cliente { NombreYApellido = "Juan Riggio", Usuario = "JuaniLGBT", Mail = "juanriggio@gmail.com", Contraseña = "a" });
+            clientes.Add(new Cliente { NombreYApellido = "Maximo Ambrosion", Usuario = "Ambro", Mail = "MaximoAmbrosino@gmail.com", Contraseña = "a" });
+            clientes.Add(new Cliente { NombreYApellido = "Carlos López", Usuario = "carloslopez", Mail = "carloslopez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Ana Díaz", Usuario = "anadiaz", Mail = "anadiaz@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Pedro Martínez", Usuario = "pedromartinez", Mail = "pedromartinez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Lucía García", Usuario = "luciagarcia", Mail = "luciagarcia@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Tomás Rodríguez", Usuario = "tomasrodriguez", Mail = "tomasrodriguez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Sofía Hernández", Usuario = "sofiahernandez", Mail = "sofiahernandez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Mateo Gómez", Usuario = "mateogomez", Mail = "mateogomez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Isabel Sánchez", Usuario = "isabelsanchez", Mail = "isabelsanchez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Alejandro Fernández", Usuario = "alejandrofernandez", Mail = "alejandrofernandez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Valeria Díaz", Usuario = "valeriadiaz", Mail = "valeriadiaz@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Gabriel López", Usuario = "gabriellopez", Mail = "gabriellopez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Eva García", Usuario = "evagarcia", Mail = "evagarcia@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Julio Martínez", Usuario = "juliomartinez", Mail = "juliomartinez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Cristina Hernández", Usuario = "cristinahernandez", Mail = "cristinahernandez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Daniel Gómez", Usuario = "danielgomez", Mail = "danielgomez@example.com", Contraseña = "password123" });
+            clientes.Add(new Cliente { NombreYApellido = "Laura Sánchez", Usuario = "laurasanchez", Mail = "laurasanchez@example.com", Contraseña = "password123" });
         } 
     } 
 }
