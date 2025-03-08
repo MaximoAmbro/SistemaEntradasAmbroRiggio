@@ -67,10 +67,10 @@
             dgveventos.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             dgveventos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dgveventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgveventos.Location = new System.Drawing.Point(50, 56);
+            dgveventos.Location = new System.Drawing.Point(12, 46);
             dgveventos.Name = "dgveventos";
             dgveventos.RowHeadersWidth = 51;
-            dgveventos.Size = new System.Drawing.Size(680, 252);
+            dgveventos.Size = new System.Drawing.Size(740, 285);
             dgveventos.TabIndex = 29;
             // 
             // btnComprar
@@ -80,7 +80,7 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnComprar.ForeColor = System.Drawing.Color.White;
-            btnComprar.Location = new System.Drawing.Point(286, 327);
+            btnComprar.Location = new System.Drawing.Point(286, 356);
             btnComprar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnComprar.Name = "btnComprar";
             btnComprar.Size = new System.Drawing.Size(215, 35);

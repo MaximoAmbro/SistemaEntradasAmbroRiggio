@@ -7,68 +7,128 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Entidades;
-
+using static Entidades.Evento;
 namespace Negocio
 {
     public partial class GestorEntradas //Lista
     {
         List<Entrada> entradas = new List<Entrada>();
         List<Evento> eventos = new List<Evento>();
-        Entrada entrada = new Entrada();
-        Cliente cliente = new Cliente();
+        public string SectorA { get; set; }
+        public string SectorB { get; set; }
+        public string SectorC { get; set; }
+        public string PrecioA { get; set; }
+        public string PrecioB { get; set; }
+        public string PrecioC { get; set; }
+        public int TotalEntradas { get; set; }
+        public string MensajeTicket { get; set; }
     }
     public partial class GestorEntradas //Metodos
     {
-        public void AgregarEntrada()
+        public bool BuscarLista(string NombreEvento)
         {
-            if (ChequearDisponibilidad() == true)
+            Evento evento1 = null;
+            foreach (var c in eventos)
             {
-                entrada.Cliente = cliente;
-                entrada.CantidadVendida = entrada.CantidadVendida + 1;
+                if (c.Nombre == NombreEvento)
+                {
+                    evento1 = c;
+                    break;
+                }
             }
-            else { throw new Exception("No hay disponibilidad"); }
-        }
-        public bool ChequearDisponibilidad()
-        {
-            Entrada entrada = null;
+            if (evento1 == null)
+            {
 
-            foreach (var c in entradas)
-            {
-                if (c.Nombre == entrada.Nombre)
-                {
-                    if (c.Capacidad >= c.CantidadVendida+1)
-                    {
-                        return true;
-                    }
-                    else { return false; }
-                }
+                return false;
+                throw new Exception("Evento no encontrado");
             }
-            return false;
+            else
+            {
+                SectorA = evento1.Sectores[0].Nombre;
+                SectorB = evento1.Sectores[1].Nombre;
+                SectorC = evento1.Sectores[2].Nombre;
+                PrecioA = evento1.Sectores[0].Precio.ToString();
+                PrecioB = evento1.Sectores[1].Precio.ToString();
+                PrecioC = evento1.Sectores[2].Precio.ToString();
+                return true;
+            }
         }
-        public void EliminarEntrada()
+        public void RestarEntrada(string NombreEvento, int cantidadA, int cantidadB, int cantidadC
+        ,int cantidadTotal)
         {
-            foreach (var c in entradas)
+            int TotalEntradasRestantes = 0;
+            foreach (var c in eventos)
             {
-                if (c.IDEntrada == entrada.IDEntrada)
+                if (c.Nombre == NombreEvento)
                 {
-                    entrada.CantidadVendida = entrada.CantidadVendida - 1;
-                }
-                else { throw new Exception("ID no encontrado"); }
+                    TotalEntradasRestantes = c.Capacidad;
+                    c.Sectores[0].Capacidad -= cantidadA;
+                    c.Sectores[1].Capacidad -= cantidadB;
+                    c.Sectores[2].Capacidad -= cantidadC;
+                    c.Capacidad -= cantidadTotal;
+                    TotalEntradasRestantes -= cantidadTotal;
+                    TotalEntradas = TotalEntradasRestantes;
+                    break;
                 }
             }
         }
+        public void GenerarTicket(string NombreEvento, string NombreSector)
+        {
+            MensajeTicket = null;
+            foreach (var c in eventos)
+            {
+
+                if (c.Nombre == NombreEvento)
+                {
+                        MensajeTicket=
+                        "ENTRADA (" + c.Nombre + ")\n"+
+                        "SECTOR: " + NombreSector + "\n"+
+                        "PRECIO: " + c.Sectores.Find(x => x.Nombre == NombreSector).Precio.ToString()+ "\n"+
+                        "HORARIO: " + c.Hora.ToString() + "\n"+
+                        "LUGAR: " + c.Locacion + "\n"+
+                        "FECHA: " + c.Fecha.ToString();
+                        break;
+                }
+            }
+
+        }
+        public List<Evento> ObtenerListaEventos()
+        {
+            return eventos;
+        }
+    }
     public partial class GestorEntradas //Eventos cargados
     {
         public GestorEntradas()
         {
-            eventos.Add(new Evento { Nombre = "Ratones Paraonoicos", Capacidad = 1500, Locacion = "Complejo Vorterix", Fecha = DateTime.Parse("12/12/2025"),Hora = HourOfDay.TwentyOne});
+           eventos.Add(new Evento
+            {
+                Nombre = "Ratones Paraonoicos",
+                Capacidad = 1500,
+                Locacion = "Complejo Vorterix",
+                Fecha = DateTime.Parse("12/12/2025"),
+                Hora = HourOfDay.TwentyOne,
+                Sectores = new List<Sector>
+            {
+                new Sector { Nombre = "Sector A", Precio = 100, Capacidad = 500 },
+                new Sector { Nombre = "Sector B", Precio = 80, Capacidad = 500 },
+                new Sector { Nombre = "Sector C", Precio = 60, Capacidad = 500 }
+            }
+            });
+
             eventos.Add(new Evento
             {
                 Nombre = "Bersuit Vergarabat",
                 Capacidad = 1500,
                 Locacion = "Salón Metropolitano",
                 Fecha = DateTime.Parse("12/12/2025"),
-                Hora = HourOfDay.Seventeen
+                Hora = HourOfDay.Seventeen,
+                Sectores = new List<Sector>
+        {
+            new Sector { Nombre = "Sector A", Precio = 120, Capacidad = 500 },
+            new Sector { Nombre = "Sector B", Precio = 100, Capacidad = 500 },
+            new Sector { Nombre = "Sector C", Precio = 80, Capacidad = 500 }
+        }
             });
 
             eventos.Add(new Evento
@@ -77,125 +137,29 @@ namespace Negocio
                 Capacidad = 1200,
                 Locacion = "Salón El Circulo",
                 Fecha = DateTime.Parse("12/12/2025"),
-                Hora = HourOfDay.Eighteen
+                Hora = HourOfDay.Eighteen,
+                Sectores = new List<Sector>
+        {
+            new Sector { Nombre = "Sector A", Precio = 150, Capacidad = 400 },
+            new Sector { Nombre = "Sector B", Precio = 120, Capacidad = 400 },
+            new Sector { Nombre = "Sector C", Precio = 100, Capacidad = 400 }
+        }
             });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Patricio Rey y sus Redonditos de Ricota",
-                Capacidad = 1800,
-                Locacion = "Salón City Center",
-                Fecha = DateTime.Parse("12/12/2025"),
-                Hora = HourOfDay.Nineteen
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Divididos",
-                Capacidad = 1500,
-                Locacion = "Salón Metropolitano",
-                Fecha = DateTime.Parse("12/12/2025"),
-                Hora = HourOfDay.Twenty
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Ataque 77",
-                Capacidad = 1200,
-                Locacion = "Salón El Circulo",
-                Fecha = DateTime.Parse("12/12/2025"),
-                Hora = HourOfDay.TwentyOne
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Los Piojos",
-                Capacidad = 1800,
-                Locacion = "Salón City Center",
-                Fecha = DateTime.Parse("12/12/2025"),
-                Hora = HourOfDay.TwentyTwo
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Fobia",
-                Capacidad = 1500,
-                Locacion = "Salón Metropolitano",
-                Fecha = DateTime.Parse("13/12/2025"),
-                Hora = HourOfDay.Seventeen
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "El Otro Yo",
-                Capacidad = 1200,
-                Locacion = "Salón El Circulo",
-                Fecha = DateTime.Parse("13/12/2025"),
-                Hora = HourOfDay.Eighteen
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Catupecu Machu",
-                Capacidad = 1800,
-                Locacion = "Salón City Center",
-                Fecha = DateTime.Parse("13/12/2025"),
-                Hora = HourOfDay.Nineteen
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Hermética",
-                Capacidad = 1500,
-                Locacion = "Salón Metropolitano",
-                Fecha = DateTime.Parse("13/12/2025"),
-                Hora = HourOfDay.Twenty
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Rata Blanca",
-                Capacidad = 1200,
-                Locacion = "Salón El Circulo",
-                Fecha = DateTime.Parse("13/12/2025"),
-                Hora = HourOfDay.TwentyOne
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Almafuerte",
-                Capacidad = 1800,
-                Locacion = "Salón City Center",
-                Fecha = DateTime.Parse("13/12/2025"),
-                Hora = HourOfDay.TwentyTwo
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "A.N.I.M.A.L.",
-                Capacidad = 1500,
-                Locacion = "Salón Metropolitano",
-                Fecha = DateTime.Parse("14/12/2025"),
-                Hora = HourOfDay.Seventeen
-            });
-
-            eventos.Add(new Evento
-            {
-                Nombre = "Carajo",
-                Capacidad = 1200,
-                Locacion = "Salón El Circulo",
-                Fecha = DateTime.Parse("14/12/2025"),
-                Hora = HourOfDay.Eighteen
-            });
-
             eventos.Add(new Evento
             {
                 Nombre = "Illya Kuryaki and the Valderramas",
                 Capacidad = 1800,
                 Locacion = "Salón City Center",
                 Fecha = DateTime.Parse("14/12/2025"),
-                Hora = HourOfDay.Nineteen
-            });
+                Hora = HourOfDay.Nineteen,
+                Sectores = new List<Sector>
+                {
+                new Sector { Nombre = "Sector A", Precio = 180, Capacidad = 600 },
+                new Sector { Nombre = "Sector B", Precio = 150, Capacidad = 600 },
+                new Sector { Nombre = "Sector C", Precio = 120, Capacidad = 600 }
+                }
+            }
+                );
         }
     }
 }
