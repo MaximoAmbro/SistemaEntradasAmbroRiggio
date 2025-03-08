@@ -90,7 +90,7 @@ namespace Visual
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
             
-            if (gestorClientes.RevisarClientes(usuario, contraseña) == false)
+            if (gestorClientes.RevisarLogin(usuario, contraseña) == false)
             {
                 MessageBox.Show("Usuario no encontrado",
                                   "Hola Pedro",
