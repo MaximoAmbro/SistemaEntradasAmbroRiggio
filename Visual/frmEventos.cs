@@ -10,31 +10,13 @@ using System.Windows.Forms;
 using Entidades; using Negocio;
 namespace Visual
 {
-    public partial class FormEventos : Form
+    public partial class frmEventos : Form
     {
         private GestorEventos gestorEventos;
 
-        public FormEventos()
+        public frmEventos()
         {
             InitializeComponent();
-            gestorEventos = new GestorEventos();
-            CargarEventosEnDataGridView();
-        }
-
-        private void CargarEventosEnDataGridView()
-        {
-            // Obtener la lista de eventos desde el gestor
-            List<Evento> listaEventos = gestorEventos.ObtenerListaEventos();
-
-            // Vincular la lista al DataGridView
-            dgveventos.DataSource = listaEventos;
-
-            // Personalizar las columnas
-            dgveventos.Columns["Id"].HeaderText = "ID";
-            dgveventos.Columns["NombreEstablecimiento"].HeaderText = "Nombre del Establecimiento";
-            dgveventos.Columns["DiaHora"].HeaderText = "Día y Hora";
-            dgveventos.Columns["CuposTotales"].HeaderText = "Cupos Totales";
-            dgveventos.Columns["LimiteMaximo"].HeaderText = "Límite Máximo";
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -42,17 +24,22 @@ namespace Visual
             frm.Show();
             this.Hide();
         }
-
         private void frmEventos_Load(object sender, EventArgs e)
         {
             frmMenuUsuario frm = new frmMenuUsuario();
             frm.Show();
             this.Hide();
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmCompra frm = new FrmCompra();
+            frm.Show();
+            this.Hide();
         }
     }
 }

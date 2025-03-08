@@ -157,7 +157,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(285, 475);
+            ClientSize = new System.Drawing.Size(282, 473);
             Controls.Add(label2);
             Controls.Add(label5);
             Controls.Add(btninicio);
