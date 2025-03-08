@@ -26,20 +26,30 @@ namespace Visual
         }
         private void frmEventos_Load(object sender, EventArgs e)
         {
-            frmMenuUsuario frm = new frmMenuUsuario();
-            frm.Show();
-            this.Hide();
+            gestorEventos = new GestorEventos();
+            dgveventos.DataSource = gestorEventos.ObtenerListaEventos();
+            DataGridViewColumn columnaNombre = new DataGridViewColumn();
+            DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
+            dgveventos.AutoGenerateColumns = true;
+            //falta hacer para que no queden espacios grises
         }
-        private void label2_Click(object sender, EventArgs e)
+        private void btnComprar_Click_1(object sender, EventArgs e)
+        {
+            if (dgveventos.SelectedRows.Count > 0)
+            {
+                FrmCompra frm = new FrmCompra();
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un evento para comprar", "Hola Pedro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FrmCompra frm = new FrmCompra();
-            frm.Show();
-            this.Hide();
         }
     }
 }
