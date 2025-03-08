@@ -17,14 +17,13 @@ namespace Negocio
     public partial class GestorClientes // Metodos
     {
        
-        public void CambiarContraseña()
+        public void CambiarContraseña(string usuario, string contraseña)
         {
             foreach (var c in clientes)
             {
-                if (c.Mail == cliente.Mail)
+                if (c.Usuario == usuario)
                 {
-                    string contracambiar = c.Contraseña;
-                    cliente.Contraseña = contracambiar;
+                    c.Contraseña = contraseña;
                     break;
                 }
             }
@@ -34,7 +33,7 @@ namespace Negocio
             cliente = new Cliente { NombreYApellido = nombre, Usuario = usuario, Mail = mail, Contraseña = contraseña };
             clientes.Add(cliente);
         }
-        public bool RevisarLogin(string usuario, string contraseña)
+        public bool RevisarUsuarioYContraseña(string usuario, string contraseña)
         {
             Cliente cliente1 = null;
             foreach (var c in clientes)
@@ -55,14 +54,14 @@ namespace Negocio
                 return true;
             }
         }
-        public bool RevisarCrearUsuario(string usuario, string mail)
+        public bool RevisarMailyUsuario(string usuario, string mail)
         {
-            string aa = "a";
-
+            Cliente cliente1 = null;
             foreach (var c in clientes)
             {
                 if (c.Usuario == usuario)
                 {
+                    cliente1 = c;
                     return false;
                     throw new Exception("El usuario ya existe");
                     break;
@@ -73,10 +72,15 @@ namespace Negocio
                     throw new Exception("El mail ya existe");
                     break;
                 }
-            } 
-            if (aa  == "a")
+                else
+                {
+                   return true;
+                }
+            }
+            if (cliente1 == null)
             {
                 return true;
+                throw new Exception("");
             }
             else
             {
@@ -88,7 +92,7 @@ namespace Negocio
     {
         public GestorClientes()
         {
-
+            clientes.Add(new Cliente { NombreYApellido = "z", Usuario = "z", Mail = "z", Contraseña = "z" });
             clientes.Add(new Cliente { NombreYApellido = "Juan Riggio", Usuario = "JuaniLGBT", Mail = "juanriggio@gmail.com", Contraseña = "a" });
             clientes.Add(new Cliente { NombreYApellido = "Maximo Ambrosion", Usuario = "Ambro", Mail = "MaximoAmbrosino@gmail.com", Contraseña = "a" });
             clientes.Add(new Cliente { NombreYApellido = "Carlos López", Usuario = "carloslopez", Mail = "carloslopez@example.com", Contraseña = "password123" });

@@ -28,29 +28,19 @@ namespace Visual
             TxtUsername.Text = "";
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
+            TxtConfirmpassword.PasswordChar='*';
         }
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            checkcount++;
-            TxtPassword.PasswordChar = '\0';
-            if (checkcount % 2 == 0)
-            {
-                TxtPassword.PasswordChar = '*';
-            }
-            else
+            if(checkbxShowPass.Checked == true)
             {
                 TxtPassword.PasswordChar = '\0';
-            }
-
-            checkcount++;
-            TxtConfirmpassword.PasswordChar = '\0';
-            if (checkcount % 2 == 0)
-            {
-                TxtConfirmpassword.PasswordChar = '*';
+                TxtConfirmpassword.PasswordChar = '\0';
             }
             else
             {
-                TxtConfirmpassword.PasswordChar = '\0';
+                TxtPassword.PasswordChar = '*';
+                TxtConfirmpassword.PasswordChar = '*';
             }
         }
         private void lblyatengocuen_Click(object sender, EventArgs e)
@@ -75,7 +65,6 @@ namespace Visual
             }
             else { return; }
         }
-
         private bool RevisarTextbox()
         {
             if (string.IsNullOrEmpty(txtnombre.Text))
@@ -106,17 +95,21 @@ namespace Visual
                 MessageBox.Show("Ingrese segunda contraseña: ");
                 return false;
             }
+            if (TxtPassword.Text != TxtConfirmpassword.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+                return false;
+            }
             else
             {
                 return true;
             }
         }
-
         public bool ValidarLista(string usuario, string mail)
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
 
-            if (gestorClientes.RevisarCrearUsuario(usuario, mail) == false)
+            if (gestorClientes.RevisarMailyUsuario(usuario, mail) == false)
             {
                 MessageBox.Show("Usuario no disponible // Mail ya existe");
                 return false;
