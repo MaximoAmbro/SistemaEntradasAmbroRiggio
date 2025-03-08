@@ -15,8 +15,6 @@ namespace Visual
 {
     public partial class frmInicio: Form
     {
-        int checkcount = 0;
-
         public frmInicio()
         {
             InitializeComponent();
@@ -29,37 +27,27 @@ namespace Visual
         }
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            checkcount++;
-            TxtPassword.PasswordChar = '\0';
-            if (checkcount %2 == 0)
-            {
-                TxtPassword.PasswordChar = '*';
-            }
-            else
+            if (checkbxShowPass.Checked == true)
             {
                 TxtPassword.PasswordChar = '\0';
             }
+            else 
+            {
+                TxtPassword.PasswordChar = '*'; 
+            }
         } //ya está
-
-        private void TxtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblolividarcontra_Click(object sender, EventArgs e)
         {
             frmCambiarContraseña frm = new frmCambiarContraseña();
             frm.Show();
             this.Hide();
         } //ya está
-
         private void lblcrearcuenta_Click(object sender, EventArgs e)
         {
             frmCrearUsuario frm = new frmCrearUsuario();
             frm.Show();
             this.Hide();
         }// ya está
-
         private void btninicio_Click(object sender, EventArgs e)
         {
             {
@@ -107,5 +95,4 @@ namespace Visual
             ;}
         }
     }
-    
 }

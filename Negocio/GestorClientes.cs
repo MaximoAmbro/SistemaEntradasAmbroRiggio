@@ -11,7 +11,7 @@ namespace Negocio
     public partial class GestorClientes // Lista
     {
        public static List<Cliente> clientes = new List<Cliente>();
-        Cliente cliente = new Cliente();
+       Cliente cliente = new Cliente();
 
     }
     public partial class GestorClientes // Metodos
@@ -23,6 +23,7 @@ namespace Negocio
             {
                 if (c.Usuario == usuario)
                 {
+                    c.Contraseña = null;
                     c.Contraseña = contraseña;
                     break;
                 }
@@ -88,7 +89,7 @@ namespace Negocio
             }
         }
     }
-    public partial class GestorClientes // Usuarios cargados
+        public partial class GestorClientes // Usuarios cargados
     {
         public GestorClientes()
         {
