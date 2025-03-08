@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public partial class Cliente
-    {
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public int DNI { get; set; }
+    { 
+        public string NombreYApellido { get; set; }
         public string Usuario { get; set; }
         public string Mail { get; set; }
         public string Contraseña { get; set; }

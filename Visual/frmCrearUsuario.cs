@@ -21,12 +21,6 @@ namespace Visual
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmCrearUsuario_Load(object sender, EventArgs e)
         {
             txtmail.Text = "";
@@ -35,12 +29,6 @@ namespace Visual
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
             checkcount++;
@@ -65,101 +53,90 @@ namespace Visual
                 TxtConfirmpassword.PasswordChar = '\0';
             }
         }
-
-
         private void lblyatengocuen_Click(object sender, EventArgs e)
         {
             frmInicio frm = new frmInicio();
             frm.Show();
             this.Hide();
         }
-
-        private void TxtConfirmpassword_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void btnregistrarse_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos())
-
+            if (RevisarTextbox()== true)
             {
-                string nombre = txtnombre.Text;
-                string usuario = TxtUsername.Text;
-                string correo = txtmail.Text;
-                string contraseña = TxtPassword.Text;
-                string confirmarContraseña = TxtConfirmpassword.Text;
-                
+
+                if(ValidarLista(TxtUsername.Text, txtmail.Text) == true)
+                {
+                    string nombre = txtnombre.Text;
+                    string usuario = TxtUsername.Text;
+                    string correo = txtmail.Text;
+                    string contraseña = TxtPassword.Text;
+                    string confirmarContraseña = TxtConfirmpassword.Text;
+                }
+            }
+            else { return; }
+        }
+
+        private bool RevisarTextbox()
+        {
+            if (string.IsNullOrEmpty(txtnombre.Text))
+            {
+                MessageBox.Show("Ingrese nombre: ");
+                return false;
+            }
+            if (string.IsNullOrEmpty(TxtUsername.Text))
+            {
+                MessageBox.Show("Ingrese Usuario: ");
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(txtmail.Text))
+            {
+                MessageBox.Show("Ingrese Mail: ");
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(TxtPassword.Text))
+            {
+                MessageBox.Show("Ingrese contraseña: ");
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(TxtConfirmpassword.Text))
+            {
+                MessageBox.Show("Ingrese segunda contraseña: ");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
-        private bool ValidarCampos()
-
+        public bool ValidarLista(string usuario, string mail)
         {
-            if (string.IsNullOrEmpty(txtnombre.Text) || string.IsNullOrEmpty(TxtUsername.Text) || string.IsNullOrEmpty(txtmail.Text) || string.IsNullOrEmpty(TxtPassword.Text) || string.IsNullOrEmpty(TxtConfirmpassword.Text))
+            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
+
+            if (gestorClientes.RevisarCrearUsuario(usuario, mail) == false)
             {
-                MessageBox.Show("Campo vacío. Por favor, complete todos los campos.");
+                MessageBox.Show("Usuario no disponible // Mail ya existe");
                 return false;
             }
-
-            if (!ValidarNombreApellido(txtnombre.Text))
+            else
             {
-                MessageBox.Show("El nombre y apellido debe tener más de 6 letras y no puede contener números ni símbolos.");
-                return false;
+                AgregarUsuario(txtnombre.Text, TxtUsername.Text, txtmail.Text,  TxtPassword.Text);
+                MessageBox.Show("Usuario creado");
+                frmInicio frm = new frmInicio();
+                frm.Show();
+                this.Hide();
+                return true;
             }
-
-
-            if (TxtUsername.Text.Length < 8)
-            {
-                MessageBox.Show("El usuario debe tener al menos 8 letras.");
-                return false;
-            }
-
-
-
-            if (!ValidarCorreo(txtmail.Text))
-            {
-                MessageBox.Show("El correo electrónico debe tener más de 8 letras y terminar con @gmail.com.");
-                return false;
-            }
-
-            if (!ValidarContraseña(TxtPassword.Text))
-            {
-                MessageBox.Show("La contraseña debe tener más de 8 letras y al menos 2 números.");
-                return false;
-            }
-
-            if (TxtPassword.Text != TxtConfirmpassword.Text)
-            {
-                MessageBox.Show("Error, las contraseñas no coinciden.");
-                return false;
-            }
-
-            if (!ValidarUsuario(TxtUsername.Text))
-            {
-                MessageBox.Show("El usuario no puede contener símbolos.");
-                return false;
-            }
-
-            if (!ValidarCorreoSinSimbolos(txtmail.Text))
-            {
-                MessageBox.Show("El correo electrónico no puede contener símbolos.");
-                return false;
-            }
-
-
-
-            return true;
-
         }
-
-
-        private void txtnombre_TextChanged(object sender, EventArgs e)
+        public void AgregarUsuario(string nombre, string usuario, string mail, string contraseña)
         {
-
+            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
+            gestorClientes.AgregarCliente(nombre, usuario, mail, contraseña);
         }
     }
-
-
 }
     
 

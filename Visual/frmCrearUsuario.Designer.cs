@@ -69,7 +69,6 @@
             TxtConfirmpassword.Name = "TxtConfirmpassword";
             TxtConfirmpassword.Size = new System.Drawing.Size(252, 28);
             TxtConfirmpassword.TabIndex = 22;
-            TxtConfirmpassword.TextChanged += TxtConfirmpassword_TextChanged;
             // 
             // label4
             // 
@@ -157,7 +156,6 @@
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new System.Drawing.Size(252, 28);
             txtnombre.TabIndex = 28;
-            txtnombre.TextChanged += txtnombre_TextChanged;
             // 
             // lblmail
             // 
