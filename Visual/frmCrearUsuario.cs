@@ -24,6 +24,7 @@ namespace Visual
         }
         private void frmCrearUsuario_Load(object sender, EventArgs e)
         {
+            txtnombre.Focus();
             txtmail.Text="";
             txtnombre.Text = "";
             TxtUsername.Text = "";
