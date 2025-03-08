@@ -32,7 +32,6 @@
             label2 = new System.Windows.Forms.Label();
             dgveventos = new System.Windows.Forms.DataGridView();
             btnComprar = new System.Windows.Forms.Button();
-            btnDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)dgveventos).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +53,7 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label2.Location = new System.Drawing.Point(80, 9);
+            label2.Location = new System.Drawing.Point(316, 9);
             label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(141, 34);
@@ -63,11 +62,15 @@
             // 
             // dgveventos
             // 
+            dgveventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dgveventos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dgveventos.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            dgveventos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dgveventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgveventos.Location = new System.Drawing.Point(46, 46);
+            dgveventos.Location = new System.Drawing.Point(50, 56);
             dgveventos.Name = "dgveventos";
             dgveventos.RowHeadersWidth = 51;
-            dgveventos.Size = new System.Drawing.Size(218, 252);
+            dgveventos.Size = new System.Drawing.Size(680, 252);
             dgveventos.TabIndex = 29;
             // 
             // btnComprar
@@ -77,38 +80,21 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnComprar.ForeColor = System.Drawing.Color.White;
-            btnComprar.Location = new System.Drawing.Point(80, 343);
+            btnComprar.Location = new System.Drawing.Point(286, 327);
             btnComprar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnComprar.Name = "btnComprar";
-            btnComprar.Size = new System.Drawing.Size(140, 35);
+            btnComprar.Size = new System.Drawing.Size(215, 35);
             btnComprar.TabIndex = 36;
             btnComprar.Text = "COMPRAR";
             btnComprar.UseVisualStyleBackColor = false;
             btnComprar.Click += btnComprar_Click_1;
-            // 
-            // btnDetalles
-            // 
-            btnDetalles.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            btnDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnDetalles.FlatAppearance.BorderSize = 0;
-            btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnDetalles.ForeColor = System.Drawing.Color.White;
-            btnDetalles.Location = new System.Drawing.Point(80, 302);
-            btnDetalles.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            btnDetalles.Name = "btnDetalles";
-            btnDetalles.Size = new System.Drawing.Size(140, 35);
-            btnDetalles.TabIndex = 37;
-            btnDetalles.Text = "VER DETALLES";
-            btnDetalles.UseVisualStyleBackColor = false;
-            btnDetalles.Click += btnDetalles_Click;
             // 
             // frmEventos
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(312, 438);
-            Controls.Add(btnDetalles);
+            ClientSize = new System.Drawing.Size(780, 438);
             Controls.Add(btnComprar);
             Controls.Add(dgveventos);
             Controls.Add(label2);
@@ -133,6 +119,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgveventos;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.Button btnDetalles;
     }
 }

@@ -11,7 +11,7 @@ using Entidades; using Negocio;
 
 namespace Visual
 {
-    public partial class frmMenuUsuario: Form
+    public partial class frmMenuUsuario : Form
     {
         public frmMenuUsuario()
         {
@@ -50,7 +50,7 @@ namespace Visual
             this.Hide();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void lblvolver_Click(object sender, EventArgs e)
         {
             frmInicio frm = new frmInicio();
             frm.Show();

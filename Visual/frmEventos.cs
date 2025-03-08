@@ -31,6 +31,7 @@ namespace Visual
             DataGridViewColumn columnaNombre = new DataGridViewColumn();
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
             dgveventos.AutoGenerateColumns = true;
+            dgveventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             //falta hacer para que no queden espacios grises
         }
         private void btnComprar_Click_1(object sender, EventArgs e)
