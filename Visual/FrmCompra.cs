@@ -36,9 +36,9 @@ namespace Visual
             lblSectorA.Text = SectorA;
             lblSectorB.Text = SectorB;
             lblSectorC.Text = SectorC;
-            lblPrecioA.Text = PrecioA;
-            lblPrecioB.Text = PrecioB;
-            lblPrecioC.Text = PrecioC;
+            lblPrecioA.Text = PrecioA + "$";
+            lblPrecioB.Text = PrecioB + "$";
+            lblPrecioC.Text = PrecioC + "$";
         }
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
@@ -65,12 +65,12 @@ namespace Visual
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTickets = 0;
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            for (int i = 0; i < CantidadTotal; i++)
+            for (int i = 0; i <= CantidadTotal; i++)
             {
                 if (cantidadA > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorA.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt "+ CantidadTickets; ;
+                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt "+ NombreEvento+ lblSectorA.Text+ CantidadTickets; ;
                     CantidadTickets++;
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     cantidadA--;
@@ -79,7 +79,7 @@ namespace Visual
                 if (CantidadB > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorB.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + CantidadTickets; ;
+                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorB.Text + CantidadTickets; ; ;
                     CantidadTickets++;
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     CantidadB--;
@@ -88,7 +88,7 @@ namespace Visual
                 if (CantidadC>0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorC.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + CantidadTickets; ;
+                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorC.Text + CantidadTickets; ;
                     CantidadTickets++; 
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     CantidadC--;

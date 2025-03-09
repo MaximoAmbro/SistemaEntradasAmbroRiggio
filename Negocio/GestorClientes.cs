@@ -14,7 +14,7 @@ namespace Negocio
        Cliente cliente = new Cliente();
 
     }
-    public partial class GestorClientes // Metodos
+        public partial class GestorClientes // Metodos
     {
        
         public void CambiarContraseña(string usuario, string contraseña)
@@ -55,7 +55,7 @@ namespace Negocio
                 return true;
             }
         }
-        public bool RevisarMailyUsuario(string usuario, string mail)
+        public bool RevisarMailOUsuario(string usuario, string mail)
         {
             Cliente cliente1 = null;
             foreach (var c in clientes)
@@ -88,8 +88,35 @@ namespace Negocio
                 return false;
             }
         }
+        public bool RevisarMailYUsuario(string usuario, string mail)
+        {
+            Cliente cliente1 = null;
+            foreach (var c in clientes)
+            {
+                if (c.Usuario == usuario && c.Mail == mail)
+                {
+                    cliente1 = c;
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            if (cliente1 == null)
+            {
+                return true;
+                throw new Exception("");
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
-        public partial class GestorClientes // Usuarios cargados
+    public partial class GestorClientes // Usuarios cargados
     {
         public GestorClientes()
         {
