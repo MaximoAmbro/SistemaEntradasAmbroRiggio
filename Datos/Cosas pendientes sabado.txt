@@ -1,4 +1,0 @@
-
- Hacer que al tocar comprar se imprima un "ticket" en notas (frmCompra)
-'
- 

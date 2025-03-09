@@ -1,7 +1,6 @@
 
-Llenar la lista en gestorEntradas con nombres mas variados, precios mas realistas y distintos formatos
-Hacer que al tocar comprar se imprima un "ticket" en notas (frmCompra)
-Acomodar el tema del conteo de entradas vendidas(funciona raro)
-Hace que se genere un numero aleatorio de 16 digitos por entrada y le ponemos COMPROBANTE:
-Revisa que cuando saco dos entradas del mismo sector me genera un solo item, hay un temita ahi
- 
+Juan: 
+ Llenar la lista en gestorEntradas con nombres mas variados, precios mas realistas y distintos formatos
+ Cambiar la hora en eventos y ponerla en este formato asi no aparece como nineteen
+ string hora = c.Hora.ToString("HH:mm tt");
+ Hace que se genere un numero aleatorio de 16 digitos por entrada y le ponemos CODIGO:
