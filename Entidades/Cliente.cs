@@ -9,7 +9,7 @@ namespace Entidades
     public partial class Cliente
     { 
         public string NombreYApellido { get; set; }
-        public string Usuario { get; set; }
+        public string Usuario { get; set; } //hola
         public string Mail { get; set; }
         public string Contraseña { get; set; }
     }
