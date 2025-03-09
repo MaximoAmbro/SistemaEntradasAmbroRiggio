@@ -53,7 +53,7 @@ namespace Visual
 
             if (ControlarTxt() == true)
             {
-                if (gestorClientes.RevisarMailYUsuario(TxtUsername.Text, txtMail.Text) == false)
+                if (gestorClientes.RevisarMailYUsuarioYContraseña(TxtUsername.Text, txtMail.Text, TxtPassword.Text) == false)
                 {
                     gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
                     MessageBox.Show("Contraseña cambiada con exito");
