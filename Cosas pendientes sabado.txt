@@ -1,6 +1,7 @@
 
- Completar el frm Eventos
- Hacer que el data grid view de eventos muestre la lista de eventos (gestor eventos)
- En comprar reemplazaria el seleccionar ticket por el nombre del boliche (frmCompra)
- Hacer que al tocar comprar se imprima un "ticket" en notas (frmCompra)
+Llenar la lista en gestorEntradas con nombres mas variados, precios mas realistas y distintos formatos
+Hacer que al tocar comprar se imprima un "ticket" en notas (frmCompra)
+Acomodar el tema del conteo de entradas vendidas(funciona raro)
+Hace que se genere un numero aleatorio de 16 digitos por entrada y le ponemos COMPROBANTE:
+Revisa que cuando saco dos entradas del mismo sector me genera un solo item, hay un temita ahi
  

@@ -16,7 +16,7 @@ namespace Visual
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEventos());
+            Application.Run(new frmInicio());
         }
     }
 }

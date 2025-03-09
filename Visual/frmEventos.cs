@@ -12,8 +12,8 @@ namespace Visual
 {
     public partial class frmEventos : Form
     {
-        private GestorEventos gestorEventos;
-
+        private GestorEntradas gestorEventos;
+        
         public frmEventos()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Visual
         }
         private void frmEventos_Load(object sender, EventArgs e)
         {
-            gestorEventos = new GestorEventos();
+            gestorEventos = new GestorEntradas();
             dgveventos.DataSource = gestorEventos.ObtenerListaEventos();
             DataGridViewColumn columnaNombre = new DataGridViewColumn();
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
@@ -36,9 +36,11 @@ namespace Visual
         }
         private void btnComprar_Click_1(object sender, EventArgs e)
         {
-            if (dgveventos.SelectedRows.Count > 0)
+            if (dgveventos.SelectedCells.Count > 0)
             {
+                string nombre = dgveventos.SelectedCells[0].Value.ToString();
                 FrmCompra frm = new FrmCompra();
+                frm.NombreEvento = nombre;
                 frm.Show();
                 this.Hide();
             }
@@ -46,11 +48,6 @@ namespace Visual
             {
                 MessageBox.Show("Debe seleccionar un evento para comprar", "Hola Pedro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnDetalles_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

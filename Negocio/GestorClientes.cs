@@ -65,13 +65,13 @@ namespace Negocio
                     cliente1 = c;
                     return false;
                     throw new Exception("El usuario ya existe");
-                    break;
+
                 }
                 if (c.Mail == mail)
                 {
                     return false;
                     throw new Exception("El mail ya existe");
-                    break;
+
                 }
                 else
                 {
