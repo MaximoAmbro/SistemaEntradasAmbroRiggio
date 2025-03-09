@@ -49,15 +49,21 @@ namespace Visual
         }
         private void btnconfirmar_Click(object sender, EventArgs e)
         {
+            GestorClientes gestorClientes = new GestorClientes();
             if (ControlarTxt() == true)
             {
-                GestorClientes gestorClientes = new GestorClientes();
-                gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
-                MessageBox.Show("Contraseña cambiada con exito");
+               if(gestorClientes.RevisarMailYUsuario(TxtUsername.Text, txtMail.Text) == false)
+                {
+                    gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
+                    MessageBox.Show("Contraseña cambiada con exito");
                     frmInicio frm = new frmInicio();
                     frm.Show();
                     this.Hide();
-
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o mail incorrecto");
+                }
             }
         }
         public bool ControlarTxt()

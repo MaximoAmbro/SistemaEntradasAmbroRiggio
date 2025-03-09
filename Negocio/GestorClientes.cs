@@ -23,7 +23,7 @@ namespace Negocio
             {
                 if (c.Usuario == usuario)
                 {
-                    c.Contraseña = null;
+
                     c.Contraseña = contraseña;
                     break;
                 }
@@ -48,14 +48,13 @@ namespace Negocio
             if (cliente1 == null)
             {
                 return false;
-                throw new Exception("Correo no encontrado");
             }
             else
             {
                 return true;
             }
         }
-        public bool RevisarMailyUsuario(string usuario, string mail)
+        public bool RevisarMailOUsuario(string usuario, string mail)
         {
             Cliente cliente1 = null;
             foreach (var c in clientes)
@@ -88,8 +87,35 @@ namespace Negocio
                 return false;
             }
         }
+        public bool RevisarMailYUsuario(string usuario, string mail)
+        {
+            Cliente cliente1 = null;
+            foreach (var c in clientes)
+            {
+                if (c.Usuario == usuario && c.Mail == mail)
+                {
+                    cliente1 = c;
+                    return false;
+                    throw new Exception("El usuario y mail estan en uso");
+
+                }
+                else
+                {
+                    return true;
+                }
+            }
+                if (cliente1 == null)
+                {
+                    return true;
+                    throw new Exception("");
+                }
+                else
+            {
+                return false;
+            }
+        }
     }
-        public partial class GestorClientes // Usuarios cargados
+   public partial class GestorClientes // Usuarios cargados
     {
         public GestorClientes()
         {

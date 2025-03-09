@@ -111,7 +111,7 @@ namespace Visual
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
 
-            if (gestorClientes.RevisarMailyUsuario(usuario, mail) == false)
+            if (gestorClientes.RevisarMailOUsuario(usuario, mail) == false)
             {
                 MessageBox.Show("Usuario no disponible // Mail ya existe");
                 return false;

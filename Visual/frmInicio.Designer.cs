@@ -35,7 +35,7 @@
             label4 = new System.Windows.Forms.Label();
             lblolividarcontra = new System.Windows.Forms.Label();
             lblcrearcuenta = new System.Windows.Forms.Label();
-            btninicio = new System.Windows.Forms.Button();
+            btnLogin = new System.Windows.Forms.Button();
             label5 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             SuspendLayout();
@@ -67,7 +67,7 @@
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(33, 214);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(77, 17);
+            label3.Size = new System.Drawing.Size(99, 23);
             label3.TabIndex = 6;
             label3.Text = "Contraseña";
             // 
@@ -78,7 +78,7 @@
             checkbxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             checkbxShowPass.Location = new System.Drawing.Point(133, 267);
             checkbxShowPass.Name = "checkbxShowPass";
-            checkbxShowPass.Size = new System.Drawing.Size(119, 21);
+            checkbxShowPass.Size = new System.Drawing.Size(151, 27);
             checkbxShowPass.TabIndex = 10;
             checkbxShowPass.Text = "Show Password";
             checkbxShowPass.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             label4.AutoSize = true;
             label4.Location = new System.Drawing.Point(283, 188);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(45, 17);
+            label4.Size = new System.Drawing.Size(59, 23);
             label4.TabIndex = 16;
             label4.Text = "label4";
             // 
@@ -98,7 +98,7 @@
             lblolividarcontra.AutoSize = true;
             lblolividarcontra.Location = new System.Drawing.Point(57, 376);
             lblolividarcontra.Name = "lblolividarcontra";
-            lblolividarcontra.Size = new System.Drawing.Size(166, 17);
+            lblolividarcontra.Size = new System.Drawing.Size(212, 23);
             lblolividarcontra.TabIndex = 18;
             lblolividarcontra.Text = "¿Olvidaste tu contraseña?";
             lblolividarcontra.Click += lblolividarcontra_Click;
@@ -110,32 +110,32 @@
             lblcrearcuenta.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
             lblcrearcuenta.Location = new System.Drawing.Point(93, 406);
             lblcrearcuenta.Name = "lblcrearcuenta";
-            lblcrearcuenta.Size = new System.Drawing.Size(87, 17);
+            lblcrearcuenta.Size = new System.Drawing.Size(114, 23);
             lblcrearcuenta.TabIndex = 19;
             lblcrearcuenta.Text = "Crear Cuenta";
             lblcrearcuenta.Click += lblcrearcuenta_Click;
             // 
-            // btninicio
+            // btnLogin
             // 
-            btninicio.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            btninicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            btninicio.FlatAppearance.BorderSize = 0;
-            btninicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btninicio.ForeColor = System.Drawing.Color.White;
-            btninicio.Location = new System.Drawing.Point(33, 328);
-            btninicio.Name = "btninicio";
-            btninicio.Size = new System.Drawing.Size(216, 35);
-            btninicio.TabIndex = 20;
-            btninicio.Text = "INICIAR SESION ";
-            btninicio.UseVisualStyleBackColor = false;
-            btninicio.Click += btninicio_Click;
+            btnLogin.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
+            btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnLogin.ForeColor = System.Drawing.Color.White;
+            btnLogin.Location = new System.Drawing.Point(33, 328);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new System.Drawing.Size(216, 35);
+            btnLogin.TabIndex = 20;
+            btnLogin.Text = "INICIAR SESION ";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btninicio_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new System.Drawing.Point(33, 152);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(55, 17);
+            label5.Size = new System.Drawing.Size(70, 23);
             label5.TabIndex = 21;
             label5.Text = "Usuario";
             // 
@@ -147,19 +147,19 @@
             label2.Location = new System.Drawing.Point(13, 80);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(87, 27);
+            label2.Size = new System.Drawing.Size(105, 34);
             label2.TabIndex = 22;
             label2.Text = "LOGIN";
             // 
             // frmInicio
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(282, 473);
             Controls.Add(label2);
             Controls.Add(label5);
-            Controls.Add(btninicio);
+            Controls.Add(btnLogin);
             Controls.Add(lblcrearcuenta);
             Controls.Add(lblolividarcontra);
             Controls.Add(label4);
@@ -187,7 +187,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblolividarcontra;
         private System.Windows.Forms.Label lblcrearcuenta;
-        private System.Windows.Forms.Button btninicio;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
     }

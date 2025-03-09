@@ -27,12 +27,12 @@ namespace Visual
             string SectorA, SectorB, SectorC, PrecioA, PrecioB, PrecioC;
             GestorEntradas gestor = new GestorEntradas();
             gestor.BuscarLista(NombreEvento);
-            SectorA = gestor.SectorA.ToString();
+            SectorA = gestor.SectorA.ToString() ;
             SectorB = gestor.SectorB.ToString();
             SectorC = gestor.SectorC.ToString();
-            PrecioA = gestor.PrecioA.ToString();
-            PrecioB = gestor.PrecioB.ToString();
-            PrecioC = gestor.PrecioC.ToString();
+            PrecioA = gestor.PrecioA.ToString() + "$";
+            PrecioB = gestor.PrecioB.ToString() + "$";
+            PrecioC = gestor.PrecioC.ToString() + "$";
             lblSectorA.Text = SectorA;
             lblSectorB.Text = SectorB;
             lblSectorC.Text = SectorC;
@@ -54,8 +54,8 @@ namespace Visual
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
             GestorEntradas gestor = new GestorEntradas();
             gestor.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
-            MessageBox.Show("Compra realizada con exito, capacidad disponible: " + gestor.TotalEntradas + " Revise documentos para recibir su entrada");
             GenerarTicket();
+            MessageBox.Show("Compra realizada con exito, capacidad disponible: " + gestor.TotalEntradas + " Revise documentos para recibir su entrada");
         }
         public void GenerarTicket()
         {
@@ -63,33 +63,34 @@ namespace Visual
             int cantidadA = Convert.ToInt32(NumPrimero.Text);
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
-            int CantidadTickets = 0;
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            for (int i = 0; i < CantidadTotal; i++)
+            int ContaTickets = 0;
+            for (int i = 0; i <= CantidadTotal; i++)
             {
                 if (cantidadA > 0)
                 {
+                    ContaTickets++;
                     gestor.GenerarTicket(NombreEvento, lblSectorA.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt "+ CantidadTickets; ;
-                    CantidadTickets++;
+                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + " "+ lblSectorA.Text+ " "+ ContaTickets ; 
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     cantidadA--;
                     CantidadTotal--;
                 }
                 if (CantidadB > 0)
                 {
+                    ContaTickets++;
                     gestor.GenerarTicket(NombreEvento, lblSectorB.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + CantidadTickets; ;
-                    CantidadTickets++;
+                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + " " + lblSectorB.Text + " " + ContaTickets;
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     CantidadB--;
                     CantidadTotal--;
                 }
                 if (CantidadC>0)
                 {
+                    int CantidadTickets;
+                    ContaTickets++;
                     gestor.GenerarTicket(NombreEvento, lblSectorC.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + CantidadTickets; ;
-                    CantidadTickets++; 
+                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt "  +NombreEvento + " " + lblSectorC.Text + " " + ContaTickets;
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     CantidadC--;
                     CantidadTotal--;

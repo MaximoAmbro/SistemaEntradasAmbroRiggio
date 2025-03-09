@@ -1,0 +1,18 @@
+
+
+ Juan: 
+ Llenar la lista en gestorEntradas con nombres mas variados, precios mas realistas y distintos formatos
+ Cambiar la hora en eventos y ponerla en este formato asi no aparece como nineteen
+ string hora = c.Hora.ToString("HH:mm tt");
+ Hace que se genere un numero aleatorio de 16 digitos por entrada y le ponemos COMPROBANTE:
+
+
+ Extras que podemos hacer:
+ Hace un revisar mail, un revisar usuario, un revisar contraseña y etc
+ Va a ser mas practico para reutilizar
+
+ Cosas clave: 
+ Solucionar contraseña reiterativa(no le encontre la solucion)
+ Soucionar falta de repeticion en la impresion de tickets de misma categoria
+ Hacer Repositorios
+ Hacer toda la seccion de modificacion por parte del usuario

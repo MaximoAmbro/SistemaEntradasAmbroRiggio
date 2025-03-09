@@ -10,7 +10,7 @@ using Entidades;
 using static Entidades.Evento;
 namespace Negocio
 {
-    public partial class GestorEntradas //Lista
+    public partial class GestorEntradas 
     {
         List<Entrada> entradas = new List<Entrada>();
         List<Evento> eventos = new List<Evento>();
@@ -77,13 +77,12 @@ namespace Negocio
             MensajeTicket = null;
             foreach (var c in eventos)
             {
-
                 if (c.Nombre == NombreEvento)
                 {
                         MensajeTicket=
                         "ENTRADA (" + c.Nombre + ")\n"+
                         "SECTOR: " + NombreSector + "\n"+
-                        "PRECIO: " + c.Sectores.Find(x => x.Nombre == NombreSector).Precio.ToString()+ "\n"+
+                        "PRECIO: " + c.Sectores.Find(x => x.Nombre == NombreSector).Precio.ToString()+ "$\n"+
                         "HORARIO: " + c.Hora.ToString() + "\n"+
                         "LUGAR: " + c.Locacion + "\n"+
                         "FECHA: " + c.Fecha.ToString();

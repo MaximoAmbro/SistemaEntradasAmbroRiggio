@@ -66,8 +66,7 @@ namespace Visual
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Warning);
                     return;
-                }
-                
+                }             
                 else
                 {
                     ValidarLista(TxtUsername.Text, TxtPassword.Text);
@@ -76,8 +75,7 @@ namespace Visual
         }
         public bool ValidarLista(string usuario, string contraseña)
         {
-            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-            
+            GestorClientes gestorClientes = new GestorClientes();
             if (gestorClientes.RevisarUsuarioYContraseña(usuario, contraseña) == false)
             {
                 MessageBox.Show("Usuario no encontrado",

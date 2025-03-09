@@ -1,7 +1,0 @@
-
-Acomodar el tema del conteo de entradas vendidas(funciona raro) 
- Juan: 
- Llenar la lista en gestorEntradas con nombres mas variados, precios mas realistas y distintos formatos
- Cambiar la hora en eventos y ponerla en este formato asi no aparece como nineteen
- string hora = c.Hora.ToString("HH:mm tt");
- Hace que se genere un numero aleatorio de 16 digitos por entrada y le ponemos COMPROBANTE:
