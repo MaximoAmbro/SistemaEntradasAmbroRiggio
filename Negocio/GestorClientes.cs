@@ -11,7 +11,7 @@ namespace Negocio
 {
     public partial class GestorClientes // Lista
     {
-       public static List<Cliente> clientes = new List<Cliente>();
+        public static List<Cliente> clientes = new List<Cliente>();
         Cliente cliente = new Cliente();
         private static GestorClientes _instance;
 
@@ -31,7 +31,7 @@ namespace Negocio
     public partial class GestorClientes // Metodos
         {
        
-        public void CambiarContraseña(string usuario, string contraseña)
+            public void CambiarContraseña(string usuario, string contraseña)
             {
                 foreach (var c in clientes)
                 {
@@ -112,16 +112,18 @@ namespace Negocio
             {
                 cliente.entradasUsuario.Add(evento);
             }
-        public List<Evento> ObtenerListaEventos()
-        {
-            return cliente.entradasUsuario;
-        }
+            public List<Evento> ObtenerListaEventos()
+            {
+                return cliente.entradasUsuario;
+            }
+
 
     }
         public partial class GestorClientes // Usuarios cargados
     {
-        public GestorClientes()
+        public void CargarLista()
         {
+            clientes.Add(new Cliente { NombreYApellido = "Pedro Lopez", Usuario = "Pedro_Lopez35", Mail = "PedroLopez@gmail.com", Contraseña = "Aa1234" });
             clientes.Add(new Cliente { NombreYApellido = "z", Usuario = "z", Mail = "z", Contraseña = "z" });
             clientes.Add(new Cliente { NombreYApellido = "Juan Riggio", Usuario = "JuaniLGBT", Mail = "juanriggio@gmail.com", Contraseña = "a" });
             clientes.Add(new Cliente { NombreYApellido = "Maximo Ambrosion", Usuario = "Ambro", Mail = "MaximoAmbrosino@gmail.com", Contraseña = "a" });

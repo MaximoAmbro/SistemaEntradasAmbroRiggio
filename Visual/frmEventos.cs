@@ -13,7 +13,7 @@ namespace Visual
     public partial class frmEventos : Form
     {
         private GestorEntradas gestorEventos;
-
+        public string NombreUsuario {  get; set; }
         public frmEventos()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace Visual
         private void btnVolver_Click(object sender, EventArgs e)
         {
             frmMenuUsuario frm = new frmMenuUsuario();
+            frm.NombreUsuario = NombreUsuario;
             frm.Show();
             this.Hide();
         }
@@ -41,6 +42,7 @@ namespace Visual
                 string nombre = dgveventos.SelectedCells[0].Value.ToString();
                 FrmCompra frm = new FrmCompra();
                 frm.NombreEvento = nombre;
+                frm.NombreUsuario = NombreUsuario;
                 frm.Show();
                 this.Hide();
             }

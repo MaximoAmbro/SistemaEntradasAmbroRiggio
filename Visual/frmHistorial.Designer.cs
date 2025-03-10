@@ -51,7 +51,7 @@
             dgvHistorial.BackgroundColor = System.Drawing.Color.White;
             dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHistorial.Cursor = System.Windows.Forms.Cursors.Hand;
-            dgvHistorial.Location = new System.Drawing.Point(11, 94);
+            dgvHistorial.Location = new System.Drawing.Point(37, 90);
             dgvHistorial.Name = "dgvHistorial";
             dgvHistorial.RowHeadersWidth = 62;
             dgvHistorial.Size = new System.Drawing.Size(897, 321);
@@ -66,13 +66,13 @@
             label1.Location = new System.Drawing.Point(299, 9);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(397, 60);
+            label1.Size = new System.Drawing.Size(335, 50);
             label1.TabIndex = 28;
             label1.Text = "Historial Compras";
             // 
             // frmHistorial
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(937, 495);

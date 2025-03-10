@@ -21,8 +21,8 @@ namespace Visual
         }
         private void frmInicio_Load(object sender, EventArgs e)
         {
-            TxtUsername.Text = "";
-            TxtPassword.Text = "";
+            TxtUsername.Text = "Pedro_Lopez35";
+            TxtPassword.Text = "Aa1234";
             TxtPassword.PasswordChar = '*';
         }
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
@@ -41,13 +41,13 @@ namespace Visual
             frmCambiarContraseña frm = new frmCambiarContraseña();
             frm.Show();
             this.Hide();
-        } //ya está
+        }
         private void lblcrearcuenta_Click(object sender, EventArgs e)
         {
             frmCrearUsuario frm = new frmCrearUsuario();
             frm.Show();
             this.Hide();
-        }// ya está
+        }
         private void btninicio_Click(object sender, EventArgs e)
         {
             {
@@ -83,6 +83,7 @@ namespace Visual
                 if (gestorClientes.EncontrarContraseña(contraseña, usuario))
                 {
                     frmMenuUsuario frm = new frmMenuUsuario();
+                    frm.NombreUsuario = usuario;
                     frm.Show();
                     this.Hide();
                 }

@@ -11,8 +11,7 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos\Datos.csproj" />
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
-    <ProjectReference Include="..\Negocio\Negocio.csproj" />
+    <ProjectReference Include="..\Negocio\Repositorio.csproj" />
   </ItemGroup>
 </Project>

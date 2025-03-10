@@ -20,9 +20,9 @@ namespace Visual
 
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
-            frmInicio frm = new frmInicio();
-            frm.Show();
-            this.Hide();
+            frmInicio frmInicio = new frmInicio();
+            frmInicio.Show();
+            this.Hide();       
         }
 
         private void frmCambiarContraseña_Load(object sender, EventArgs e)
@@ -52,28 +52,28 @@ namespace Visual
             if (ControlarTxt() == true)
             {
                 if(gestorClientes.EncontrarUsuario(TxtUsername.Text) == true)
-                {
+            {
                     if(gestorClientes.EncontrarMail(txtMail.Text) == true)
                     {
                         gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
                         MessageBox.Show("Contraseña cambiada con exito");
-                        frmInicio frm = new frmInicio();
-                        frm.Show();
+                        frmInicio frmInicio = new frmInicio();
                         this.Hide();
+                        frmInicio.ShowDialog();
                     }
                     else
                     {
                         MessageBox.Show("Mail no encontrado");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Usuario no encontrado");
-                }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario no encontrado");
+                    }
 
             }
         }
-        public bool ControlarTxt()
+            public bool ControlarTxt()
         {
             if (string.IsNullOrEmpty(TxtUsername.Text))
             {
