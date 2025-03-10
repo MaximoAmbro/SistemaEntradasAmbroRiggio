@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             btnVolver = new System.Windows.Forms.Button();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
+            dgvHistorial = new System.Windows.Forms.DataGridView();
             label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHistorial).BeginInit();
             SuspendLayout();
             // 
             // btnVolver
@@ -46,16 +46,17 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // dataGridView1
+            // dgvHistorial
             // 
-            dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridView1.Location = new System.Drawing.Point(88, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new System.Drawing.Size(324, 321);
-            dataGridView1.TabIndex = 1;
+            dgvHistorial.BackgroundColor = System.Drawing.Color.FromArgb(116, 86, 174);
+            dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistorial.Cursor = System.Windows.Forms.Cursors.Hand;
+            dgvHistorial.Location = new System.Drawing.Point(88, 88);
+            dgvHistorial.Name = "dgvHistorial";
+            dgvHistorial.RowHeadersWidth = 62;
+            dgvHistorial.Size = new System.Drawing.Size(324, 321);
+            dgvHistorial.TabIndex = 1;
+            dgvHistorial.CellContentClick += dgvHistorial_CellContentClick;
             // 
             // label1
             // 
@@ -65,18 +66,18 @@
             label1.Location = new System.Drawing.Point(14, 9);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(397, 60);
+            label1.Size = new System.Drawing.Size(335, 50);
             label1.TabIndex = 28;
             label1.Text = "Historial Compras";
             // 
             // frmHistorial
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(501, 495);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvHistorial);
             Controls.Add(btnVolver);
             Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ForeColor = System.Drawing.Color.FromArgb(164, 165, 169);
@@ -84,7 +85,8 @@
             Name = "frmHistorial";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmHistorial";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += frmHistorial_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvHistorial).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -93,7 +95,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHistorial;
         private System.Windows.Forms.Label label1;
     }
 }

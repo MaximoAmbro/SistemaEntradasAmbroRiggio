@@ -24,8 +24,6 @@ namespace Negocio
     }
     public partial class GestorEntradas //Metodos
     {
-      
-
         public bool BuscarLista(string NombreEvento)
         {
             Evento evento1 = null;
@@ -73,21 +71,15 @@ namespace Negocio
                 }
             }
         }
-
-      
         public void GenerarTicket(string NombreEvento, string NombreSector)
         {
-
             MensajeTicket = null;
             string hora = DateTime.Now.ToString();
-            Guid idTicket = Guid.NewGuid(); // generar un id único para el ticket
+            Guid idTicket = Guid.NewGuid();
             foreach (var c in eventos)
             {
-
                 if (c.Nombre == NombreEvento)
                 {
-
-
                     MensajeTicket =
                         "ENTRADA (" + c.Nombre + ")\n" +
                         "ID TICKET: " + idTicket.ToString() + "\n" +
@@ -99,19 +91,23 @@ namespace Negocio
                     break;
                 }
             }
-
-           
-        }
-
-
-        
+        } 
         public List<Evento> ObtenerListaEventos()
         {
             return eventos;
         }
+        public void DevolverEntrada(string NombreEvento, ref Evento e)
+        {
+            foreach (var c in eventos)
+            {
+                if (c.Nombre == NombreEvento)
+                {
+                    e = c;
+                    break;
+                }
+            }
+        }
     }
-
-   
     public partial class GestorEntradas //Eventos cargados
     {
         public GestorEntradas()

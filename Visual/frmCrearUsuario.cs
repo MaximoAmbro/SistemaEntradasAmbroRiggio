@@ -24,10 +24,10 @@ namespace Visual
         }
         private void frmCrearUsuario_Load(object sender, EventArgs e)
         {
-            txtnombre.Focus();
+            txtUsuario.Focus();
             txtmail.Text="";
-            txtnombre.Text = "";
-            TxtUsername.Text = "";
+            txtUsuario.Text = "";
+            txtNombre.Text = "";
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
             TxtConfirmpassword.PasswordChar='*';
@@ -56,10 +56,10 @@ namespace Visual
             if (RevisarTextbox()== true)
             {
 
-                if(ValidarLista(TxtUsername.Text, txtmail.Text) == true)
+                if(ValidarLista(txtUsuario.Text, txtmail.Text) == true)
                 {
-                    string nombre = txtnombre.Text;
-                    string usuario = TxtUsername.Text;
+                    string nombre = txtNombre.Text;
+                    string usuario = txtUsuario.Text;
                     string correo = txtmail.Text;
                     string contraseña = TxtPassword.Text;
                     string confirmarContraseña = TxtConfirmpassword.Text;
@@ -69,12 +69,12 @@ namespace Visual
         }
         private bool RevisarTextbox()
         {
-            if (string.IsNullOrEmpty(txtnombre.Text))
+            if (string.IsNullOrEmpty(txtUsuario.Text))
             {
                 MessageBox.Show("Ingrese nombre: ");
                 return false;
             }
-            if (string.IsNullOrEmpty(TxtUsername.Text))
+            if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 MessageBox.Show("Ingrese Usuario: ");
                 return false;
@@ -110,15 +110,19 @@ namespace Visual
         public bool ValidarLista(string usuario, string mail)
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-
-            if (gestorClientes.RevisarMailOUsuario(usuario, mail) == false)
+            if (gestorClientes.EncontrarMail(mail) == true)
             {
-                MessageBox.Show("Usuario no disponible // Mail ya existe");
+                MessageBox.Show("Mail: " +mail + " ya está registrado");
+                return false;
+            }
+            else if (gestorClientes.EncontrarUsuario(usuario) == true)
+            {
+                MessageBox.Show("Usuario: "+usuario + " ya está registrado");
                 return false;
             }
             else
             {
-                AgregarUsuario(txtnombre.Text, TxtUsername.Text, txtmail.Text,  TxtPassword.Text);
+                AgregarUsuario(txtUsuario.Text, txtNombre.Text, txtmail.Text,  TxtPassword.Text);
                 MessageBox.Show("Usuario creado");
                 frmInicio frm = new frmInicio();
                 frm.Show();
