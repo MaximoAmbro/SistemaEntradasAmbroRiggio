@@ -36,10 +36,11 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new System.Drawing.Point(8, 411);
+            btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnVolver.Location = new System.Drawing.Point(11, 441);
             btnVolver.Margin = new System.Windows.Forms.Padding(2);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new System.Drawing.Size(52, 28);
+            btnVolver.Size = new System.Drawing.Size(92, 43);
             btnVolver.TabIndex = 0;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
@@ -49,29 +50,31 @@
             // 
             dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(116, 86, 174);
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(1, 65);
+            dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridView1.Location = new System.Drawing.Point(88, 88);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new System.Drawing.Size(324, 321);
             dataGridView1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label1.Location = new System.Drawing.Point(8, 25);
+            label1.Location = new System.Drawing.Point(14, 9);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(267, 27);
+            label1.Size = new System.Drawing.Size(397, 60);
             label1.TabIndex = 28;
             label1.Text = "Historial Compras";
             // 
             // frmHistorial
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(327, 450);
+            ClientSize = new System.Drawing.Size(501, 495);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(btnVolver);

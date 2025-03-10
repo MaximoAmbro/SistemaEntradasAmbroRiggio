@@ -10,10 +10,11 @@ namespace Entidades
     public partial class Evento
     {
         public string Nombre { get; set; }
-        public HourOfDay Hora { get; set; }
+        public TimeSpan Hora { get; set; }
         public int Capacidad { get; set; }
         public DateTime Fecha { get; set; }
         public string Locacion { get; set; }
+        public int Id { get; set; }
         public class Sector
         {
             public string Nombre { get; set; }

@@ -38,11 +38,12 @@
             // btnVolver
             // 
             btnVolver.BackColor = System.Drawing.Color.White;
+            btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             btnVolver.ForeColor = System.Drawing.Color.FromArgb(164, 165, 169);
-            btnVolver.Location = new System.Drawing.Point(2, 396);
+            btnVolver.Location = new System.Drawing.Point(395, 394);
             btnVolver.Margin = new System.Windows.Forms.Padding(2);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new System.Drawing.Size(111, 31);
+            btnVolver.Size = new System.Drawing.Size(121, 33);
             btnVolver.TabIndex = 1;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
@@ -51,12 +52,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.Font = new System.Drawing.Font("Nirmala UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label2.Location = new System.Drawing.Point(316, 9);
+            label2.Location = new System.Drawing.Point(314, 9);
             label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(141, 34);
+            label2.Size = new System.Drawing.Size(276, 74);
             label2.TabIndex = 28;
             label2.Text = "EVENTOS";
             // 
@@ -67,11 +68,13 @@
             dgveventos.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             dgveventos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dgveventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgveventos.Location = new System.Drawing.Point(12, 46);
+            dgveventos.Cursor = System.Windows.Forms.Cursors.Hand;
+            dgveventos.Location = new System.Drawing.Point(25, 108);
             dgveventos.Name = "dgveventos";
             dgveventos.RowHeadersWidth = 51;
-            dgveventos.Size = new System.Drawing.Size(740, 285);
+            dgveventos.Size = new System.Drawing.Size(876, 233);
             dgveventos.TabIndex = 29;
+            dgveventos.CellContentClick += dgveventos_CellContentClick;
             // 
             // btnComprar
             // 
@@ -80,10 +83,10 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnComprar.ForeColor = System.Drawing.Color.White;
-            btnComprar.Location = new System.Drawing.Point(286, 356);
+            btnComprar.Location = new System.Drawing.Point(345, 347);
             btnComprar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnComprar.Name = "btnComprar";
-            btnComprar.Size = new System.Drawing.Size(215, 35);
+            btnComprar.Size = new System.Drawing.Size(215, 42);
             btnComprar.TabIndex = 36;
             btnComprar.Text = "COMPRAR";
             btnComprar.UseVisualStyleBackColor = false;
@@ -91,10 +94,10 @@
             // 
             // frmEventos
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(780, 438);
+            ClientSize = new System.Drawing.Size(893, 438);
             Controls.Add(btnComprar);
             Controls.Add(dgveventos);
             Controls.Add(label2);
