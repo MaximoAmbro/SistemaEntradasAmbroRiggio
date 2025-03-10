@@ -39,10 +39,10 @@
             btnEventos.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
             btnEventos.Cursor = System.Windows.Forms.Cursors.Hand;
             btnEventos.ForeColor = System.Drawing.Color.White;
-            btnEventos.Location = new System.Drawing.Point(34, 162);
+            btnEventos.Location = new System.Drawing.Point(86, 189);
             btnEventos.Margin = new System.Windows.Forms.Padding(2);
             btnEventos.Name = "btnEventos";
-            btnEventos.Size = new System.Drawing.Size(225, 46);
+            btnEventos.Size = new System.Drawing.Size(309, 113);
             btnEventos.TabIndex = 5;
             btnEventos.Text = "Eventos";
             btnEventos.UseVisualStyleBackColor = false;
@@ -53,10 +53,10 @@
             btnHistorial.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
             btnHistorial.Cursor = System.Windows.Forms.Cursors.Hand;
             btnHistorial.ForeColor = System.Drawing.Color.White;
-            btnHistorial.Location = new System.Drawing.Point(34, 240);
+            btnHistorial.Location = new System.Drawing.Point(86, 341);
             btnHistorial.Margin = new System.Windows.Forms.Padding(2);
             btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new System.Drawing.Size(225, 50);
+            btnHistorial.Size = new System.Drawing.Size(309, 111);
             btnHistorial.TabIndex = 6;
             btnHistorial.Text = "Historial de compras";
             btnHistorial.UseVisualStyleBackColor = false;
@@ -67,7 +67,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label1.Location = new System.Drawing.Point(14, 25);
+            label1.Location = new System.Drawing.Point(14, 74);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(290, 60);
@@ -80,7 +80,7 @@
             lblvolver.AutoSize = true;
             lblvolver.Cursor = System.Windows.Forms.Cursors.Hand;
             lblvolver.ForeColor = System.Drawing.Color.FromArgb(164, 165, 169);
-            lblvolver.Location = new System.Drawing.Point(68, 330);
+            lblvolver.Location = new System.Drawing.Point(156, 501);
             lblvolver.Name = "lblvolver";
             lblvolver.Size = new System.Drawing.Size(161, 23);
             lblvolver.TabIndex = 32;
@@ -92,7 +92,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(299, 422);
+            ClientSize = new System.Drawing.Size(498, 586);
             Controls.Add(lblvolver);
             Controls.Add(label1);
             Controls.Add(btnHistorial);

@@ -121,9 +121,9 @@ namespace Negocio
                 Hora = new TimeSpan(21, 0, 0),
                 Sectores = new List<Sector>
             {
-                new Sector { Nombre = "Sector A", Precio = 45000, Capacidad = 500 },
-                new Sector { Nombre = "Sector B", Precio = 20000, Capacidad = 500 },
-                new Sector { Nombre = "Sector C", Precio = 12000, Capacidad = 500 }
+                new Sector { Nombre = "Sector VIP", Precio = 45000, Capacidad = 500 },
+                new Sector { Nombre = "Sector PLATEA", Precio = 20000, Capacidad = 500 },
+                new Sector { Nombre = "Sector GENERAL", Precio = 12000, Capacidad = 500 }
             }
             });
 
@@ -158,7 +158,7 @@ namespace Negocio
             });
             eventos.Add(new Evento
             {
-                Nombre = "Illya Kuryaki and the Valderramas",
+                Nombre = "otto",
                 Capacidad = 1800,
                 Locacion = "Salón City Center",
                 Fecha = DateTime.Parse("14/12/2025"),

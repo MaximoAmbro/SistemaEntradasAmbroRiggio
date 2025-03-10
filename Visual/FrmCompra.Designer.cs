@@ -49,7 +49,7 @@
             // btnVolver
             // 
             btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnVolver.Location = new System.Drawing.Point(168, 514);
+            btnVolver.Location = new System.Drawing.Point(192, 663);
             btnVolver.Margin = new System.Windows.Forms.Padding(2);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new System.Drawing.Size(122, 41);
@@ -62,7 +62,7 @@
             // 
             lblSectorA.AutoSize = true;
             lblSectorA.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblSectorA.Location = new System.Drawing.Point(21, 174);
+            lblSectorA.Location = new System.Drawing.Point(30, 198);
             lblSectorA.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblSectorA.Name = "lblSectorA";
             lblSectorA.Size = new System.Drawing.Size(129, 23);
@@ -76,10 +76,10 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnComprar.ForeColor = System.Drawing.Color.White;
-            btnComprar.Location = new System.Drawing.Point(101, 448);
+            btnComprar.Location = new System.Drawing.Point(128, 588);
             btnComprar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnComprar.Name = "btnComprar";
-            btnComprar.Size = new System.Drawing.Size(252, 50);
+            btnComprar.Size = new System.Drawing.Size(266, 53);
             btnComprar.TabIndex = 35;
             btnComprar.Text = "COMPRAR";
             btnComprar.UseVisualStyleBackColor = false;
@@ -98,7 +98,7 @@
             // 
             lblSectorB.AutoSize = true;
             lblSectorB.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblSectorB.Location = new System.Drawing.Point(21, 258);
+            lblSectorB.Location = new System.Drawing.Point(30, 313);
             lblSectorB.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblSectorB.Name = "lblSectorB";
             lblSectorB.Size = new System.Drawing.Size(151, 23);
@@ -109,7 +109,7 @@
             // 
             lblSectorC.AutoSize = true;
             lblSectorC.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblSectorC.Location = new System.Drawing.Point(16, 343);
+            lblSectorC.Location = new System.Drawing.Point(30, 431);
             lblSectorC.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblSectorC.Name = "lblSectorC";
             lblSectorC.Size = new System.Drawing.Size(97, 23);
@@ -121,7 +121,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label1.Location = new System.Drawing.Point(4, 62);
+            label1.Location = new System.Drawing.Point(30, 67);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(391, 60);
@@ -132,7 +132,7 @@
             // 
             NumPrimero.Cursor = System.Windows.Forms.Cursors.Hand;
             NumPrimero.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            NumPrimero.Location = new System.Drawing.Point(21, 200);
+            NumPrimero.Location = new System.Drawing.Point(36, 224);
             NumPrimero.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             NumPrimero.Name = "NumPrimero";
             NumPrimero.Size = new System.Drawing.Size(150, 29);
@@ -141,7 +141,7 @@
             // NumSegundo
             // 
             NumSegundo.Cursor = System.Windows.Forms.Cursors.Hand;
-            NumSegundo.Location = new System.Drawing.Point(21, 284);
+            NumSegundo.Location = new System.Drawing.Point(36, 339);
             NumSegundo.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             NumSegundo.Name = "NumSegundo";
             NumSegundo.Size = new System.Drawing.Size(150, 29);
@@ -150,7 +150,7 @@
             // NumTercero
             // 
             NumTercero.Cursor = System.Windows.Forms.Cursors.Hand;
-            NumTercero.Location = new System.Drawing.Point(21, 369);
+            NumTercero.Location = new System.Drawing.Point(36, 459);
             NumTercero.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             NumTercero.Name = "NumTercero";
             NumTercero.Size = new System.Drawing.Size(150, 29);
@@ -160,7 +160,7 @@
             // 
             lblPrecioA.AutoSize = true;
             lblPrecioA.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblPrecioA.Location = new System.Drawing.Point(202, 202);
+            lblPrecioA.Location = new System.Drawing.Point(217, 226);
             lblPrecioA.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblPrecioA.Name = "lblPrecioA";
             lblPrecioA.Size = new System.Drawing.Size(129, 23);
@@ -171,7 +171,7 @@
             // 
             lblPrecioB.AutoSize = true;
             lblPrecioB.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblPrecioB.Location = new System.Drawing.Point(202, 286);
+            lblPrecioB.Location = new System.Drawing.Point(217, 341);
             lblPrecioB.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblPrecioB.Name = "lblPrecioB";
             lblPrecioB.Size = new System.Drawing.Size(129, 23);
@@ -182,7 +182,7 @@
             // 
             lblPrecioC.AutoSize = true;
             lblPrecioC.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblPrecioC.Location = new System.Drawing.Point(202, 371);
+            lblPrecioC.Location = new System.Drawing.Point(216, 459);
             lblPrecioC.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblPrecioC.Name = "lblPrecioC";
             lblPrecioC.Size = new System.Drawing.Size(129, 23);
@@ -194,7 +194,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(430, 566);
+            ClientSize = new System.Drawing.Size(514, 731);
             Controls.Add(lblPrecioC);
             Controls.Add(lblPrecioB);
             Controls.Add(lblPrecioA);

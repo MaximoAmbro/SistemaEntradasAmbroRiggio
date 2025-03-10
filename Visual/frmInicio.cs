@@ -13,7 +13,7 @@ using Negocio;
 
 namespace Visual
 {
-    public partial class frmInicio: Form
+    public partial class frmInicio : Form
     {
         public frmInicio()
         {
@@ -31,9 +31,9 @@ namespace Visual
             {
                 TxtPassword.PasswordChar = '\0';
             }
-            else 
+            else
             {
-                TxtPassword.PasswordChar = '*'; 
+                TxtPassword.PasswordChar = '*';
             }
         } //ya está
         private void lblolividarcontra_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace Visual
                                   MessageBoxIcon.Warning);
                     return;
                 }
-                
+
                 else
                 {
                     ValidarLista(TxtUsername.Text, TxtPassword.Text);
@@ -77,20 +77,19 @@ namespace Visual
         public void ValidarLista(string usuario, string contraseña)
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-            
-            if (gestorClientes.EncontrarContraseña(contraseña, usuario) == false)
+
             {
                 MessageBox.Show("Usuario no encontrado",
                                   "Hola Pedro",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Warning);
             }
-            else 
+            else
             {
                 frmMenuUsuario frm = new frmMenuUsuario();
                 frm.Show();
                 this.Hide();
-            ;}
+
         }
     }
 }

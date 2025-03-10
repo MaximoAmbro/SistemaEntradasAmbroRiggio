@@ -40,7 +40,7 @@
             btnVolver.BackColor = System.Drawing.Color.White;
             btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             btnVolver.ForeColor = System.Drawing.Color.FromArgb(164, 165, 169);
-            btnVolver.Location = new System.Drawing.Point(395, 394);
+            btnVolver.Location = new System.Drawing.Point(385, 394);
             btnVolver.Margin = new System.Windows.Forms.Padding(2);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new System.Drawing.Size(121, 33);
@@ -54,7 +54,7 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Nirmala UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label2.Location = new System.Drawing.Point(314, 9);
+            label2.Location = new System.Drawing.Point(308, 9);
             label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(276, 74);
@@ -69,12 +69,11 @@
             dgveventos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dgveventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgveventos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dgveventos.Location = new System.Drawing.Point(25, 108);
+            dgveventos.Location = new System.Drawing.Point(67, 108);
             dgveventos.Name = "dgveventos";
             dgveventos.RowHeadersWidth = 51;
             dgveventos.Size = new System.Drawing.Size(876, 233);
             dgveventos.TabIndex = 29;
-            dgveventos.CellContentClick += dgveventos_CellContentClick;
             // 
             // btnComprar
             // 
@@ -83,7 +82,7 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnComprar.ForeColor = System.Drawing.Color.White;
-            btnComprar.Location = new System.Drawing.Point(345, 347);
+            btnComprar.Location = new System.Drawing.Point(342, 347);
             btnComprar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnComprar.Name = "btnComprar";
             btnComprar.Size = new System.Drawing.Size(215, 42);
