@@ -15,6 +15,7 @@ namespace Visual
     public partial class frmHistorial : Form
     {
         public string NombreUsuario { get; set; }
+        public List<Evento> ListaEventos { get; set; }
         public frmHistorial()
         {
             InitializeComponent();
@@ -35,24 +36,19 @@ namespace Visual
 
         private void frmHistorial_Load(object sender, EventArgs e)
         {
-
             GestorClientes gestorClientes = GestorClientes.Instance;
+            ListaEventos = gestorClientes.ObtenerListaEventos();
             dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos();
-            dgvHistorial.Refresh();
-            DataGridViewColumn columnaNombre = new DataGridViewColumn();
-            DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
-            dgvHistorial.AutoGenerateColumns = true;
-            dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-          
 
-        }
-        public void GuardarDatos()
-        {
-            GestorClientes gestorClientes = GestorClientes.Instance;
-            string NombreEvento;
-            string SectorEvento;
-            string DiaEvento;
-            string HoraEvento;
+             ListaEventos = gestorClientes.ObtenerListaEventos();
+             dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos();
+             dgvHistorial.Refresh();
+             DataGridViewColumn columnaNombre = new DataGridViewColumn();
+             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
+             dgvHistorial.AutoGenerateColumns = true;
+             dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
 
         }
     }

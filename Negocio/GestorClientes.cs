@@ -114,6 +114,7 @@ namespace Negocio
             }
             public List<Evento> ObtenerListaEventos()
             {
+                Evento evento = new Evento();
                 return cliente.entradasUsuario;
             }
 

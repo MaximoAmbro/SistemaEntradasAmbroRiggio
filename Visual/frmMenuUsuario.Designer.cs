@@ -45,7 +45,7 @@
             btnEventos.Name = "btnEventos";
             btnEventos.Size = new System.Drawing.Size(309, 113);
             btnEventos.TabIndex = 5;
-            btnEventos.Text = "Eventos";
+            btnEventos.Text = "Eventos disponibles";
             btnEventos.UseVisualStyleBackColor = false;
             btnEventos.Click += btnEventos_Click;
             // 
@@ -59,7 +59,7 @@
             btnHistorial.Name = "btnHistorial";
             btnHistorial.Size = new System.Drawing.Size(309, 111);
             btnHistorial.TabIndex = 6;
-            btnHistorial.Text = "Historial de compras";
+            btnHistorial.Text = "Mis eventos";
             btnHistorial.UseVisualStyleBackColor = false;
             btnHistorial.Click += btnHistorial_Click;
             // 
