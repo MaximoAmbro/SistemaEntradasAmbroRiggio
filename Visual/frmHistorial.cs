@@ -28,17 +28,21 @@ namespace Visual
 
         private void dgvHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void frmHistorial_Load(object sender, EventArgs e)
         {
-            GestorClientes gestorClientes = new GestorClientes();
-            dgvHistorial.DataSource= gestorClientes.ObtenerListaEventos();
+
+            GestorClientes gestorClientes = GestorClientes.Instance;
+            dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos();
+            dgvHistorial.Refresh();
             DataGridViewColumn columnaNombre = new DataGridViewColumn();
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
             dgvHistorial.AutoGenerateColumns = true;
             dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+          
+
         }
     }
 }
