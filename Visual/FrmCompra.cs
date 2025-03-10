@@ -16,6 +16,7 @@ namespace Visual
     public partial class FrmCompra : Form
     {
         public string NombreEvento { get; set; }
+        public string NombreUsuario { get; set; }
         public FrmCompra()
         {
             frmEventos frm = new frmEventos();
@@ -44,6 +45,7 @@ namespace Visual
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
             frmEventos frm = new frmEventos();
+            frm.NombreUsuario= NombreUsuario;
             frm.Show();
             this.Hide();
         }

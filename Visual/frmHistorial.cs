@@ -14,6 +14,7 @@ namespace Visual
 {
     public partial class frmHistorial : Form
     {
+        public string NombreUsuario { get; set; }
         public frmHistorial()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Visual
         private void btnVolver_Click(object sender, EventArgs e)
         {
             frmMenuUsuario frm = new frmMenuUsuario();
+            frm.NombreUsuario = NombreUsuario;
             frm.Show();
             this.Hide();
         }
@@ -42,6 +44,15 @@ namespace Visual
             dgvHistorial.AutoGenerateColumns = true;
             dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
           
+
+        }
+        public void GuardarDatos()
+        {
+            GestorClientes gestorClientes = GestorClientes.Instance;
+            string NombreEvento;
+            string SectorEvento;
+            string DiaEvento;
+            string HoraEvento;
 
         }
     }
