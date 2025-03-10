@@ -78,18 +78,29 @@ namespace Visual
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
 
+            if (gestorClientes.EncontrarUsuario(usuario))
             {
-                MessageBox.Show("Usuario no encontrado",
-                                  "Hola Pedro",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Warning);
+                if (gestorClientes.EncontrarContraseña(contraseña, usuario))
+                {
+                    frmMenuUsuario frm = new frmMenuUsuario();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta",
+                                      "Error",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Error);
+                }
             }
             else
             {
-                frmMenuUsuario frm = new frmMenuUsuario();
-                frm.Show();
-                this.Hide();
-
+                MessageBox.Show("Usuario no registrado",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+            }
         }
     }
 }

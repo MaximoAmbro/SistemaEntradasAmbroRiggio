@@ -13,12 +13,25 @@ namespace Negocio
     {
        public static List<Cliente> clientes = new List<Cliente>();
         Cliente cliente = new Cliente();
+        private static GestorClientes _instance;
+
+        public static GestorClientes Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GestorClientes();
+                }
+                return _instance;
+            }
+        }
 
     }
-        public partial class GestorClientes // Metodos
+    public partial class GestorClientes // Metodos
         {
-            
-            public void CambiarContraseña(string usuario, string contraseña)
+       
+        public void CambiarContraseña(string usuario, string contraseña)
             {
                 foreach (var c in clientes)
                 {
@@ -99,10 +112,10 @@ namespace Negocio
             {
                 cliente.entradasUsuario.Add(evento);
             }
-            public List<Evento> ObtenerListaEventos()
-            {
-            return cliente.entradasUsuario; 
-            }
+        public List<Evento> ObtenerListaEventos()
+        {
+            return cliente.entradasUsuario;
+        }
 
     }
         public partial class GestorClientes // Usuarios cargados

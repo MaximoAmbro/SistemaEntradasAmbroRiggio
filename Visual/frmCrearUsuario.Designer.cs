@@ -52,7 +52,7 @@
             checkbxShowPass.Location = new System.Drawing.Point(291, 593);
             checkbxShowPass.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             checkbxShowPass.Name = "checkbxShowPass";
-            checkbxShowPass.Size = new System.Drawing.Size(131, 23);
+            checkbxShowPass.Size = new System.Drawing.Size(154, 27);
             checkbxShowPass.TabIndex = 23;
             checkbxShowPass.Text = "Show Password";
             checkbxShowPass.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             TxtConfirmpassword.Location = new System.Drawing.Point(98, 542);
             TxtConfirmpassword.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             TxtConfirmpassword.Name = "TxtConfirmpassword";
-            TxtConfirmpassword.Size = new System.Drawing.Size(252, 27);
+            TxtConfirmpassword.Size = new System.Drawing.Size(252, 32);
             TxtConfirmpassword.TabIndex = 22;
             // 
             // label4
@@ -75,7 +75,7 @@
             label4.Location = new System.Drawing.Point(98, 506);
             label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(156, 19);
+            label4.Size = new System.Drawing.Size(186, 23);
             label4.TabIndex = 21;
             label4.Text = "Confirmar Contraseña";
             // 
@@ -88,7 +88,7 @@
             TxtPassword.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             TxtPassword.Name = "TxtPassword";
             TxtPassword.PasswordChar = '*';
-            TxtPassword.Size = new System.Drawing.Size(252, 27);
+            TxtPassword.Size = new System.Drawing.Size(252, 32);
             TxtPassword.TabIndex = 20;
             // 
             // label3
@@ -97,12 +97,19 @@
             label3.Location = new System.Drawing.Point(98, 413);
             label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(84, 19);
+            label3.Size = new System.Drawing.Size(99, 23);
             label3.TabIndex = 19;
             label3.Text = "Contraseña";
             // 
             // txtNombre
             // 
+            txtNombre.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
+            txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtNombre.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtNombre.Location = new System.Drawing.Point(98, 180);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new System.Drawing.Size(252, 32);
+            txtNombre.TabIndex = 34;
             // 
             // label2
             // 
@@ -110,7 +117,7 @@
             label2.Location = new System.Drawing.Point(98, 325);
             label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(60, 19);
+            label2.Size = new System.Drawing.Size(70, 23);
             label2.TabIndex = 17;
             label2.Text = "Usuario";
             // 
@@ -122,7 +129,7 @@
             label1.Location = new System.Drawing.Point(5, 30);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(323, 50);
+            label1.Size = new System.Drawing.Size(383, 60);
             label1.TabIndex = 16;
             label1.Text = "CREAR USUARIO ";
             // 
@@ -131,12 +138,20 @@
             label6.AutoSize = true;
             label6.Location = new System.Drawing.Point(98, 144);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(138, 19);
+            label6.Size = new System.Drawing.Size(163, 23);
             label6.TabIndex = 27;
             label6.Text = "Nombre y Apellido";
             // 
             // txtUsuario
             // 
+            txtUsuario.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
+            txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtUsuario.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
+            txtUsuario.Location = new System.Drawing.Point(98, 351);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new System.Drawing.Size(252, 32);
+            txtUsuario.TabIndex = 33;
             // 
             // lblmail
             // 
@@ -144,7 +159,7 @@
             lblmail.Location = new System.Drawing.Point(98, 234);
             lblmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblmail.Name = "lblmail";
-            lblmail.Size = new System.Drawing.Size(38, 19);
+            lblmail.Size = new System.Drawing.Size(45, 23);
             lblmail.TabIndex = 29;
             lblmail.Text = "Mail";
             // 
@@ -156,7 +171,7 @@
             txtmail.Location = new System.Drawing.Point(98, 270);
             txtmail.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             txtmail.Name = "txtmail";
-            txtmail.Size = new System.Drawing.Size(252, 27);
+            txtmail.Size = new System.Drawing.Size(252, 32);
             txtmail.TabIndex = 30;
             // 
             // lblyatengocuen
@@ -166,7 +181,7 @@
             lblyatengocuen.Location = new System.Drawing.Point(157, 738);
             lblyatengocuen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblyatengocuen.Name = "lblyatengocuen";
-            lblyatengocuen.Size = new System.Drawing.Size(116, 19);
+            lblyatengocuen.Size = new System.Drawing.Size(137, 23);
             lblyatengocuen.TabIndex = 31;
             lblyatengocuen.Text = "Ya tengo cuenta";
             lblyatengocuen.Click += lblyatengocuen_Click;
@@ -189,7 +204,7 @@
             // 
             // frmCrearUsuario
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(459, 804);

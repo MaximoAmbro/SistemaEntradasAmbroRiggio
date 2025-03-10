@@ -102,9 +102,9 @@ namespace Visual
         public void CargarEntrada()
         {
             GestorEntradas gestorE = new GestorEntradas();
-            GestorClientes gestorC = new GestorClientes();
+            GestorClientes gestorC = GestorClientes.Instance;
             List<Evento> listaEventos = gestorE.ObtenerListaEventos();
-            
+
             foreach (Evento _evento in listaEventos)
             {
                 if (_evento.Nombre == NombreEvento)
@@ -112,7 +112,7 @@ namespace Visual
                     gestorC.AgregarEntrada(_evento);
                     break;
                 }
-            }            
+            }
         }
     }
 }
