@@ -48,10 +48,11 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new System.Drawing.Point(9, 460);
+            btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnVolver.Location = new System.Drawing.Point(168, 514);
             btnVolver.Margin = new System.Windows.Forms.Padding(2);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new System.Drawing.Size(52, 28);
+            btnVolver.Size = new System.Drawing.Size(122, 41);
             btnVolver.TabIndex = 1;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
@@ -61,10 +62,10 @@
             // 
             lblSectorA.AutoSize = true;
             lblSectorA.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblSectorA.Location = new System.Drawing.Point(16, 132);
+            lblSectorA.Location = new System.Drawing.Point(21, 174);
             lblSectorA.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblSectorA.Name = "lblSectorA";
-            lblSectorA.Size = new System.Drawing.Size(106, 19);
+            lblSectorA.Size = new System.Drawing.Size(129, 23);
             lblSectorA.TabIndex = 37;
             lblSectorA.Text = "TICKET PREVIA";
             // 
@@ -75,10 +76,10 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnComprar.ForeColor = System.Drawing.Color.White;
-            btnComprar.Location = new System.Drawing.Point(44, 392);
+            btnComprar.Location = new System.Drawing.Point(101, 448);
             btnComprar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnComprar.Name = "btnComprar";
-            btnComprar.Size = new System.Drawing.Size(252, 35);
+            btnComprar.Size = new System.Drawing.Size(252, 50);
             btnComprar.TabIndex = 35;
             btnComprar.Text = "COMPRAR";
             btnComprar.UseVisualStyleBackColor = false;
@@ -90,17 +91,17 @@
             label4.Location = new System.Drawing.Point(16, 230);
             label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(0, 19);
+            label4.Size = new System.Drawing.Size(0, 23);
             label4.TabIndex = 32;
             // 
             // lblSectorB
             // 
             lblSectorB.AutoSize = true;
             lblSectorB.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblSectorB.Location = new System.Drawing.Point(16, 208);
+            lblSectorB.Location = new System.Drawing.Point(21, 258);
             lblSectorB.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblSectorB.Name = "lblSectorB";
-            lblSectorB.Size = new System.Drawing.Size(123, 19);
+            lblSectorB.Size = new System.Drawing.Size(151, 23);
             lblSectorB.TabIndex = 30;
             lblSectorB.Text = "TICKET GENERAL ";
             // 
@@ -108,58 +109,61 @@
             // 
             lblSectorC.AutoSize = true;
             lblSectorC.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblSectorC.Location = new System.Drawing.Point(16, 291);
+            lblSectorC.Location = new System.Drawing.Point(16, 343);
             lblSectorC.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblSectorC.Name = "lblSectorC";
-            lblSectorC.Size = new System.Drawing.Size(80, 19);
+            lblSectorC.Size = new System.Drawing.Size(97, 23);
             lblSectorC.TabIndex = 28;
             lblSectorC.Text = "TICKET VIP";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
             label1.Location = new System.Drawing.Point(4, 62);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(339, 34);
+            label1.Size = new System.Drawing.Size(391, 60);
             label1.TabIndex = 27;
             label1.Text = "Selecciona tickets";
             // 
             // NumPrimero
             // 
+            NumPrimero.Cursor = System.Windows.Forms.Cursors.Hand;
             NumPrimero.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            NumPrimero.Location = new System.Drawing.Point(21, 177);
+            NumPrimero.Location = new System.Drawing.Point(21, 200);
             NumPrimero.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             NumPrimero.Name = "NumPrimero";
-            NumPrimero.Size = new System.Drawing.Size(150, 26);
+            NumPrimero.Size = new System.Drawing.Size(150, 29);
             NumPrimero.TabIndex = 43;
             // 
             // NumSegundo
             // 
-            NumSegundo.Location = new System.Drawing.Point(21, 262);
+            NumSegundo.Cursor = System.Windows.Forms.Cursors.Hand;
+            NumSegundo.Location = new System.Drawing.Point(21, 284);
             NumSegundo.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             NumSegundo.Name = "NumSegundo";
-            NumSegundo.Size = new System.Drawing.Size(150, 26);
+            NumSegundo.Size = new System.Drawing.Size(150, 29);
             NumSegundo.TabIndex = 44;
             // 
             // NumTercero
             // 
-            NumTercero.Location = new System.Drawing.Point(21, 335);
+            NumTercero.Cursor = System.Windows.Forms.Cursors.Hand;
+            NumTercero.Location = new System.Drawing.Point(21, 369);
             NumTercero.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             NumTercero.Name = "NumTercero";
-            NumTercero.Size = new System.Drawing.Size(150, 26);
+            NumTercero.Size = new System.Drawing.Size(150, 29);
             NumTercero.TabIndex = 45;
             // 
             // lblPrecioA
             // 
             lblPrecioA.AutoSize = true;
             lblPrecioA.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblPrecioA.Location = new System.Drawing.Point(145, 132);
+            lblPrecioA.Location = new System.Drawing.Point(202, 202);
             lblPrecioA.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblPrecioA.Name = "lblPrecioA";
-            lblPrecioA.Size = new System.Drawing.Size(106, 19);
+            lblPrecioA.Size = new System.Drawing.Size(129, 23);
             lblPrecioA.TabIndex = 46;
             lblPrecioA.Text = "TICKET PREVIA";
             // 
@@ -167,10 +171,10 @@
             // 
             lblPrecioB.AutoSize = true;
             lblPrecioB.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblPrecioB.Location = new System.Drawing.Point(149, 211);
+            lblPrecioB.Location = new System.Drawing.Point(202, 286);
             lblPrecioB.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblPrecioB.Name = "lblPrecioB";
-            lblPrecioB.Size = new System.Drawing.Size(106, 19);
+            lblPrecioB.Size = new System.Drawing.Size(129, 23);
             lblPrecioB.TabIndex = 47;
             lblPrecioB.Text = "TICKET PREVIA";
             // 
@@ -178,19 +182,19 @@
             // 
             lblPrecioC.AutoSize = true;
             lblPrecioC.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblPrecioC.Location = new System.Drawing.Point(149, 291);
+            lblPrecioC.Location = new System.Drawing.Point(202, 371);
             lblPrecioC.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblPrecioC.Name = "lblPrecioC";
-            lblPrecioC.Size = new System.Drawing.Size(106, 19);
+            lblPrecioC.Size = new System.Drawing.Size(129, 23);
             lblPrecioC.TabIndex = 48;
             lblPrecioC.Text = "TICKET PREVIA";
             // 
             // FrmCompra
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(348, 497);
+            ClientSize = new System.Drawing.Size(430, 566);
             Controls.Add(lblPrecioC);
             Controls.Add(lblPrecioB);
             Controls.Add(lblPrecioA);

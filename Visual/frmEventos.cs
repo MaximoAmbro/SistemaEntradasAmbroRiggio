@@ -13,7 +13,7 @@ namespace Visual
     public partial class frmEventos : Form
     {
         private GestorEntradas gestorEventos;
-        
+
         public frmEventos()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Visual
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
             dgveventos.AutoGenerateColumns = true;
             dgveventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            //falta hacer para que no queden espacios grises
+
         }
         private void btnComprar_Click_1(object sender, EventArgs e)
         {
@@ -48,6 +48,11 @@ namespace Visual
             {
                 MessageBox.Show("Debe seleccionar un evento para comprar", "Hola Pedro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgveventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgveventos.Columns["Hora"].DefaultCellStyle.Format = "HH:mm tt";
         }
     }
 }
