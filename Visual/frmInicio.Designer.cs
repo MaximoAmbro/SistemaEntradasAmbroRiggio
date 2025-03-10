@@ -44,27 +44,27 @@
             TxtUsername.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             TxtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             TxtUsername.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtUsername.Location = new System.Drawing.Point(36, 172);
-            TxtUsername.Multiline = true;
+            TxtUsername.Location = new System.Drawing.Point(97, 259);
             TxtUsername.Name = "TxtUsername";
-            TxtUsername.Size = new System.Drawing.Size(216, 27);
+            TxtUsername.Size = new System.Drawing.Size(227, 32);
             TxtUsername.TabIndex = 5;
+            TxtUsername.TabStop = false;
             // 
             // TxtPassword
             // 
             TxtPassword.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             TxtPassword.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtPassword.Location = new System.Drawing.Point(36, 234);
-            TxtPassword.Multiline = true;
+            TxtPassword.Location = new System.Drawing.Point(97, 367);
             TxtPassword.Name = "TxtPassword";
-            TxtPassword.Size = new System.Drawing.Size(216, 27);
+            TxtPassword.Size = new System.Drawing.Size(227, 32);
             TxtPassword.TabIndex = 7;
+            TxtPassword.TextChanged += TxtPassword_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(33, 203);
+            label3.Location = new System.Drawing.Point(97, 326);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(118, 28);
             label3.TabIndex = 6;
@@ -75,7 +75,7 @@
             checkbxShowPass.AutoSize = true;
             checkbxShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
             checkbxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            checkbxShowPass.Location = new System.Drawing.Point(133, 267);
+            checkbxShowPass.Location = new System.Drawing.Point(248, 405);
             checkbxShowPass.Name = "checkbxShowPass";
             checkbxShowPass.Size = new System.Drawing.Size(178, 32);
             checkbxShowPass.TabIndex = 10;
@@ -87,7 +87,7 @@
             // 
             lblolividarcontra.AutoSize = true;
             lblolividarcontra.Cursor = System.Windows.Forms.Cursors.Hand;
-            lblolividarcontra.Location = new System.Drawing.Point(36, 398);
+            lblolividarcontra.Location = new System.Drawing.Point(84, 606);
             lblolividarcontra.Name = "lblolividarcontra";
             lblolividarcontra.Size = new System.Drawing.Size(255, 28);
             lblolividarcontra.TabIndex = 18;
@@ -99,7 +99,7 @@
             lblcrearcuenta.AutoSize = true;
             lblcrearcuenta.Cursor = System.Windows.Forms.Cursors.Hand;
             lblcrearcuenta.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            lblcrearcuenta.Location = new System.Drawing.Point(97, 438);
+            lblcrearcuenta.Location = new System.Drawing.Point(140, 654);
             lblcrearcuenta.Name = "lblcrearcuenta";
             lblcrearcuenta.Size = new System.Drawing.Size(134, 28);
             lblcrearcuenta.TabIndex = 19;
@@ -113,9 +113,9 @@
             btninicio.FlatAppearance.BorderSize = 0;
             btninicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btninicio.ForeColor = System.Drawing.Color.White;
-            btninicio.Location = new System.Drawing.Point(57, 338);
+            btninicio.Location = new System.Drawing.Point(97, 503);
             btninicio.Name = "btninicio";
-            btninicio.Size = new System.Drawing.Size(216, 35);
+            btninicio.Size = new System.Drawing.Size(227, 49);
             btninicio.TabIndex = 20;
             btninicio.Text = "INICIAR SESION ";
             btninicio.UseVisualStyleBackColor = false;
@@ -124,7 +124,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(33, 141);
+            label5.Location = new System.Drawing.Point(97, 216);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(84, 28);
             label5.TabIndex = 21;
@@ -135,7 +135,7 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label2.Location = new System.Drawing.Point(13, 33);
+            label2.Location = new System.Drawing.Point(22, 69);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(159, 60);
@@ -147,7 +147,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(348, 500);
+            ClientSize = new System.Drawing.Size(437, 734);
             Controls.Add(label2);
             Controls.Add(label5);
             Controls.Add(btninicio);

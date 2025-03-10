@@ -49,7 +49,7 @@
             checkbxShowPass.AutoSize = true;
             checkbxShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
             checkbxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            checkbxShowPass.Location = new System.Drawing.Point(132, 381);
+            checkbxShowPass.Location = new System.Drawing.Point(291, 593);
             checkbxShowPass.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             checkbxShowPass.Name = "checkbxShowPass";
             checkbxShowPass.Size = new System.Drawing.Size(154, 27);
@@ -63,7 +63,7 @@
             TxtConfirmpassword.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             TxtConfirmpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             TxtConfirmpassword.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtConfirmpassword.Location = new System.Drawing.Point(34, 343);
+            TxtConfirmpassword.Location = new System.Drawing.Point(98, 542);
             TxtConfirmpassword.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             TxtConfirmpassword.Name = "TxtConfirmpassword";
             TxtConfirmpassword.Size = new System.Drawing.Size(252, 32);
@@ -72,7 +72,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(31, 327);
+            label4.Location = new System.Drawing.Point(98, 506);
             label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(186, 23);
@@ -84,7 +84,7 @@
             TxtPassword.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             TxtPassword.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtPassword.Location = new System.Drawing.Point(34, 296);
+            TxtPassword.Location = new System.Drawing.Point(98, 448);
             TxtPassword.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             TxtPassword.Name = "TxtPassword";
             TxtPassword.PasswordChar = '*';
@@ -94,7 +94,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(31, 280);
+            label3.Location = new System.Drawing.Point(98, 413);
             label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(99, 23);
@@ -106,7 +106,7 @@
             TxtUsername.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             TxtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             TxtUsername.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtUsername.Location = new System.Drawing.Point(34, 149);
+            TxtUsername.Location = new System.Drawing.Point(98, 179);
             TxtUsername.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             TxtUsername.Name = "TxtUsername";
             TxtUsername.Size = new System.Drawing.Size(252, 32);
@@ -115,7 +115,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(31, 233);
+            label2.Location = new System.Drawing.Point(98, 325);
             label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(70, 23);
@@ -127,7 +127,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label1.Location = new System.Drawing.Point(5, 47);
+            label1.Location = new System.Drawing.Point(5, 30);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(383, 60);
@@ -137,7 +137,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(31, 133);
+            label6.Location = new System.Drawing.Point(98, 144);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(163, 23);
             label6.TabIndex = 27;
@@ -148,7 +148,7 @@
             txtnombre.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtnombre.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtnombre.Location = new System.Drawing.Point(34, 249);
+            txtnombre.Location = new System.Drawing.Point(98, 360);
             txtnombre.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new System.Drawing.Size(252, 32);
@@ -157,7 +157,7 @@
             // lblmail
             // 
             lblmail.AutoSize = true;
-            lblmail.Location = new System.Drawing.Point(31, 180);
+            lblmail.Location = new System.Drawing.Point(98, 234);
             lblmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblmail.Name = "lblmail";
             lblmail.Size = new System.Drawing.Size(45, 23);
@@ -169,7 +169,7 @@
             txtmail.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             txtmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtmail.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtmail.Location = new System.Drawing.Point(34, 196);
+            txtmail.Location = new System.Drawing.Point(98, 270);
             txtmail.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             txtmail.Name = "txtmail";
             txtmail.Size = new System.Drawing.Size(252, 32);
@@ -179,7 +179,7 @@
             // 
             lblyatengocuen.AutoSize = true;
             lblyatengocuen.Cursor = System.Windows.Forms.Cursors.Hand;
-            lblyatengocuen.Location = new System.Drawing.Point(116, 486);
+            lblyatengocuen.Location = new System.Drawing.Point(157, 738);
             lblyatengocuen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblyatengocuen.Name = "lblyatengocuen";
             lblyatengocuen.Size = new System.Drawing.Size(137, 23);
@@ -194,10 +194,10 @@
             btnregistrarse.FlatAppearance.BorderSize = 0;
             btnregistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnregistrarse.ForeColor = System.Drawing.Color.White;
-            btnregistrarse.Location = new System.Drawing.Point(61, 436);
+            btnregistrarse.Location = new System.Drawing.Point(98, 661);
             btnregistrarse.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnregistrarse.Name = "btnregistrarse";
-            btnregistrarse.Size = new System.Drawing.Size(252, 35);
+            btnregistrarse.Size = new System.Drawing.Size(252, 53);
             btnregistrarse.TabIndex = 32;
             btnregistrarse.Text = "REGISTRARSE";
             btnregistrarse.UseVisualStyleBackColor = false;
@@ -208,7 +208,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(380, 544);
+            ClientSize = new System.Drawing.Size(459, 804);
             Controls.Add(btnregistrarse);
             Controls.Add(lblyatengocuen);
             Controls.Add(txtmail);
