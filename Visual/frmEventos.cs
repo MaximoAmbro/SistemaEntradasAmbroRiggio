@@ -50,9 +50,6 @@ namespace Visual
             }
         }
 
-        private void dgveventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgveventos.Columns["Hora"].DefaultCellStyle.Format = "HH:mm tt";
-        }
+       
     }
 }
