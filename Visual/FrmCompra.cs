@@ -101,11 +101,18 @@ namespace Visual
         }
         public void CargarEntrada()
         {
-            Evento e = new Evento();
             GestorEntradas gestorE = new GestorEntradas();
             GestorClientes gestorC = new GestorClientes();
-            gestorE.DevolverEntrada(NombreEvento, ref  e);
-            gestorC.AgregarEntrada(e);
+            List<Evento> listaEventos = gestorE.ObtenerListaEventos();
+            
+            foreach (Evento _evento in listaEventos)
+            {
+                if (_evento.Nombre == NombreEvento)
+                {
+                    gestorC.AgregarEntrada(_evento);
+                    break;
+                }
+            }            
         }
     }
 }

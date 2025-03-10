@@ -96,13 +96,12 @@ namespace Negocio
         {
             return eventos;
         }
-        public void DevolverEntrada(string NombreEvento, ref Evento e)
+        public void DevolverEntrada(string NombreEvento)
         {
             foreach (var c in eventos)
             {
                 if (c.Nombre == NombreEvento)
                 {
-                    e = c;
                     break;
                 }
             }

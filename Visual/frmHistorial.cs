@@ -34,7 +34,7 @@ namespace Visual
         private void frmHistorial_Load(object sender, EventArgs e)
         {
             GestorClientes gestorClientes = new GestorClientes();
-            dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos();
+            dgvHistorial.DataSource= gestorClientes.ObtenerListaEventos();
             DataGridViewColumn columnaNombre = new DataGridViewColumn();
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
             dgvHistorial.AutoGenerateColumns = true;
