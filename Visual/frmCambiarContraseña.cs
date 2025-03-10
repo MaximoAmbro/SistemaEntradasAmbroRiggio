@@ -13,8 +13,6 @@ namespace Visual
 {
     public partial class frmCambiarContraseña : Form
     {
-        int checkcount = 0;
-
         public frmCambiarContraseña()
         {
             InitializeComponent();
@@ -53,17 +51,24 @@ namespace Visual
 
             if (ControlarTxt() == true)
             {
-                if (gestorClientes.RevisarMailYUsuario(TxtUsername.Text, txtMail.Text) == false)
+                if(gestorClientes.EncontrarUsuario(TxtUsername.Text) == true)
                 {
-                    gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
-                    MessageBox.Show("Contraseña cambiada con exito");
-                    frmInicio frm = new frmInicio();
-                    frm.Show();
-                    this.Hide();
+                    if(gestorClientes.EncontrarMail(txtMail.Text) == true)
+                    {
+                        gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
+                        MessageBox.Show("Contraseña cambiada con exito");
+                        frmInicio frm = new frmInicio();
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mail no encontrado");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El usuario ya existe");
+                    MessageBox.Show("Usuario no encontrado");
                 }
 
             }

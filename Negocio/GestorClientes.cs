@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,112 +12,100 @@ namespace Negocio
     public partial class GestorClientes // Lista
     {
        public static List<Cliente> clientes = new List<Cliente>();
-       Cliente cliente = new Cliente();
+        Cliente cliente = new Cliente();
 
     }
         public partial class GestorClientes // Metodos
-    {
-       
-        public void CambiarContraseña(string usuario, string contraseña)
         {
-            foreach (var c in clientes)
+            
+            public void CambiarContraseña(string usuario, string contraseña)
             {
-                if (c.Usuario == usuario)
+                foreach (var c in clientes)
                 {
-                    c.Contraseña = null;
-                    c.Contraseña = contraseña;
-                    break;
+                    if (c.Usuario == usuario)
+                    {
+                        c.Contraseña = null;
+                        c.Contraseña = contraseña;
+                        break;
+                    }
                 }
             }
-        }
-        public void AgregarCliente(string nombre, string usuario, string mail, string contraseña)
-        {
-            cliente = new Cliente { NombreYApellido = nombre, Usuario = usuario, Mail = mail, Contraseña = contraseña };
-            clientes.Add(cliente);
-        }
-        public bool RevisarUsuarioYContraseña(string usuario, string contraseña)
-        {
-            Cliente cliente1 = null;
-            foreach (var c in clientes)
+            public void AgregarCliente(string nombre, string usuario, string mail, string contraseña)
             {
-                if (c.Usuario == usuario && c.Contraseña == contraseña)
+                cliente = new Cliente { NombreYApellido = nombre, Usuario = usuario, Mail = mail, Contraseña = contraseña };
+                clientes.Add(cliente);
+            }
+            public bool EncontrarUsuario(string usuario)
+            {
+                Cliente cliente1 = null;
+                foreach (var c in clientes)
                 {
-                    cliente1 = c;
-                    break;
+                    if (c.Usuario == usuario)
+                    {
+                        cliente1 = c;
+                        break;
+                    }
                 }
-            }
-            if (cliente1 == null)
-            {
-                return false;
-                throw new Exception("Correo no encontrado");
-            }
-            else
-            {
-                return true;
-            }
-        }
-        public bool RevisarMailOUsuario(string usuario, string mail)
-        {
-            Cliente cliente1 = null;
-            foreach (var c in clientes)
-            {
-                if (c.Usuario == usuario)
-                {
-                    cliente1 = c;
-                    return false;
-                    throw new Exception("El usuario ya existe");
-
-                }
-                if (c.Mail == mail)
+                if (cliente1 == null)
                 {
                     return false;
-                    throw new Exception("El mail ya existe");
-
-                }
-                else
-                {
-                   return true;
-                }
-            }
-            if (cliente1 == null)
-            {
-                return true;
-                throw new Exception("");
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public bool RevisarMailYUsuario(string usuario, string mail)
-        {
-            Cliente cliente1 = null;
-            foreach (var c in clientes)
-            {
-                if (c.Usuario == usuario && c.Mail == mail)
-                {
-                    cliente1 = c;
-                    return false;
-
                 }
                 else
                 {
                     return true;
                 }
             }
-            if (cliente1 == null)
+            public bool EncontrarContraseña(string contraseña, string usuario)
             {
-                return true;
-                throw new Exception("");
+                Cliente cliente1 = null;
+                foreach (var c in clientes)
+                {
+                    if (c.Usuario == usuario && c.Contraseña == contraseña)
+                    {
+                        cliente1 = c;
+                        break;
+                    }
+                }
+                if (cliente1 == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            else
+            public bool EncontrarMail(string mail)
             {
-                return false;
+                Cliente cliente1 = null;
+                foreach (var c in clientes)
+                {
+                    if (c.Mail == mail)
+                    {
+                        cliente1 = c;
+                        break;
+                    }
+                }
+                if (cliente1 == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-        }
+            public void AgregarEntrada(Evento evento)
+            {
+                cliente.entradasUsuario.Add(evento);
+            }
+            public List<Evento> ObtenerListaEventos()
+            {
+            return cliente.entradasUsuario; 
+            }
 
     }
-    public partial class GestorClientes // Usuarios cargados
+        public partial class GestorClientes // Usuarios cargados
     {
         public GestorClientes()
         {
@@ -139,6 +128,7 @@ namespace Negocio
             clientes.Add(new Cliente { NombreYApellido = "Cristina Hernández", Usuario = "cristinahernandez", Mail = "cristinahernandez@example.com", Contraseña = "password123" });
             clientes.Add(new Cliente { NombreYApellido = "Daniel Gómez", Usuario = "danielgomez", Mail = "danielgomez@example.com", Contraseña = "password123" });
             clientes.Add(new Cliente { NombreYApellido = "Laura Sánchez", Usuario = "laurasanchez", Mail = "laurasanchez@example.com", Contraseña = "password123" });
+            
         } 
     } 
 }

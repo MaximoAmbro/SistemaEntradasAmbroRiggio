@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Entidades;
 
 namespace Visual
 {
@@ -52,10 +53,12 @@ namespace Visual
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            GestorEntradas gestor = new GestorEntradas();
-            gestor.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
-            MessageBox.Show("Compra realizada con exito, capacidad disponible: " + gestor.TotalEntradas + " Revise documentos para recibir su entrada");
+            GestorEntradas gestorE = new GestorEntradas();
+            GestorClientes gestorC = new GestorClientes();
+            gestorE.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
+            CargarEntrada();
             GenerarTicket();
+            MessageBox.Show("Compra realizada con exito, capacidad disponible: " + gestorE.TotalEntradas + " Revise documentos para recibir su entrada");
         }
         public void GenerarTicket()
         {
@@ -95,6 +98,14 @@ namespace Visual
                     CantidadTotal--;
                 }
             }
+        }
+        public void CargarEntrada()
+        {
+            Evento e = new Evento();
+            GestorEntradas gestorE = new GestorEntradas();
+            GestorClientes gestorC = new GestorClientes();
+            gestorE.DevolverEntrada(NombreEvento, ref  e);
+            gestorC.AgregarEntrada(e);
         }
     }
 }

@@ -11,6 +11,9 @@ namespace Entidades
         public string NombreYApellido { get; set; }
         public string Usuario { get; set; } //hola
         public string Mail { get; set; }
+        public List<Evento> entradasUsuario = new List<Evento>();
         public string Contraseña { get; set; }
+
+
     }
 }
