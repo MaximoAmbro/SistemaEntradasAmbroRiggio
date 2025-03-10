@@ -74,24 +74,22 @@ namespace Visual
                 }
             }
         }
-        public bool ValidarLista(string usuario, string contraseña)
+        public void ValidarLista(string usuario, string contraseña)
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
             
-            if (gestorClientes.RevisarUsuarioYContraseña(usuario, contraseña) == false)
+            if (gestorClientes.EncontrarContraseña(contraseña, usuario) == false)
             {
                 MessageBox.Show("Usuario no encontrado",
                                   "Hola Pedro",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Warning);
-                return false;
             }
             else 
             {
                 frmMenuUsuario frm = new frmMenuUsuario();
                 frm.Show();
                 this.Hide();
-                return true
             ;}
         }
     }
