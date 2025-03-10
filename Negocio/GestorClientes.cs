@@ -88,16 +88,15 @@ namespace Negocio
                 return false;
             }
         }
-        public bool RevisarMailYUsuario(string usuario, string mail)
+        public bool RevisarMailYUsuarioYContraseña(string usuario, string mail, string contraseña)
         {
             Cliente cliente1 = null;
             foreach (var c in clientes)
             {
-                if (c.Usuario == usuario && c.Mail == mail)
+                if (c.Usuario == usuario && c.Mail == mail && c.Contraseña != contraseña )
                 {
                     cliente1 = c;
                     return false;
-
                 }
                 else
                 {
