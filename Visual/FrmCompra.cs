@@ -60,7 +60,7 @@ namespace Visual
             gestorE.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
             CargarEntrada();
             GenerarTicket();
-            MessageBox.Show("Compra realizada con exito, capacidad disponible: " + gestorE.TotalEntradas + " Revise documentos para recibir su entrada");
+            MessageBox.Show("Compra realizada con exito,"+ "revise documentos para recibir su entrada");
         }
         public void GenerarTicket()
         {
@@ -70,12 +70,17 @@ namespace Visual
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTickets = 0;
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
+            string carpetaTickets = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Tickets Comprados";
+            if (!Directory.Exists(carpetaTickets))
+            {
+                Directory.CreateDirectory(carpetaTickets);
+            }
             for (int i = 0; i <= CantidadTotal; i++)
             {
                 if (cantidadA > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorA.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt "+ NombreEvento+ lblSectorA.Text+ CantidadTickets; ;
+                    string Ruta = Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorA.Text}_{CantidadTickets}.txt" );
                     CantidadTickets++;
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     cantidadA--;
@@ -84,7 +89,7 @@ namespace Visual
                 if (CantidadB > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorB.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorB.Text + CantidadTickets; ; ;
+                    string Ruta = Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorB.Text}_{CantidadTickets}.txt");
                     CantidadTickets++;
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     CantidadB--;
@@ -93,7 +98,7 @@ namespace Visual
                 if (CantidadC>0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorC.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorC.Text + CantidadTickets; ;
+                    string Ruta = Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorC.Text}_{CantidadTickets}.txt");
                     CantidadTickets++; 
                     File.WriteAllText(Ruta, gestor.MensajeTicket);
                     CantidadC--;

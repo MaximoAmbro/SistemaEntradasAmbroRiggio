@@ -27,7 +27,8 @@ namespace Visual
 
         private void frmCambiarContraseña_Load(object sender, EventArgs e)
         {
-            TxtUsername.Text = "";
+            TxtUsername.Text = "Pedro_Lopez35";
+            txtMail.Text = "PedroLopez@gmail.com";
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
             TxtConfirmpassword.PasswordChar = '*';
