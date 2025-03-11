@@ -112,6 +112,26 @@ namespace Negocio
             {
                 cliente.entradasUsuario.Add(evento);
             }
+            public bool BuscarMailDeUsuario(string mail, string usuario)
+            {
+            Cliente cliente1 = null;
+            foreach (var c in clientes)
+            {
+                if (c.Mail == mail && c.Usuario == usuario)
+                {
+                    cliente1 = c;
+                    break;
+                }
+            }
+            if (cliente1 == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }        
             public List<Evento> ObtenerListaEventos()
             {
                 Evento evento = new Evento();
@@ -127,7 +147,7 @@ namespace Negocio
             clientes.Add(new Cliente { NombreYApellido = "Pedro Lopez", Usuario = "Pedro_Lopez35", Mail = "PedroLopez@gmail.com", Contraseña = "Aa1234" });
             clientes.Add(new Cliente { NombreYApellido = "z", Usuario = "z", Mail = "z", Contraseña = "z" });
             clientes.Add(new Cliente { NombreYApellido = "Juan Riggio", Usuario = "JuaniLGBT", Mail = "juanriggio@gmail.com", Contraseña = "a" });
-            clientes.Add(new Cliente { NombreYApellido = "Maximo Ambrosion", Usuario = "Ambro", Mail = "MaximoAmbrosino@gmail.com", Contraseña = "a" });
+            clientes.Add(new Cliente { NombreYApellido = "Maximo Ambrosion", Usuario = "Ambrosape", Mail = "Maximoambrosino5@gmail.com", Contraseña = "Ambro" });
             clientes.Add(new Cliente { NombreYApellido = "Carlos López", Usuario = "carloslopez", Mail = "carloslopez@example.com", Contraseña = "password123" });
             clientes.Add(new Cliente { NombreYApellido = "Ana Díaz", Usuario = "anadiaz", Mail = "anadiaz@example.com", Contraseña = "password123" });
             clientes.Add(new Cliente { NombreYApellido = "Pedro Martínez", Usuario = "pedromartinez", Mail = "pedromartinez@example.com", Contraseña = "password123" });

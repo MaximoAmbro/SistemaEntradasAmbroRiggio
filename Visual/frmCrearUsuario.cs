@@ -25,10 +25,11 @@ namespace Visual
         private void frmCrearUsuario_Load(object sender, EventArgs e)
         {
             txtUsuario.Focus();
-            txtmail.Text="";
-            txtUsuario.Text = "";
-            txtNombre.Text = "";
-            TxtPassword.Text = "";
+            txtmail.Text="A";
+            txtUsuario.Text = "A";
+            txtNombre.Text = "A";
+            TxtPassword.Text = "A";
+            TxtConfirmpassword.Text = "A";
             TxtPassword.PasswordChar = '*';
             TxtConfirmpassword.PasswordChar='*';
         }
@@ -122,7 +123,7 @@ namespace Visual
             }
             else
             {
-                AgregarUsuario(txtUsuario.Text, txtNombre.Text, txtmail.Text,  TxtPassword.Text);
+                AgregarUsuario(txtNombre.Text, txtUsuario.Text, txtmail.Text,  TxtPassword.Text);
                 MessageBox.Show("Usuario creado");
                 frmInicio frm = new frmInicio();
                 frm.Show();

@@ -56,15 +56,22 @@ namespace Visual
             {
                     if(gestorClientes.EncontrarMail(txtMail.Text) == true)
                     {
-                        gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
-                        MessageBox.Show("Contraseña cambiada con exito");
-                        frmInicio frmInicio = new frmInicio();
-                        this.Hide();
-                        frmInicio.ShowDialog();
+                        if (gestorClientes.BuscarMailDeUsuario(txtMail.Text,TxtUsername.Text) == true)
+                        {
+                            gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
+                            MessageBox.Show("Contraseña cambiada con exito");
+                            frmInicio frmInicio = new frmInicio();
+                            this.Hide();
+                            frmInicio.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario no encontrado");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Mail no encontrado");
+                        MessageBox.Show("Usuario no encontrado");
                     }
                     }
                     else
