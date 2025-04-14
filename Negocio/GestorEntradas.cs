@@ -51,7 +51,7 @@ namespace Negocio
                 PrecioC = evento1.Sectores[2].Precio.ToString();
                 return true;
             }
-        }
+        } // Funciona 
         public void RestarEntrada(string NombreEvento, int cantidadA, int cantidadB, int cantidadC
         ,int cantidadTotal)
         {
@@ -70,7 +70,7 @@ namespace Negocio
                     break;
                 }
             }
-        }
+        } // Funciona 
         public void GenerarTicket(string NombreEvento, string NombreSector)
         {
             MensajeTicket = null;
@@ -91,11 +91,11 @@ namespace Negocio
                     break;
                 }
             }
-        } 
+        }  // Funciona
         public List<Evento> ObtenerListaEventos()
         {
             return eventos;
-        }
+        } // Funciona
         public void DevolverEntrada(string NombreEvento)
         {
             foreach (var c in eventos)
@@ -105,13 +105,13 @@ namespace Negocio
                     break;
                 }
             }
-        }
+        } // Funciona
     }
     public partial class GestorEntradas //Eventos cargados
     {
         public GestorEntradas()
         {
-           eventos.Add(new Evento
+            eventos.Add(new Evento
             {
                 Nombre = "Ratones Paraonoicos",
                 Capacidad = 1500,
@@ -124,8 +124,7 @@ namespace Negocio
                 new Sector { Nombre = "Sector PLATEA", Precio = 20000, Capacidad = 500 },
                 new Sector { Nombre = "Sector GENERAL", Precio = 12000, Capacidad = 500 }
             }
-            });
-
+            }); // Ratones Paraonoicos
             eventos.Add(new Evento
             {
                 Nombre = "Bersuit Vergarabat",
@@ -134,13 +133,12 @@ namespace Negocio
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(22, 0, 0),
                 Sectores = new List<Sector>
-        {
-            new Sector { Nombre = "Sector VIP", Precio = 70000, Capacidad = 500 },
-            new Sector { Nombre = "Sector PLATEA", Precio = 45000, Capacidad = 500 },
-            new Sector { Nombre = "Sector GENERAL", Precio = 25000, Capacidad = 500 }
-        }
-            });
-
+            {
+                new Sector { Nombre = "Sector VIP", Precio = 70000, Capacidad = 500 },
+                new Sector { Nombre = "Sector PLATEA", Precio = 45000, Capacidad = 500 },
+                new Sector { Nombre = "Sector GENERAL", Precio = 25000, Capacidad = 500 }
+            }
+            }); // Bersuit Vergarabat
             eventos.Add(new Evento
             {
                 Nombre = "La Renga",
@@ -149,41 +147,40 @@ namespace Negocio
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(20, 0, 0),
                 Sectores = new List<Sector>
-        {
-            new Sector { Nombre = "Sector VIP", Precio = 60000, Capacidad = 400 },
-            new Sector { Nombre = "Sector PLATEA", Precio = 35000, Capacidad = 400 },
-            new Sector { Nombre = "Sector GENERAL", Precio = 20000, Capacidad = 400 }
-        }
-            });
+                {
+                    new Sector { Nombre = "Sector VIP", Precio = 60000, Capacidad = 400 },
+                    new Sector { Nombre = "Sector PLATEA", Precio = 35000, Capacidad = 400 },
+                    new Sector { Nombre = "Sector GENERAL", Precio = 20000, Capacidad = 400 }
+                }
+            }); // La Renga
             eventos.Add(new Evento
             {
-                Nombre = "otto",
+                Nombre = "Otto",
                 Capacidad = 1800,
-                Locacion = "Salón City Center",
+                Locacion = "Complejo Forest",
                 Fecha = DateTime.Parse("14/12/2025"),
                 Hora = new TimeSpan(22, 30, 0),
                 Sectores = new List<Sector>
                 {
-                new Sector { Nombre = "Sector VIP", Precio = 50000, Capacidad = 600 },
-                new Sector { Nombre = "Sector PLATEA", Precio = 30000, Capacidad = 600 },
-                new Sector { Nombre = "Sector GENERAL", Precio = 18000, Capacidad = 600 }
+                    new Sector { Nombre = "Sector MESA", Precio = 50000, Capacidad = 600 },
+                    new Sector { Nombre = "Sector GENERAL", Precio = 30000, Capacidad = 600 },
+                    new Sector { Nombre = "Sector PREVIA", Precio = 18000, Capacidad = 600 }
                 }
-            }
-                );
+            }); // Otto
             eventos.Add(new Evento
             {
-                Nombre = "LOVA",
+                Nombre = "Lova",
                 Capacidad = 700,
                 Locacion = "Brown 3126",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(00, 30, 0),
                 Sectores = new List<Sector>
-        {
-            new Sector { Nombre = "Sector VIP", Precio = 20000, Capacidad = 400 },
-            new Sector { Nombre = "Sector GENERAL", Precio = 15000, Capacidad = 400 },
-            new Sector { Nombre = "Sector PERVIA", Precio = 10000, Capacidad = 400 }
-        }
-            });
+                {
+                    new Sector { Nombre = "Sector VIP", Precio = 20000, Capacidad = 400 },
+                    new Sector { Nombre = "Sector GENERAL", Precio = 15000, Capacidad = 400 },
+                    new Sector { Nombre = "Sector PREVIA", Precio = 10000, Capacidad = 400 }
+                }
+            }); // Lova
         }
     }
 }

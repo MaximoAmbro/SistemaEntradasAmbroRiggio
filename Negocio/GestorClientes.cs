@@ -9,12 +9,11 @@ using Entidades;
 
 namespace Negocio
 {
-    public partial class GestorClientes // Lista
+        public partial class GestorClientes // Lista
     {
         public static List<Cliente> clientes = new List<Cliente>();
         Cliente cliente = new Cliente();
         private static GestorClientes _instance;
-
         public static GestorClientes Instance
         {
             get
@@ -26,9 +25,8 @@ namespace Negocio
                 return _instance;
             }
         }
-
     }
-    public partial class GestorClientes // Metodos
+        public partial class GestorClientes // Metodos
         {
        
             public void CambiarContraseña(string usuario, string contraseña)
@@ -42,12 +40,12 @@ namespace Negocio
                         break;
                     }
                 }
-            }
+            } // Funciona
             public void AgregarCliente(string nombre, string usuario, string mail, string contraseña)
             {
                 cliente = new Cliente { NombreYApellido = nombre, Usuario = usuario, Mail = mail, Contraseña = contraseña };
                 clientes.Add(cliente);
-            }
+            } // Funciona
             public bool EncontrarUsuario(string usuario)
             {
                 Cliente cliente1 = null;
@@ -67,7 +65,7 @@ namespace Negocio
                 {
                     return true;
                 }
-            }
+        } // Funciona
             public bool EncontrarContraseña(string contraseña, string usuario)
             {
                 Cliente cliente1 = null;
@@ -87,7 +85,7 @@ namespace Negocio
                 {
                     return true;
                 }
-            }
+            } // Funciona
             public bool EncontrarMail(string mail)
             {
                 Cliente cliente1 = null;
@@ -107,20 +105,27 @@ namespace Negocio
                 {
                     return true;
                 }
-            }
+            } // Funciona 
             public void AgregarEntrada(Evento evento)
             {
                 cliente.entradasUsuario.Add(evento);
-            }
-            public List<Evento> ObtenerListaEventos()
+            } // Funciona 
+            public List<Evento> ObtenerListaEventos(string usuario)
             {
-                return cliente.entradasUsuario;
-            }
-
-
-    }
+                Cliente cliente1 = null;
+                foreach (var c in clientes)
+                {
+                    if (c.Usuario == usuario)
+                    {
+                        cliente1 = c;
+                        break;
+                    }
+                }
+                return cliente1.entradasUsuario;
+            } // Funciona
+        }
         public partial class GestorClientes // Usuarios cargados
-    {
+        {
         public void CargarLista()
         {
             clientes.Add(new Cliente { NombreYApellido = "Pedro Lopez", Usuario = "Pedro_Lopez35", Mail = "PedroLopez@gmail.com", Contraseña = "Aa1234" });
