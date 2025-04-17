@@ -17,6 +17,8 @@ namespace Visual
     {
         public string NombreEvento { get; set; }
         public string NombreUsuario { get; set; }
+        GestorEntradas gestorE = new GestorEntradas();
+        GestorClientes gestorC = GestorClientes.Instance;
         public FrmCompra()
         {
             frmEventos frm = new frmEventos();
@@ -55,11 +57,8 @@ namespace Visual
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            GestorEntradas gestorE = new GestorEntradas();
-            GestorClientes gestorC = new GestorClientes();
             gestorE.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
             CargarEntrada();
-            GenerarTicket();
             MessageBox.Show("Compra realizada con exito,"+ "revise documentos para recibir su entrada");
         }
         public void GenerarTicket()
@@ -108,15 +107,13 @@ namespace Visual
         }
         public void CargarEntrada()
         {
-            GestorEntradas gestorE = new GestorEntradas();
-            GestorClientes gestorC = GestorClientes.Instance;
             List<Evento> listaEventos = gestorE.ObtenerListaEventos();
 
             foreach (Evento _evento in listaEventos)
             {
                 if (_evento.Nombre == NombreEvento)
                 {
-                    gestorC.AgregarEntrada(_evento);
+                    gestorC.AgregarEntrada(_evento, NombreUsuario);
                     break;
                 }
             }

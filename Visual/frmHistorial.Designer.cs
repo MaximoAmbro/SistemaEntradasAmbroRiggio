@@ -56,7 +56,6 @@
             dgvHistorial.RowHeadersWidth = 62;
             dgvHistorial.Size = new System.Drawing.Size(897, 321);
             dgvHistorial.TabIndex = 1;
-            dgvHistorial.CellContentClick += dgvHistorial_CellContentClick;
             // 
             // label1
             // 

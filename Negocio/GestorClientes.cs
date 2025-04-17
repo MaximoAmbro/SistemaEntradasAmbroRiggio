@@ -108,37 +108,53 @@ namespace Negocio
                     return true;
                 }
             }
-            public void AgregarEntrada(Evento evento)
+            public void AgregarEntrada(Evento evento, string usuario)
             {
-                cliente.entradasUsuario.Add(evento);
+                Cliente cliente1 = null;
+                foreach (var c in clientes)
+                {
+                    if (c.Usuario == usuario)
+                    {
+                        cliente1 = c;
+                        cliente1.entradasUsuario.Add(evento);
+                        break;
+                    }
+                }
             }
             public bool BuscarMailDeUsuario(string mail, string usuario)
             {
-            Cliente cliente1 = null;
-            foreach (var c in clientes)
-            {
-                if (c.Mail == mail && c.Usuario == usuario)
+                Cliente cliente1 = null;
+                foreach (var c in clientes)
                 {
-                    cliente1 = c;
-                    break;
+                    if (c.Mail == mail && c.Usuario == usuario)
+                    {
+                        cliente1 = c;
+                        break;
+                    }
                 }
-            }
-            if (cliente1 == null)
+                if (cliente1 == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }        
+            public List<Evento> ObtenerListaEventos(string usuario)
             {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }        
-            public List<Evento> ObtenerListaEventos()
-            {
-                Evento evento = new Evento();
-                return cliente.entradasUsuario;
-            }
-
-
+                Cliente cliente1 = null;
+                foreach (var c in clientes)
+                {
+                    if (c.Usuario == usuario)
+                    {
+                        cliente1 = c;
+                        return cliente1.entradasUsuario;
+                    }
+                    cliente1 = null;
+                }
+                 return null;
+        }
     }
         public partial class GestorClientes // Usuarios cargados
     {
