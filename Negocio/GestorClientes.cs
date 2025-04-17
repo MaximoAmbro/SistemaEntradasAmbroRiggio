@@ -106,10 +106,19 @@ namespace Negocio
                     return true;
                 }
             } // Funciona 
-            public void AgregarEntrada(Evento evento)
+            public void AgregarEntrada(Evento evento, string usuario)
             {
-                cliente.entradasUsuario.Add(evento);
-            } // Funciona 
+                Cliente cliente1 = null;
+                foreach(var c in clientes)
+                {
+                    if (c.Usuario == usuario)
+                {
+                    cliente1 = c;
+                    break;
+                }
+                }
+                cliente1.entradasUsuario.Add(evento);
+            }
             public List<Evento> ObtenerListaEventos(string usuario)
             {
                 Cliente cliente1 = null;
@@ -118,12 +127,13 @@ namespace Negocio
                     if (c.Usuario == usuario)
                     {
                         cliente1 = c;
-                        break;
+                        return cliente1.entradasUsuario;
                     }
+                break;
                 }
-                return cliente1.entradasUsuario;
-            } // Funciona
-        }
+                exp
+        } // Funciona
+    }
         public partial class GestorClientes // Usuarios cargados
         {
         public void CargarLista()

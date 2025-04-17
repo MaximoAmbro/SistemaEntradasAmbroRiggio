@@ -15,6 +15,8 @@ namespace Visual
 {
     public partial class FrmCompra : Form
     {
+        GestorEntradas gestorE = new GestorEntradas();
+        GestorClientes gestorC = new GestorClientes();
         public string NombreEvento { get; set; }
         public string NombreUsuario { get; set; }
         public FrmCompra()
@@ -55,8 +57,6 @@ namespace Visual
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            GestorEntradas gestorE = new GestorEntradas();
-            GestorClientes gestorC = new GestorClientes();
             gestorE.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
             CargarEntrada();
             GenerarTicket();
@@ -64,7 +64,6 @@ namespace Visual
         }
         public void GenerarTicket()
         {
-            GestorEntradas gestor = new GestorEntradas();
             int cantidadA = Convert.ToInt32(NumPrimero.Text);
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
@@ -74,28 +73,28 @@ namespace Visual
             {
                 if (cantidadA > 0)
                 {
-                    gestor.GenerarTicket(NombreEvento, lblSectorA.Text);
+                    gestorE.GenerarTicket(NombreEvento, lblSectorA.Text);
                     string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt "+ NombreEvento+ lblSectorA.Text+ CantidadTickets; ;
                     CantidadTickets++;
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    File.WriteAllText(Ruta, gestorE.MensajeTicket);
                     cantidadA--;
                     CantidadTotal--;
                 }
                 if (CantidadB > 0)
                 {
-                    gestor.GenerarTicket(NombreEvento, lblSectorB.Text);
+                    gestorE.GenerarTicket(NombreEvento, lblSectorB.Text);
                     string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorB.Text + CantidadTickets; ; ;
                     CantidadTickets++;
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    File.WriteAllText(Ruta, gestorE.MensajeTicket);
                     CantidadB--;
                     CantidadTotal--;
                 }
                 if (CantidadC>0)
                 {
-                    gestor.GenerarTicket(NombreEvento, lblSectorC.Text);
+                    gestorE.GenerarTicket(NombreEvento, lblSectorC.Text);
                     string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorC.Text + CantidadTickets; ;
                     CantidadTickets++; 
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    File.WriteAllText(Ruta, gestorE.MensajeTicket);
                     CantidadC--;
                     CantidadTotal--;
                 }
@@ -103,15 +102,12 @@ namespace Visual
         }
         public void CargarEntrada()
         {
-            GestorEntradas gestorE = new GestorEntradas();
-            GestorClientes gestorC = GestorClientes.Instance;
             List<Evento> listaEventos = gestorE.ObtenerListaEventos();
-
             foreach (Evento _evento in listaEventos)
             {
                 if (_evento.Nombre == NombreEvento)
                 {
-                    gestorC.AgregarEntrada(_evento);
+                    gestorC.AgregarEntrada(_evento, NombreUsuario);
                     break;
                 }
             }
