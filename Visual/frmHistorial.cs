@@ -26,30 +26,23 @@ namespace Visual
             frmMenuUsuario frm = new frmMenuUsuario();
             frm.NombreUsuario = NombreUsuario;
             frm.Show();
+            dgvHistorial.ClearSelection();
             this.Hide();
         }
-
-        private void dgvHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void frmHistorial_Load(object sender, EventArgs e)
         {
+            
             GestorClientes gestorClientes = GestorClientes.Instance;
-            ListaEventos = gestorClientes.ObtenerListaEventos();
-            dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos();
+            ListaEventos = gestorClientes.ObtenerListaEventos(NombreUsuario);
+            dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos(NombreUsuario);
 
-             ListaEventos = gestorClientes.ObtenerListaEventos();
-             dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos();
+             ListaEventos = gestorClientes.ObtenerListaEventos(NombreUsuario);
+             dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos(NombreUsuario);
              dgvHistorial.Refresh();
              DataGridViewColumn columnaNombre = new DataGridViewColumn();
              DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
              dgvHistorial.AutoGenerateColumns = true;
              dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-
-
         }
     }
 }
