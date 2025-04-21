@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Entidades;
+using QRCoder;
 using static Entidades.Evento;
 namespace Negocio
 {
@@ -21,6 +22,7 @@ namespace Negocio
         public string PrecioC { get; set; }
         public int TotalEntradas { get; set; }
         public string MensajeTicket { get; set; }
+        public byte[] QRCodeImage { get; set; }
     }
     public partial class GestorEntradas //Metodos
     {
@@ -74,12 +76,14 @@ namespace Negocio
         public void GenerarTicket(string NombreEvento, string NombreSector)
         {
             MensajeTicket = null;
+            QRCodeImage = null;
             string hora = DateTime.Now.ToString();
             Guid idTicket = Guid.NewGuid();
             foreach (var c in eventos)
             {
                 if (c.Nombre == NombreEvento)
                 {
+
                     MensajeTicket =
                         "ENTRADA (" + c.Nombre + ")\n" +
                         "ID TICKET: " + idTicket.ToString() + "\n" +
@@ -88,6 +92,14 @@ namespace Negocio
                         "HORARIO: " + hora + "\n" +
                         "LUGAR: " + c.Locacion + "\n" +
                         "FECHA: " + c.Fecha.ToString();
+                    using (var qrGenerator = new QRCodeGenerator())
+                    {
+                        var qrCodeData = qrGenerator.CreateQrCode(MensajeTicket, QRCodeGenerator.ECCLevel.Q);
+                        using (var qrCode = new PngByteQRCode(qrCodeData))
+                        {
+                            QRCodeImage = qrCode.GetGraphic(20);
+                        }
+                    }
                     break;
                 }
             }

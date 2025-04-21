@@ -10,6 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Entidades;
+using iText;
+using iText.IO.Image;
+using iText.Kernel;
+using iText.Layout;
+using iText.Layout.Properties;
+using iText.Layout.Element;
+using QRCoder;
+using iText.Kernel.Pdf;
+using iText.Kernel.Geom;
+using iText.Layout.Element;
 
 namespace Visual
 {
@@ -59,6 +69,7 @@ namespace Visual
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
             gestorE.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
             CargarEntrada();
+            GenerarTicket();
             MessageBox.Show("Compra realizada con exito,"+ "revise documentos para recibir su entrada");
         }
         public void GenerarTicket()
@@ -74,36 +85,48 @@ namespace Visual
             {
                 Directory.CreateDirectory(carpetaTickets);
             }
+
             for (int i = 0; i <= CantidadTotal; i++)
             {
                 if (cantidadA > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorA.Text);
-                    string Ruta = Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorA.Text}_{CantidadTickets}.txt" );
+                    string Ruta = System.IO.Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorA.Text}_{CantidadTickets}.PDF" );
                     CantidadTickets++;
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    GenerarPDF(Ruta, gestor.MensajeTicket, gestor.QRCodeImage);
                     cantidadA--;
                     CantidadTotal--;
                 }
                 if (CantidadB > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorB.Text);
-                    string Ruta = Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorB.Text}_{CantidadTickets}.txt");
+                    string Ruta = System.IO.Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorB.Text}_{CantidadTickets}.PDF");
                     CantidadTickets++;
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    GenerarPDF(Ruta, gestor.MensajeTicket, gestor.QRCodeImage);
                     CantidadB--;
                     CantidadTotal--;
                 }
                 if (CantidadC>0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorC.Text);
-                    string Ruta = Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorC.Text}_{CantidadTickets}.txt");
-                    CantidadTickets++; 
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    string Ruta =  System.IO.Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorC.Text}_{CantidadTickets}.PDF");
+                    CantidadTickets++;
+                    GenerarPDF(Ruta, gestor.MensajeTicket, gestor.QRCodeImage);
                     CantidadC--;
                     CantidadTotal--;
                 }
             }
+        }
+        public void GenerarPDF(string ruta, string mensaje, byte[] QR )
+        {
+           PdfWriter pw = new PdfWriter(ruta);
+           PdfDocument pdf = new PdfDocument(pw);
+           Document doc = new Document(pdf, PageSize.DEFAULT);
+           doc.Add(new Paragraph(mensaje));
+           var img = new iText.Layout.Element.Image(ImageDataFactory.Create(QR));
+           img.ScaleAbsolute(100, 100);
+           doc.Add(img);
+           doc.Close();
         }
         public void CargarEntrada()
         {
