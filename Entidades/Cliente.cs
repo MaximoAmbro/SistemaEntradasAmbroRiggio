@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public partial class Cliente
-    { 
-        public string NombreYApellido { get; set; }
+    {
+        public string Nombre{ get; set; }
+        public string Apellido{ get; set; }
         public string Usuario { get; set; } //hola
         public string Mail { get; set; }
-        public List<Evento> entradasUsuario = new List<Evento>();
         public string Contraseña { get; set; }
-
+        public List<Evento> entradasUsuario = new List<Evento>();
 
     }
 }

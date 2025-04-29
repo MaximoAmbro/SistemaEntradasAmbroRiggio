@@ -80,7 +80,7 @@ namespace Visual
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTickets = 0;
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            string carpetaTickets = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Tickets Comprados";
+            string carpetaTickets = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\A1.Tickets EVENTAURA";
             if (!Directory.Exists(carpetaTickets))
             {
                 Directory.CreateDirectory(carpetaTickets);

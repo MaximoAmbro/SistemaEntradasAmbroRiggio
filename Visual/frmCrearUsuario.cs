@@ -123,7 +123,7 @@ namespace Visual
             }
             else
             {
-                AgregarUsuario(txtNombre.Text, txtUsuario.Text, txtmail.Text,  TxtPassword.Text);
+                AgregarUsuario(txtNombre.Text,txtApellido.Text, txtUsuario.Text, txtmail.Text,  TxtPassword.Text);
                 MessageBox.Show("Usuario creado");
                 frmInicio frm = new frmInicio();
                 frm.Show();
@@ -131,10 +131,10 @@ namespace Visual
                 return true;
             }
         }
-        public void AgregarUsuario(string nombre, string usuario, string mail, string contraseña)
+        public void AgregarUsuario(string nombre,string apellido, string usuario, string mail, string contraseña)
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-            gestorClientes.AgregarCliente(nombre, usuario, mail, contraseña);
+            gestorClientes.AgregarCliente(nombre, apellido, usuario, mail, contraseña);
         }
     }
 }

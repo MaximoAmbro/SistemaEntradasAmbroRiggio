@@ -42,6 +42,8 @@
             txtmail = new System.Windows.Forms.TextBox();
             lblyatengocuen = new System.Windows.Forms.Label();
             btnregistrarse = new System.Windows.Forms.Button();
+            label5 = new System.Windows.Forms.Label();
+            txtApellido = new System.Windows.Forms.TextBox();
             SuspendLayout();
             // 
             // checkbxShowPass
@@ -106,7 +108,7 @@
             txtNombre.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtNombre.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtNombre.Location = new System.Drawing.Point(98, 180);
+            txtNombre.Location = new System.Drawing.Point(98, 123);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new System.Drawing.Size(252, 27);
             txtNombre.TabIndex = 34;
@@ -136,11 +138,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(98, 144);
+            label6.Location = new System.Drawing.Point(98, 87);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(138, 19);
+            label6.Size = new System.Drawing.Size(65, 19);
             label6.TabIndex = 27;
-            label6.Text = "Nombre y Apellido";
+            label6.Text = "Nombre";
             // 
             // txtUsuario
             // 
@@ -203,12 +205,33 @@
             btnregistrarse.UseVisualStyleBackColor = false;
             btnregistrarse.Click += btnregistrarse_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(98, 154);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(66, 19);
+            label5.TabIndex = 35;
+            label5.Text = "Apellido";
+            // 
+            // txtApellido
+            // 
+            txtApellido.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
+            txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtApellido.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtApellido.Location = new System.Drawing.Point(98, 190);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new System.Drawing.Size(252, 27);
+            txtApellido.TabIndex = 36;
+            // 
             // frmCrearUsuario
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(459, 804);
+            Controls.Add(label5);
+            Controls.Add(txtApellido);
             Controls.Add(btnregistrarse);
             Controls.Add(lblyatengocuen);
             Controls.Add(txtmail);
@@ -251,5 +274,7 @@
         private System.Windows.Forms.TextBox txtmail;
         private System.Windows.Forms.Label lblyatengocuen;
         private System.Windows.Forms.Button btnregistrarse;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtApellido;
     }
 }

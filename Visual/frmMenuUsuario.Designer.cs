@@ -98,9 +98,9 @@
             lblNombre.Location = new System.Drawing.Point(240, 74);
             lblNombre.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new System.Drawing.Size(244, 50);
+            lblNombre.Size = new System.Drawing.Size(214, 50);
             lblNombre.TabIndex = 33;
-            lblNombre.Text = "Bienvenidos ";
+            lblNombre.Text = "[USUARIO]";
             lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmMenuUsuario

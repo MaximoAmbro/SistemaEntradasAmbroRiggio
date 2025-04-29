@@ -1,1 +1,1 @@
-Fijate si la ruta para almacenar un PDF es la misma que la ruta para almacenar un txt
+Fijate que en la generacion de QR tambien se genera el codigo (para Ing Software)
