@@ -83,7 +83,8 @@ namespace Negocio
             {
                 if (c.Nombre == NombreEvento)
                 {
-
+                    int codigoEvento = Guid.NewGuid().GetHashCode();
+                    string CodigoEvento = codigoEvento.ToString().Substring(0, 8);
                     MensajeTicket =
                         "ENTRADA (" + c.Nombre + ")\n" +
                         "ID TICKET: " + idTicket.ToString() + "\n" +
@@ -92,9 +93,13 @@ namespace Negocio
                         "HORARIO: " + hora + "\n" +
                         "LUGAR: " + c.Locacion + "\n" +
                         "FECHA: " + c.Fecha.ToString();
+                    
+                    string contenidoQR = "EVENTO: " + c.Nombre +
+                   "\nFECHA: " + c.Fecha.ToString() + "\nCÓDIGO: " + CodigoEvento;
+
                     using (var qrGenerator = new QRCodeGenerator())
                     {
-                        var qrCodeData = qrGenerator.CreateQrCode(MensajeTicket, QRCodeGenerator.ECCLevel.Q);
+                        var qrCodeData = qrGenerator.CreateQrCode(contenidoQR, QRCodeGenerator.ECCLevel.Q);
                         using (var qrCode = new PngByteQRCode(qrCodeData))
                         {
                             QRCodeImage = qrCode.GetGraphic(20);
