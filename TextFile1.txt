@@ -1,1 +1,0 @@
-Fijate que en la generacion de QR tambien se genera el codigo (para Ing Software)

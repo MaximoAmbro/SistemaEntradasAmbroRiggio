@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class frmMenuVendedor: Form
+    public partial class MisLocales: Form
     {
-        public frmMenuVendedor()
+        public MisLocales()
         {
             InitializeComponent();
         }

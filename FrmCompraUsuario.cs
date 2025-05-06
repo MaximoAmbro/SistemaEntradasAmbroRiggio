@@ -20,18 +20,23 @@ using QRCoder;
 using iText.Kernel.Pdf;
 using iText.Kernel.Geom;
 using iText.Layout.Element;
+using iText.Kernel.Colors;
+using iText.Kernel.Pdf.Canvas;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using iText.IO.Font;
 
 namespace Visual
 {
-    public partial class FrmCompra : Form
+    public partial class FrmCompraUsuario : Form
     {
         public string NombreEvento { get; set; }
         public string NombreUsuario { get; set; }
         GestorEntradas gestorE = new GestorEntradas();
         GestorClientes gestorC = GestorClientes.Instance;
-        public FrmCompra()
+        public FrmCompraUsuario()
         {
-            frmEventos frm = new frmEventos();
+            frmEventosUsuario frm = new frmEventosUsuario();
 
             InitializeComponent();
         }
@@ -56,7 +61,7 @@ namespace Visual
         }
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
-            frmEventos frm = new frmEventos();
+            frmEventosUsuario frm = new frmEventosUsuario();
             frm.NombreUsuario= NombreUsuario;
             frm.Show();
             this.Hide();
@@ -122,7 +127,23 @@ namespace Visual
            PdfWriter pw = new PdfWriter(ruta);
            PdfDocument pdf = new PdfDocument(pw);
            Document doc = new Document(pdf, PageSize.DEFAULT);
-           doc.Add(new Paragraph(mensaje));
+            // aca seteamos el color de la pagina
+            PdfPage page = pdf.AddNewPage();
+            PdfCanvas canvas = new PdfCanvas(page);
+            canvas.SetFillColor(ColorConstants.BLACK);
+            canvas.Rectangle(0, 0, PageSize.DEFAULT.GetWidth(), PageSize.DEFAULT.GetHeight());
+            canvas.Fill();
+
+            // aca seteamos el color del texto
+            doc.Add(new Paragraph(mensaje)
+               .SetFontColor(ColorConstants.WHITE)
+               .SetFontSize(12));
+            // aca seteamos la fuente
+            doc.Add(new Paragraph(mensaje)
+               .SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD))
+               .SetFontSize(12));
+
+            doc.Add(new Paragraph(mensaje));
            var img = new iText.Layout.Element.Image(ImageDataFactory.Create(QR));
            img.ScaleAbsolute(100, 100);
            doc.Add(img);

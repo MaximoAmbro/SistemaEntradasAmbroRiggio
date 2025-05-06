@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class frmHistorial : Form
+    public partial class frmHistorialUsuario : Form
     {
         public string NombreUsuario { get; set; }
         public List<Evento> ListaEventos { get; set; }
-        public frmHistorial()
+        public frmHistorialUsuario()
         {
             InitializeComponent();
         }

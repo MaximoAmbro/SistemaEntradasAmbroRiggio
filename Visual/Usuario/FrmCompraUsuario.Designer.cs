@@ -1,6 +1,6 @@
 ﻿namespace Visual
 {
-    partial class FrmCompra
+    partial class FrmCompraUsuario
     {
         /// <summary>
         /// Required designer variable.

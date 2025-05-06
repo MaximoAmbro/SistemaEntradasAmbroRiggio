@@ -86,16 +86,14 @@ namespace Negocio
                     int codigoEvento = Guid.NewGuid().GetHashCode();
                     string CodigoEvento = codigoEvento.ToString().Substring(0, 8);
                     MensajeTicket =
-                        "ENTRADA (" + c.Nombre + ")\n" +
-                        "ID TICKET: " + idTicket.ToString() + "\n" +
+                        "ENTRADA " + c.Nombre + "\n" +
                         "SECTOR: " + NombreSector + "\n" +
                         "PRECIO: " + c.Sectores.Find(x => x.Nombre == NombreSector).Precio.ToString() + "$\n" +
                         "HORARIO: " + hora + "\n" +
                         "LUGAR: " + c.Locacion + "\n" +
                         "FECHA: " + c.Fecha.ToString();
                     
-                    string contenidoQR = "EVENTO: " + c.Nombre +
-                   "\nFECHA: " + c.Fecha.ToString() + "\nCÓDIGO: " + CodigoEvento;
+                    string contenidoQR = "CÓDIGO: " + CodigoEvento;
 
                     using (var qrGenerator = new QRCodeGenerator())
                     {

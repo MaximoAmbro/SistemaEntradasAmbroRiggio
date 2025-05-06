@@ -25,14 +25,14 @@ namespace Visual
         }
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            frmEventos frm = new frmEventos();
+            frmEventosUsuario frm = new frmEventosUsuario();
             frm.NombreUsuario = NombreUsuario;
             frm.Show();
             this.Hide();
         }
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            frmHistorial frm = new frmHistorial();
+            frmHistorialUsuario frm = new frmHistorialUsuario();
             frm.NombreUsuario = NombreUsuario;
             frm.Show();
             this.Hide();
