@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using Entidades; using Negocio;
 namespace Visual
 {
-    public partial class frmEventos : Form
+    public partial class frmEventosUsuario : Form
     {
         private GestorEntradas gestorEventos;
         public string NombreUsuario {  get; set; }
-        public frmEventos()
+        public frmEventosUsuario()
         {
             InitializeComponent();
         }
@@ -40,7 +40,7 @@ namespace Visual
             if (dgveventos.SelectedCells.Count > 0)
             {
                 string nombre = dgveventos.SelectedCells[0].Value.ToString();
-                FrmCompra frm = new FrmCompra();
+                FrmCompraUsuario frm = new FrmCompraUsuario();
                 frm.NombreEvento = nombre;
                 frm.NombreUsuario = NombreUsuario;
                 frm.Show();

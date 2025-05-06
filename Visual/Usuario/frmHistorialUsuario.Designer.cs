@@ -1,6 +1,6 @@
 ﻿namespace Visual
 {
-    partial class frmHistorial
+    partial class frmHistorialUsuario
     {
         /// <summary>
         /// Required designer variable.

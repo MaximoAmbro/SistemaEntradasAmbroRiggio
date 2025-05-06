@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Vendedor : Cliente
+   public class Vendedor : Cliente
     {
         public class Local()
         {
