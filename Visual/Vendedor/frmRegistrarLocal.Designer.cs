@@ -1,6 +1,6 @@
 ﻿namespace Visual
 {
-    partial class MenuVendedor
+    partial class frmRegistrarLocal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MenuVendedor";
+            SuspendLayout();
+            // 
+            // frmRegistrarLocal
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(800, 450);
+            Name = "frmRegistrarLocal";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "RegistrarLocal";
+            ResumeLayout(false);
         }
 
         #endregion

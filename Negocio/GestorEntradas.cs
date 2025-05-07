@@ -172,9 +172,9 @@ namespace Negocio
             });
             eventos.Add(new Evento
             {
-                Nombre = "otto",
+                Nombre = "Otto",
                 Capacidad = 1800,
-                Locacion = "Salón City Center",
+                Locacion = "Brown 3126",
                 Fecha = DateTime.Parse("14/12/2025"),
                 Hora = new TimeSpan(22, 30, 0),
                 Sectores = new List<Sector>

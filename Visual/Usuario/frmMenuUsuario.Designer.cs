@@ -75,7 +75,6 @@
             label1.TabIndex = 30;
             label1.Text = "Bienvenido ";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // lblvolver
             // 
@@ -102,6 +101,7 @@
             lblNombre.TabIndex = 33;
             lblNombre.Text = "[USUARIO]";
             lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblNombre.Click += lblNombre_Click;
             // 
             // frmMenuUsuario
             // 
