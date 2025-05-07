@@ -43,8 +43,7 @@ namespace Visual
             frm.Show();
             this.Hide();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void lblNombre_Click(object sender, EventArgs e)
         {
 
         }

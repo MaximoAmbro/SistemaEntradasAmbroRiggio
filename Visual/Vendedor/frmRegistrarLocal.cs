@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class MisLocales: Form
+    public partial class frmRegistrarLocal: Form
     {
-        public MisLocales()
+        public string NombreUsuario { get; set; }
+        public frmRegistrarLocal()
         {
             InitializeComponent();
         }

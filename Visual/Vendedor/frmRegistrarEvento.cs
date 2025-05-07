@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Visual
+namespace Visual.Vendedor
 {
-    public partial class EventosLocal: Form
+    public partial class frmRegistrarEvento: Form
     {
-        public EventosLocal()
+        public string NombreUsuario { get; set; }
+        public string EventoSeleccionado { get; set; }
+        public frmRegistrarEvento()
         {
             InitializeComponent();
         }
