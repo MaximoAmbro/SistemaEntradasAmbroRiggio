@@ -1,0 +1,21 @@
+V2.0.2 :
+Agregue formularios para la seccion vendedor (vacios)
+Agregue la clase Vendedor con su lista de locales y eventos de cada local (revisar)
+Dividi la propiedad NombreYApellido por Nombre y otra de Apellido.
+Modifique el contenido del QR, ahora este tiene almacenado el evento, la fecha 
+y un codigo de 8 digitos
+__________________________________________________________________________________________
+V 2.0.3
+Cree la clase GestorVendedores y la entidad Vendedor.
+Organize los forms en carpetas
+Modifique el PDF para que sea mas estetico
+Cambie el codigo del QR de manera en que solamente muestre el codigo del evento para 
+verificar mas facil.
+___________________________________________________________________________________________
+V 2.0.4
+Acomode los nombres de los forms mal cargado en un principio (me faltaba el frm)
+Deje mas o menos preparados todos los forms con los botoncitos que mueven 
+los forms y los usuarios que se pasan por referencia
+Agregue un txt con los cambios realizados
+___________________________________________________________________________________________
+V 2.0.5
