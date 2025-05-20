@@ -82,7 +82,10 @@ namespace Visual
             {
                 if (GestorClientes.Instance.EncontrarContraseña(TxtPassword.Text, mail))
                 {
+                    string nombreusuario;
                     frmMenuUsuario frm = new frmMenuUsuario();
+                    GestorClientes.Instance.DevolverUsuario(mail, out nombreusuario);
+                    frm.NombreUsuario = nombreusuario;
                     frm.Show();
                     this.Hide();
                 }
@@ -95,7 +98,10 @@ namespace Visual
             {
                 if (GestorVendedores.Instance.EncontrarContraseña(TxtPassword.Text, mail))
                 {
+                    string nombreusuario;
                     frmMenuVendedor frm = new frmMenuVendedor();
+                    GestorVendedores.Instance.DevolverUsuario(mail, out nombreusuario);
+                    frm.NombreUsuario = nombreusuario;
                     frm.Show();
                     this.Hide();
                 }
