@@ -6,17 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-   public class Vendedor : Cliente
+   public class Vendedor : Usuario
     {
-        public class Local()
-        {
-            public string Nombre { get; set; }
-            public string Direccion { get; set; }
-            public string Telefono { get; set; }
-            public string Mail { get; set; }
-            public int Capacidad { get; set; }
-            public List<Evento> Eventos { get; set; }
-        }
+
         public List <Local> Locales { get; set; }
     }
 }

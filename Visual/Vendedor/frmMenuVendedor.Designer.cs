@@ -115,6 +115,7 @@
             Name = "frmMenuVendedor";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MenuVendedor";
+            Load += frmMenuVendedor_Load;
             ResumeLayout(false);
             PerformLayout();
         }

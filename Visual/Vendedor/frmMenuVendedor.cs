@@ -20,7 +20,6 @@ namespace Visual
         }
         private void frmMenuVendedor_Load(object sender, EventArgs e)
         {
-            GestorClientes gestorClientes = new GestorClientes();
             lblNombre.Text = NombreUsuario;
         }
 
