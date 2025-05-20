@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TxtUsername = new System.Windows.Forms.TextBox();
+            TxtMail = new System.Windows.Forms.TextBox();
             TxtPassword = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
             checkbxShowPass = new System.Windows.Forms.CheckBox();
@@ -39,16 +39,16 @@
             label2 = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
-            // TxtUsername
+            // TxtMail
             // 
-            TxtUsername.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
-            TxtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            TxtUsername.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtUsername.Location = new System.Drawing.Point(97, 259);
-            TxtUsername.Name = "TxtUsername";
-            TxtUsername.Size = new System.Drawing.Size(227, 27);
-            TxtUsername.TabIndex = 5;
-            TxtUsername.TabStop = false;
+            TxtMail.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
+            TxtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            TxtMail.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            TxtMail.Location = new System.Drawing.Point(97, 259);
+            TxtMail.Name = "TxtMail";
+            TxtMail.Size = new System.Drawing.Size(227, 27);
+            TxtMail.TabIndex = 5;
+            TxtMail.TabStop = false;
             // 
             // TxtPassword
             // 
@@ -125,9 +125,9 @@
             label5.AutoSize = true;
             label5.Location = new System.Drawing.Point(97, 216);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(70, 23);
+            label5.Size = new System.Drawing.Size(45, 23);
             label5.TabIndex = 21;
-            label5.Text = "Usuario";
+            label5.Text = "Mail";
             // 
             // label2
             // 
@@ -155,7 +155,7 @@
             Controls.Add(checkbxShowPass);
             Controls.Add(TxtPassword);
             Controls.Add(label3);
-            Controls.Add(TxtUsername);
+            Controls.Add(TxtMail);
             Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ForeColor = System.Drawing.Color.FromArgb(164, 165, 169);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -169,7 +169,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox TxtUsername;
+        private System.Windows.Forms.TextBox TxtMail;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkbxShowPass;
