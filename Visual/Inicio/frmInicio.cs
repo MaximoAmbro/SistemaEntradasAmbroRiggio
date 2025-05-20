@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades; 
 using Negocio;
+using Repositorio;
+using Visual.Inicio;
 
 namespace Visual
 {
@@ -18,11 +20,13 @@ namespace Visual
         public frmInicio()
         {
             InitializeComponent();
+            GestorClientes.Instance.CargarLista();
+            GestorVendedores.Instance.CargarLista();
         }
         private void frmInicio_Load(object sender, EventArgs e)
         {
-            TxtUsername.Text = "Pedro_Lopez35";
-            TxtPassword.Text = "Aa1234";
+            TxtMail.Text = "";
+            TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
         }
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
@@ -44,64 +48,67 @@ namespace Visual
         }
         private void lblcrearcuenta_Click(object sender, EventArgs e)
         {
-            frmCrearUsuario frm = new frmCrearUsuario();
+            frmSeleccionarCuentaACrear frm = new frmSeleccionarCuentaACrear();
             frm.Show();
             this.Hide();
         }
         private void btninicio_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(TxtMail.Text))
             {
-                if (string.IsNullOrEmpty(TxtUsername.Text))
-                {
-                    MessageBox.Show("Por favor, ingrese usuario",
-                                  "Campo vacíos",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Warning);
-                    return;
-                }
-                if (string.IsNullOrEmpty(TxtPassword.Text))
-                {
-                    MessageBox.Show("Por favor, ingrese contraseña",
-                                  "Campo vacíos",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Warning);
-                    return;
-                }
-
-                else
-                {
-                    ValidarLista(TxtUsername.Text, TxtPassword.Text);
-                }
+                MessageBox.Show("Por favor, ingrese usuario",
+                                "Campo vacíos",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrEmpty(TxtPassword.Text))
+            {
+                MessageBox.Show("Por favor, ingrese contraseña",
+                                "Campo vacíos",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                BuscarMail(TxtMail.Text);
             }
         }
-        public void ValidarLista(string usuario, string contraseña)
-        {
-            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
 
-            if (gestorClientes.EncontrarUsuario(usuario))
+        public void BuscarMail(string mail)
+        {
+            if (GestorClientes.Instance.EncontrarMail(mail))
             {
-                if (gestorClientes.EncontrarContraseña(contraseña, usuario))
+                if (GestorClientes.Instance.EncontrarContraseña(TxtPassword.Text, mail))
                 {
                     frmMenuUsuario frm = new frmMenuUsuario();
-                    frm.NombreUsuario = usuario;
                     frm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña incorrecta",
-                                      "Error",
-                                      MessageBoxButtons.OK,
-                                      MessageBoxIcon.Error);
+                    MessageBox.Show("Contraseña incorrecta");
+                }
+            }
+            else if (GestorVendedores.Instance.EncontrarMail(mail))
+            {
+                if (GestorVendedores.Instance.EncontrarContraseña(TxtPassword.Text, mail))
+                {
+                    frmMenuVendedor frm = new frmMenuVendedor();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta");
                 }
             }
             else
             {
-                MessageBox.Show("Usuario no registrado",
-                                  "Error",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error);
+                MessageBox.Show("Mail no encontrado");
             }
         }
+
     }
 }

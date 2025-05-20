@@ -9,7 +9,7 @@ using Entidades;
 
 namespace Negocio
 {
-    public partial class GestorClientes // Lista
+        public partial class GestorClientes // Lista
     {
         public static List<Cliente> clientes = new List<Cliente>();
         Cliente cliente = new Cliente();
@@ -28,7 +28,7 @@ namespace Negocio
         }
 
     }
-    public partial class GestorClientes // Metodos
+        public partial class GestorClientes // Metodos
         {
        
             public void CambiarContraseña(string usuario, string contraseña)
@@ -159,7 +159,7 @@ namespace Negocio
     {
         public void CargarLista()
         {
-            clientes.Add(new Cliente { Nombre = "Pedro", Apellido = "Lopez", Usuario = "Pedro_Lopez35", Mail = "PedroLopez@gmail.com", Contraseña = "Aa1234" });
+            clientes.Add(new Cliente { Nombre = "Pedro", Apellido = "Lopez", Usuario = "Pedro_Lopez35", Mail = "Cliente", Contraseña = "a" });
             clientes.Add(new Cliente { Nombre = "", Apellido = "", Usuario = "z", Mail = "z", Contraseña = "z" });
             clientes.Add(new Cliente { Nombre = "Juan", Apellido = "Riggio", Usuario = "JuaniLGBT", Mail = "juanriggio@gmail.com", Contraseña = "a" });
             clientes.Add(new Cliente { Nombre = "Maximo", Apellido = "Ambrosion", Usuario = "Ambrosape", Mail = "Maximoambrosino5@gmail.com", Contraseña = "Ambro" });
