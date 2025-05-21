@@ -26,5 +26,12 @@ namespace Visual
             frm.EventoSeleccionado = EventoSeleccionado;
             frm.Show(); this.Hide();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmMenuVendedor frm = new frmMenuVendedor();
+            frm.NombreUsuario = NombreUsuario;
+            frm.Show(); this.Hide();
+        }
     }
 }

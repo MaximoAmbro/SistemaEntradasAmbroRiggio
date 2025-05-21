@@ -8,20 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Visual
+namespace Visual.Vendedor
 {
-    public partial class frmRegistrarLocal : Form
+    public partial class frmRegistrarSector : Form
     {
-        public string NombreUsuario { get; set; }
-        public frmRegistrarLocal()
+        public frmRegistrarSector()
         {
             InitializeComponent();
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmMenuVendedor frm = new frmMenuVendedor();
-            frm.Show(); this.Hide();
+            frmRegistrarEvento frmRegistrarEvento = new frmRegistrarEvento();
+            frmRegistrarEvento.Show();
+            this.Hide();
         }
     }
 }

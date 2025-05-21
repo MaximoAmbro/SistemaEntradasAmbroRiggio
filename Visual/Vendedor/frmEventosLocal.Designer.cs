@@ -90,6 +90,7 @@
             btnVolver.TabIndex = 42;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // label1
             // 

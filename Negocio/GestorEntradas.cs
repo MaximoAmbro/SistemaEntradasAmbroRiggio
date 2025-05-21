@@ -23,6 +23,18 @@ namespace Negocio
         public int TotalEntradas { get; set; }
         public string MensajeTicket { get; set; }
         public byte[] QRCodeImage { get; set; }
+        private static GestorEntradas _instance;
+        public static GestorEntradas Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GestorEntradas();
+                }
+                return _instance;
+            }
+        }
     }
     public partial class GestorEntradas //Metodos
     {
