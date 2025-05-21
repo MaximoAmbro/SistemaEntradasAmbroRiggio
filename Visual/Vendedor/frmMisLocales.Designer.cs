@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvLocales = new System.Windows.Forms.DataGridView();
+            dgvMisLocales = new System.Windows.Forms.DataGridView();
             label2 = new System.Windows.Forms.Label();
             btnVolver = new System.Windows.Forms.Button();
             btnEventosLocal = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)dgvLocales).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMisLocales).BeginInit();
             SuspendLayout();
             // 
-            // dgvLocales
+            // dgvMisLocales
             // 
-            dgvLocales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvLocales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dgvLocales.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            dgvLocales.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dgvLocales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLocales.Cursor = System.Windows.Forms.Cursors.Hand;
-            dgvLocales.Location = new System.Drawing.Point(8, 109);
-            dgvLocales.Name = "dgvLocales";
-            dgvLocales.RowHeadersWidth = 51;
-            dgvLocales.Size = new System.Drawing.Size(876, 233);
-            dgvLocales.TabIndex = 39;
+            dgvMisLocales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvMisLocales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dgvMisLocales.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            dgvMisLocales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dgvMisLocales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMisLocales.Cursor = System.Windows.Forms.Cursors.Hand;
+            dgvMisLocales.Location = new System.Drawing.Point(8, 109);
+            dgvMisLocales.Name = "dgvMisLocales";
+            dgvMisLocales.RowHeadersWidth = 51;
+            dgvMisLocales.Size = new System.Drawing.Size(876, 233);
+            dgvMisLocales.TabIndex = 39;
             // 
             // label2
             // 
@@ -73,6 +73,7 @@
             btnVolver.TabIndex = 37;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // btnEventosLocal
             // 
@@ -96,20 +97,20 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(893, 438);
             Controls.Add(btnEventosLocal);
-            Controls.Add(dgvLocales);
+            Controls.Add(dgvMisLocales);
             Controls.Add(label2);
             Controls.Add(btnVolver);
             Name = "frmMisLocales";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MisLocales";
-            ((System.ComponentModel.ISupportInitialize)dgvLocales).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMisLocales).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvLocales;
+        private System.Windows.Forms.DataGridView dgvMisLocales;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnEventosLocal;

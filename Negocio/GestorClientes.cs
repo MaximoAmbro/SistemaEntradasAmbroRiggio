@@ -10,24 +10,24 @@ using Entidades;
 namespace Negocio
 {
         public partial class GestorClientes // Lista
-    {
-        public static List<Cliente> clientes = new List<Cliente>();
-        Cliente cliente = new Cliente();
-        private static GestorClientes _instance;
-
-        public static GestorClientes Instance
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new GestorClientes();
-                }
-                return _instance;
-            }
-        }
+            public static List<Cliente> clientes = new List<Cliente>();
+            Cliente cliente = new Cliente();
+            private static GestorClientes _instance;
 
-    }
+            public static GestorClientes Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new GestorClientes();
+                    }
+                    return _instance;
+                }
+            }
+
+        }
         public partial class GestorClientes // Metodos
         {
             public void CambiarContraseña(string usuario, string contraseña)
@@ -170,7 +170,7 @@ namespace Negocio
     {
         public void CargarLista()
         {
-            clientes.Add(new Cliente { Nombre = "Pedro", Apellido = "Lopez", NombreUsuario = "Pedro_Lopez35", Mail = "Cliente", Contraseña = "a1" });
+            clientes.Add(new Cliente { Nombre = "Pedro", Apellido = "Lopez", NombreUsuario = "Pedro_Lopez35", Mail = "Cliente", Contraseña = "a" });
             clientes.Add(new Cliente { Nombre = "Juan pedro", Apellido = "", NombreUsuario = "z", Mail = "z", Contraseña = "z" });
             clientes.Add(new Cliente { Nombre = "Juan", Apellido = "Riggio", NombreUsuario = "JuaniLGBT", Mail = "juanriggio@gmail.com", Contraseña = "a" });
             clientes.Add(new Cliente { Nombre = "Maximo", Apellido = "Ambrosion", NombreUsuario = "Ambrosape", Mail = "Maximoambrosino5@gmail.com", Contraseña = "Ambro" });

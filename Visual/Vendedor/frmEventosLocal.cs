@@ -26,5 +26,11 @@ namespace Visual
             frm.EventoSeleccionado = EventoSeleccionado;
             frm.Show(); this.Hide();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmMisLocales frm = new frmMisLocales();
+            frm.Show(); this.Hide();
+        }
     }
 }
