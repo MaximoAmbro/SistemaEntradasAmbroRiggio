@@ -13,11 +13,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Visual
 {
-    public partial class frmCrearUsuario : Form
+    public partial class frmCrearCliente : Form
     {
         int checkcount = 0;
 
-        public frmCrearUsuario()
+        public frmCrearCliente()
         {
             InitializeComponent();
 
@@ -134,7 +134,7 @@ namespace Visual
         public void AgregarUsuario(string nombre,string apellido, string usuario, string mail, string contraseña)
         {
             Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-            gestorClientes.AgregarCliente(nombre, apellido, usuario, mail, contraseña);
+            gestorClientes.AgregarCliente(nombre, apellido, mail, contraseña);
         }
     }
 }

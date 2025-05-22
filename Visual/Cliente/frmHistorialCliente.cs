@@ -12,19 +12,19 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class frmHistorialUsuario : Form
+    public partial class frmHistorialCliente : Form
     {
-        public string NombreUsuario { get; set; }
+        public string Mail { get; set; }
         public List<Evento> ListaEventos { get; set; }
-        public frmHistorialUsuario()
+        public frmHistorialCliente()
         {
             InitializeComponent();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmMenuUsuario frm = new frmMenuUsuario();
-            frm.NombreUsuario = NombreUsuario;
+            frmMenuCliente frm = new frmMenuCliente();
+            frm.Mail = Mail;
             frm.Show();
             dgvHistorial.ClearSelection();
             this.Hide();
@@ -32,12 +32,11 @@ namespace Visual
         private void frmHistorial_Load(object sender, EventArgs e)
         {
             
-            GestorClientes gestorClientes = GestorClientes.Instance;
-            ListaEventos = gestorClientes.ObtenerListaEventos(NombreUsuario);
-            dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos(NombreUsuario);
+            ListaEventos = GestorClientes.Instance.ObtenerListaEventos(Mail);
+            dgvHistorial.DataSource = GestorClientes.Instance.ObtenerListaEventos(Mail);
 
-             ListaEventos = gestorClientes.ObtenerListaEventos(NombreUsuario);
-             dgvHistorial.DataSource = gestorClientes.ObtenerListaEventos(NombreUsuario);
+             ListaEventos = GestorClientes.Instance.ObtenerListaEventos(Mail);
+             dgvHistorial.DataSource = GestorClientes.Instance.ObtenerListaEventos(Mail);
              dgvHistorial.Refresh();
              DataGridViewColumn columnaNombre = new DataGridViewColumn();
              DataGridViewColumn columnaUbicacion = new DataGridViewColumn();

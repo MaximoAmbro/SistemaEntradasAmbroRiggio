@@ -12,7 +12,7 @@ namespace Visual
 {
     public partial class frmRegistrarLocal: Form
     {
-        public string NombreUsuario { get; set; }
+        public string Mail { get; set; }
         public frmRegistrarLocal()
         {
             InitializeComponent();

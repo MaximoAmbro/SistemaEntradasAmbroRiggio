@@ -47,13 +47,12 @@ namespace Visual
         }
         private void lblcrearcuenta_Click(object sender, EventArgs e)
         {
-            frmCrearUsuario frm = new frmCrearUsuario();
+            frmCrearCliente frm = new frmCrearCliente();
             frm.Show();
             this.Hide();
         }
         private void btninicio_Click(object sender, EventArgs e)
         {
-            {
                 if (string.IsNullOrEmpty(TxtUsername.Text))
                 {
                     MessageBox.Show("Por favor, ingrese usuario",
@@ -75,18 +74,17 @@ namespace Visual
                 {
                     ValidarLista(TxtUsername.Text, TxtPassword.Text);
                 }
-            }
         }
-        public void ValidarLista(string usuario, string contraseña)
+        public void ValidarLista(string mail, string contraseña)
         {
-            if (GestorClientes.Instance.EncontrarMail(usuario))
+            if (GestorClientes.Instance.EncontrarMail(mail))
             {
-                if (GestorClientes.Instance.EncontrarMail(usuario))
+                if (GestorClientes.Instance.EncontrarMail(mail))
                 {
-                    if (GestorClientes.Instance.EncontrarContraseña(contraseña, usuario))
+                    if (GestorClientes.Instance.EncontrarContraseña(contraseña, mail))
                     {
-                        frmMenuUsuario frm = new frmMenuUsuario();
-                        frm.NombreUsuario = usuario;
+                        frmMenuCliente frm = new frmMenuCliente();
+                        frm.Mail = mail;
                         frm.Show();
                         this.Hide();
                     }
@@ -106,14 +104,14 @@ namespace Visual
                                       MessageBoxIcon.Error);
                 }
             }
-            if (GestorVendedores.Instance.EncontrarMail(usuario))
+            if (GestorVendedores.Instance.EncontrarMail(mail))
             {
-                if (GestorVendedores.Instance.EncontrarMail(usuario))
+                if (GestorVendedores.Instance.EncontrarMail(mail))
                 {
-                    if (GestorVendedores.Instance.EncontrarContraseña(contraseña, usuario))
+                    if (GestorVendedores.Instance.EncontrarContraseña(contraseña, mail))
                     {
                         frmMenuVendedor frm = new frmMenuVendedor();
-                        frm.NombreUsuario = usuario;
+                        frm.Mail = mail;
                         frm.Show();
                         this.Hide();
                     }

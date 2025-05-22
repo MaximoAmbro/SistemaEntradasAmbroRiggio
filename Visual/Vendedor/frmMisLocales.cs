@@ -15,7 +15,6 @@ namespace Visual
 {
     public partial class frmMisLocales : Form
     {
-        public string NombreUsuario { get; set; }
         public string Mail { get; set; }
         public string EventoSeleccionado { get; set; }
         public List<Local> ListaLocales { get; set; }
@@ -27,25 +26,23 @@ namespace Visual
         private void btnEventosLocal_Click(object sender, EventArgs e)
         {
             frmEventosLocal frm = new frmEventosLocal();
-            frm.NombreUsuario = NombreUsuario;
+            frm.Mail = Mail;
             frm.EventoSeleccionado = EventoSeleccionado;
             frm.Show(); this.Hide();
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
             frmMenuVendedor frm = new frmMenuVendedor();
-            frm.NombreUsuario = NombreUsuario;
+            frm.Mail = Mail;
             frm.Show(); this.Hide();
         }
-
         private void frmMisLocales_Load(object sender, EventArgs e)
         {
-            GestorVendedores gestorVendedores = GestorVendedores.Instance;
-            ListaLocales = gestorVendedores.ObtenerListaLocales(NombreUsuario);
-            dgvLocales.DataSource = gestorVendedores.ObtenerListaLocales(NombreUsuario);
+            ListaLocales = GestorVendedores.Instance.ObtenerListaLocales(Mail);
+            dgvLocales.DataSource = GestorVendedores.Instance.ObtenerListaLocales(Mail);
 
-            ListaLocales = gestorVendedores.ObtenerListaLocales(NombreUsuario);
-            dgvLocales.DataSource = gestorVendedores.ObtenerListaLocales(NombreUsuario);
+            ListaLocales = GestorVendedores.Instance.ObtenerListaLocales(Mail);
+            dgvLocales.DataSource = GestorVendedores.Instance.ObtenerListaLocales(Mail);
             dgvLocales.Refresh();
             DataGridViewColumn columnaNombre = new DataGridViewColumn();
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();

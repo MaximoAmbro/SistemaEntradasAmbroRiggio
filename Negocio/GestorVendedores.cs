@@ -49,16 +49,16 @@ namespace Repositorio
         }
         public bool EncontrarContraseña(string contraseña, string mail)
         {
-            Cliente cliente1 = null;
+            Vendedor vendedor1= null;
             foreach (var c in vendedores)
             {
                 if (c.Mail == mail && c.Contraseña == contraseña)
                 {
-                    cliente1 = c;
+                    vendedor1 = c;
                     break;
                 }
             }
-            if (cliente1 == null)
+            if (vendedor1 == null)
             {
                 return false;
             }
@@ -81,15 +81,24 @@ namespace Repositorio
             }
             return null;
         }
-
-
-
+        public void DevolverNombre(string mail, out string nombre)
+        {
+            nombre = "";
+            foreach (var c in vendedores)
+            {
+                if (c.Mail == mail)
+                {
+                    nombre = c.Nombre;
+                    break;
+                }
+            }
+        }
     } // Metodos
     public partial class GestorVendedores
     {
         public void CargarLista()
         {
-            vendedores.Add(new Vendedor { Nombre = "Ambro", Apellido = "Sape", Usuario = "V", Mail = "V", Contraseña = "V"  });
+            vendedores.Add(new Vendedor { Nombre = "Ambro", Apellido = "Sape", Mail = "V", Contraseña = "V"  });
         }
 
     } // Creacion de Elementos

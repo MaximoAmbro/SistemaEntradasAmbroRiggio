@@ -13,7 +13,7 @@ namespace Visual
 {
     public partial class frmEventosLocal : Form
     {
-        public string NombreUsuario { get; set; }
+        public string Mail { get; set; }
         public string EventoSeleccionado { get; set; }
         public frmEventosLocal()
         {
@@ -22,7 +22,7 @@ namespace Visual
         private void btnNuevoEventoLocal_Click(object sender, EventArgs e)
         {
             frmRegistrarEvento frm = new frmRegistrarEvento();
-            frm.NombreUsuario = NombreUsuario;
+            frm.Mail = Mail;
             frm.EventoSeleccionado = EventoSeleccionado;
             frm.Show(); this.Hide();
         }

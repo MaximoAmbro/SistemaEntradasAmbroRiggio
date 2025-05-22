@@ -29,15 +29,15 @@ using iText.Pdfa.Checker;
 
 namespace Visual
 {
-    public partial class FrmCompraUsuario : Form
+    public partial class FrmCompraCliente : Form
     {
         public string NombreEvento { get; set; }
         public string NombreUsuario { get; set; }
-        GestorEntradas gestorE = new GestorEntradas();
-        GestorClientes gestorC = GestorClientes.Instance;
-        public FrmCompraUsuario()
+        public string Mail { get; set; }
+        GestorEventos gestorE = new GestorEventos();
+        public FrmCompraCliente()
         {
-            frmEventosUsuario frm = new frmEventosUsuario();
+            frmEventosCliente frm = new frmEventosCliente();
 
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace Visual
         {
             label1.Text = NombreEvento;
             string SectorA, SectorB, SectorC, PrecioA, PrecioB, PrecioC;
-            GestorEntradas gestor = new GestorEntradas();
+            GestorEventos gestor = new GestorEventos();
             gestor.BuscarLista(NombreEvento);
             SectorA = gestor.SectorA.ToString();
             SectorB = gestor.SectorB.ToString();
@@ -62,8 +62,8 @@ namespace Visual
         }
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
-            frmEventosUsuario frm = new frmEventosUsuario();
-            frm.NombreUsuario= NombreUsuario;
+            frmEventosCliente frm = new frmEventosCliente();
+            frm.Mail = Mail;
             frm.Show();
             this.Hide();
         }
@@ -80,7 +80,7 @@ namespace Visual
         }
         public void GenerarTicket()
         {
-            GestorEntradas gestor = new GestorEntradas();
+            GestorEventos gestor = new GestorEventos();
             int cantidadA = Convert.ToInt32(NumPrimero.Text);
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
@@ -160,7 +160,7 @@ namespace Visual
             {
                 if (_evento.Nombre == NombreEvento)
                 {
-                    gestorC.AgregarEntrada(_evento, NombreUsuario);
+                    GestorClientes.Instance.AgregarEntrada(_evento, Mail);
                     break;
                 }
             }

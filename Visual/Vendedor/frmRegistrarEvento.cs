@@ -12,7 +12,7 @@ namespace Visual.Vendedor
 {
     public partial class frmRegistrarEvento: Form
     {
-        public string NombreUsuario { get; set; }
+        public string Mail { get; set; }
         public string EventoSeleccionado { get; set; }
         public frmRegistrarEvento()
         {

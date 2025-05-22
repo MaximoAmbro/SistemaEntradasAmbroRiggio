@@ -1,4 +1,5 @@
 ﻿using Negocio;
+using Repositorio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Visual
     public partial class frmMenuVendedor : Form
     {
         public string NombreUsuario { get; set; }
+        public string Mail { get; set; }
         public frmMenuVendedor()
         {
             InitializeComponent();
@@ -22,21 +24,20 @@ namespace Visual
         private void btnMisLocales_Click(object sender, EventArgs e)
         {
             frmMisLocales frm = new frmMisLocales();
-            frm.NombreUsuario = NombreUsuario;
+            frm.Mail = Mail;
             frm.Show(); this.Hide();
         }
         private void btnRegistrarLocal_Click(object sender, EventArgs e)
         {
             frmRegistrarLocal frm = new frmRegistrarLocal();
-            frm.NombreUsuario = NombreUsuario;
+            frm.Mail = Mail;
             frm.Show(); this.Hide();
         }
-
         private void frmMenuVendedor_Load(object sender, EventArgs e)
         {
+            GestorVendedores.Instance.DevolverNombre(Mail, out string NombreUsuario);
             lblNombre.Text = NombreUsuario;
         }
-
         private void lblvolver_Click(object sender, EventArgs e)
         {
             frmInicio frmInicio = new frmInicio();

@@ -11,7 +11,7 @@ using QRCoder;
 using static Entidades.Evento;
 namespace Negocio
 {
-    public partial class GestorEntradas //Lista
+    public partial class GestorEventos //Lista
     {
         List<Evento> eventos = new List<Evento>();
         public string SectorA { get; set; }
@@ -24,7 +24,7 @@ namespace Negocio
         public string MensajeTicket { get; set; }
         public byte[] QRCodeImage { get; set; }
     }
-    public partial class GestorEntradas //Metodos
+    public partial class GestorEventos //Metodos
     {
         public bool BuscarLista(string NombreEvento)
         {
@@ -122,9 +122,9 @@ namespace Negocio
             }
         }
     }
-    public partial class GestorEntradas //Eventos cargados
+    public partial class GestorEventos //Eventos cargados
     {
-        public GestorEntradas()
+        public GestorEventos()
         {
            eventos.Add(new Evento
             {

@@ -1,6 +1,6 @@
 ﻿namespace Visual
 {
-    partial class frmMenuUsuario
+    partial class frmMenuCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -101,7 +101,6 @@
             lblNombre.TabIndex = 33;
             lblNombre.Text = "[USUARIO]";
             lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            lblNombre.Click += lblNombre_Click;
             // 
             // frmMenuUsuario
             // 
