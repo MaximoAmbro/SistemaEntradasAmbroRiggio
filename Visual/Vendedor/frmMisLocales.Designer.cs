@@ -73,6 +73,7 @@
             btnVolver.TabIndex = 37;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // btnEventosLocal
             // 
@@ -102,6 +103,7 @@
             Name = "frmMisLocales";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MisLocales";
+            Load += frmMisLocales_Load;
             ((System.ComponentModel.ISupportInitialize)dgvLocales).EndInit();
             ResumeLayout(false);
             PerformLayout();

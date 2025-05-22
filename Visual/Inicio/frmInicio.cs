@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades; 
 using Negocio;
+using Repositorio;
 
 namespace Visual
 {
@@ -18,11 +19,13 @@ namespace Visual
         public frmInicio()
         {
             InitializeComponent();
+            GestorClientes.Instance.CargarLista();
+            GestorVendedores.Instance.CargarLista();
         }
         private void frmInicio_Load(object sender, EventArgs e)
         {
-            TxtUsername.Text = "Pedro_Lopez35";
-            TxtPassword.Text = "Aa1234";
+            TxtUsername.Text = "";
+            TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
         }
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
@@ -76,31 +79,59 @@ namespace Visual
         }
         public void ValidarLista(string usuario, string contraseña)
         {
-            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-
-            if (gestorClientes.EncontrarUsuario(usuario))
+            if (GestorClientes.Instance.EncontrarMail(usuario))
             {
-                if (gestorClientes.EncontrarContraseña(contraseña, usuario))
+                if (GestorClientes.Instance.EncontrarMail(usuario))
                 {
-                    frmMenuUsuario frm = new frmMenuUsuario();
-                    frm.NombreUsuario = usuario;
-                    frm.Show();
-                    this.Hide();
+                    if (GestorClientes.Instance.EncontrarContraseña(contraseña, usuario))
+                    {
+                        frmMenuUsuario frm = new frmMenuUsuario();
+                        frm.NombreUsuario = usuario;
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta",
+                                          "Error",
+                                          MessageBoxButtons.OK,
+                                          MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña incorrecta",
+                    MessageBox.Show("Usuario no registrado",
                                       "Error",
                                       MessageBoxButtons.OK,
                                       MessageBoxIcon.Error);
                 }
             }
-            else
+            if (GestorVendedores.Instance.EncontrarMail(usuario))
             {
-                MessageBox.Show("Usuario no registrado",
-                                  "Error",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error);
+                if (GestorVendedores.Instance.EncontrarMail(usuario))
+                {
+                    if (GestorVendedores.Instance.EncontrarContraseña(contraseña, usuario))
+                    {
+                        frmMenuVendedor frm = new frmMenuVendedor();
+                        frm.NombreUsuario = usuario;
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta",
+                                          "Error",
+                                          MessageBoxButtons.OK,
+                                          MessageBoxIcon.Error);
+                    }
+                }
+                    else
+                {
+                    MessageBox.Show("Usuario no registrado",
+                                      "Error",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Error);
+                }
             }
         }
     }

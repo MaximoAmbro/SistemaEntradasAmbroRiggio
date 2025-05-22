@@ -59,6 +59,7 @@
             lblvolver.Size = new System.Drawing.Size(189, 28);
             lblvolver.TabIndex = 37;
             lblvolver.Text = "VOLVER AL INICIO ";
+            lblvolver.Click += lblvolver_Click;
             // 
             // label1
             // 
@@ -114,6 +115,7 @@
             Name = "frmMenuVendedor";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MenuVendedor";
+            Load += frmMenuVendedor_Load;
             ResumeLayout(false);
             PerformLayout();
         }

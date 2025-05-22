@@ -67,12 +67,12 @@ namespace Negocio
                     return true;
                 }
             }
-            public bool EncontrarContraseña(string contraseña, string usuario)
+            public bool EncontrarContraseña(string contraseña, string mail)
             {
                 Cliente cliente1 = null;
                 foreach (var c in clientes)
                 {
-                    if (c.Usuario == usuario && c.Contraseña == contraseña)
+                    if (c.Mail == mail && c.Contraseña == contraseña)
                     {
                         cliente1 = c;
                         break;
@@ -159,6 +159,7 @@ namespace Negocio
     {
         public void CargarLista()
         {
+            clientes.Add(new Cliente { Nombre = "Pedro", Apellido = "Lopez", Usuario = "Pedro_Lopez35", Mail = "C", Contraseña = "C" });
             clientes.Add(new Cliente { Nombre = "Pedro", Apellido = "Lopez", Usuario = "Pedro_Lopez35", Mail = "PedroLopez@gmail.com", Contraseña = "Aa1234" });
             clientes.Add(new Cliente { Nombre = "", Apellido = "", Usuario = "z", Mail = "z", Contraseña = "z" });
             clientes.Add(new Cliente { Nombre = "Juan", Apellido = "Riggio", Usuario = "JuaniLGBT", Mail = "juanriggio@gmail.com", Contraseña = "a" });

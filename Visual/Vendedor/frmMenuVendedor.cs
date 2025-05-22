@@ -18,11 +18,6 @@ namespace Visual
         {
             InitializeComponent();
         }
-        private void frmMenuVendedor_Load(object sender, EventArgs e)
-        {
-            GestorClientes gestorClientes = new GestorClientes();
-            lblNombre.Text = NombreUsuario;
-        }
 
         private void btnMisLocales_Click(object sender, EventArgs e)
         {
@@ -35,6 +30,18 @@ namespace Visual
             frmRegistrarLocal frm = new frmRegistrarLocal();
             frm.NombreUsuario = NombreUsuario;
             frm.Show(); this.Hide();
+        }
+
+        private void frmMenuVendedor_Load(object sender, EventArgs e)
+        {
+            lblNombre.Text = NombreUsuario;
+        }
+
+        private void lblvolver_Click(object sender, EventArgs e)
+        {
+            frmInicio frmInicio = new frmInicio();
+            
+            frmInicio.Show(); this.Hide();
         }
     }
 }
