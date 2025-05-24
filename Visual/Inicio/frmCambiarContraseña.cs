@@ -17,17 +17,14 @@ namespace Visual
         {
             InitializeComponent();
         }
-
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
             frmInicio frmInicio = new frmInicio();
             frmInicio.Show();
             this.Hide();       
         }
-
         private void frmCambiarContraseña_Load(object sender, EventArgs e)
         {
-            TxtUsername.Text = "Pedro_Lopez35";
             txtMail.Text = "PedroLopez@gmail.com";
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
@@ -52,35 +49,18 @@ namespace Visual
 
             if (ControlarTxt() == true)
             {
-                if(gestorClientes.EncontrarUsuario(TxtUsername.Text) == true)
-            {
                     if(gestorClientes.EncontrarMail(txtMail.Text) == true)
                     {
                         MessageBox.Show("Tengo que terminar el codigo");
                     }
-                        else
-                        {
-                            MessageBox.Show("Usuario no encontrado");
-                        }
-                }
-                    else
-                    {
-                        MessageBox.Show("Usuario no encontrado");
-                    }
             }
                     else
                     {
                         MessageBox.Show("Usuario no encontrado");
                     }
-
          }
-            public bool ControlarTxt()
+        public bool ControlarTxt()
         {
-            if (string.IsNullOrEmpty(TxtUsername.Text))
-            {
-                MessageBox.Show("Ingrese Usuario: ");
-                return false;
-            }
             if (string.IsNullOrEmpty(TxtPassword.Text))
             {
                 MessageBox.Show("Ingrese contraseña: ");
@@ -106,6 +86,5 @@ namespace Visual
                 return true;
             }
         }
-        
     }  
 }

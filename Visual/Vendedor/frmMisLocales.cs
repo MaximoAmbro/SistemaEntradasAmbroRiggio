@@ -10,25 +10,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Visual.Vendedor;
 
 namespace Visual
 {
     public partial class frmMisLocales : Form
     {
         public string Mail { get; set; }
-        public string EventoSeleccionado { get; set; }
         public List<Local> ListaLocales { get; set; }
         public frmMisLocales()
         {
             InitializeComponent();
-            GestorVendedores.Instance.CargarLista();
         }
         private void btnEventosLocal_Click(object sender, EventArgs e)
         {
-            frmEventosLocal frm = new frmEventosLocal();
-            frm.Mail = Mail;
-            frm.EventoSeleccionado = EventoSeleccionado;
-            frm.Show(); this.Hide();
+            if (dgvLocales.SelectedCells.Count > 0)
+            {
+                string nombreLocal = dgvLocales.SelectedCells[0].Value.ToString();
+                frmEventosLocal frm = new frmEventosLocal();
+                frm.NombreLocal = nombreLocal;
+                frm.Mail = Mail;
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un local", "Hola Pedro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -38,11 +46,7 @@ namespace Visual
         }
         private void frmMisLocales_Load(object sender, EventArgs e)
         {
-            ListaLocales = GestorVendedores.Instance.ObtenerListaLocales(Mail);
-            dgvLocales.DataSource = GestorVendedores.Instance.ObtenerListaLocales(Mail);
-
-            ListaLocales = GestorVendedores.Instance.ObtenerListaLocales(Mail);
-            dgvLocales.DataSource = GestorVendedores.Instance.ObtenerListaLocales(Mail);
+            dgvLocales.DataSource = GestorPropietario.Instance.ObtenerListaLocales(Mail);
             dgvLocales.Refresh();
             DataGridViewColumn columnaNombre = new DataGridViewColumn();
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();

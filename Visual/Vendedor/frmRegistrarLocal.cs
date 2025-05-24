@@ -10,12 +10,19 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class frmRegistrarLocal: Form
+    public partial class frmRegistrarLocal : Form
     {
         public string Mail { get; set; }
         public frmRegistrarLocal()
         {
             InitializeComponent();
+        }
+
+        private void lblyatengocuen_Click(object sender, EventArgs e)
+        {
+            frmMenuVendedor frm = new frmMenuVendedor();
+            frm.Mail = Mail;
+            frm.Show(); this.Hide();
         }
     }
 }

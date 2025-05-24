@@ -1,4 +1,4 @@
-﻿namespace Visual
+﻿namespace Visual.Vendedor
 {
     partial class frmEventosLocal
     {
@@ -28,50 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnNuevoEventoLocal = new System.Windows.Forms.Button();
-            dgvLocales = new System.Windows.Forms.DataGridView();
+            btnEliminarEvento = new System.Windows.Forms.Button();
+            dgvEventos = new System.Windows.Forms.DataGridView();
             label2 = new System.Windows.Forms.Label();
             btnVolver = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)dgvLocales).BeginInit();
+            lblNombre = new System.Windows.Forms.Label();
+            btnAgregarEvento = new System.Windows.Forms.Button();
+            btnModificarEvento = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)dgvEventos).BeginInit();
             SuspendLayout();
             // 
-            // btnNuevoEventoLocal
+            // btnEliminarEvento
             // 
-            btnNuevoEventoLocal.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            btnNuevoEventoLocal.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnNuevoEventoLocal.FlatAppearance.BorderSize = 0;
-            btnNuevoEventoLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnNuevoEventoLocal.ForeColor = System.Drawing.Color.White;
-            btnNuevoEventoLocal.Location = new System.Drawing.Point(279, 348);
-            btnNuevoEventoLocal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            btnNuevoEventoLocal.Name = "btnNuevoEventoLocal";
-            btnNuevoEventoLocal.Size = new System.Drawing.Size(215, 42);
-            btnNuevoEventoLocal.TabIndex = 45;
-            btnNuevoEventoLocal.Text = "Nuevo evento";
-            btnNuevoEventoLocal.UseVisualStyleBackColor = false;
-            btnNuevoEventoLocal.Click += btnNuevoEventoLocal_Click;
+            btnEliminarEvento.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
+            btnEliminarEvento.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnEliminarEvento.FlatAppearance.BorderSize = 0;
+            btnEliminarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnEliminarEvento.ForeColor = System.Drawing.Color.White;
+            btnEliminarEvento.Location = new System.Drawing.Point(50, 354);
+            btnEliminarEvento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            btnEliminarEvento.Name = "btnEliminarEvento";
+            btnEliminarEvento.Size = new System.Drawing.Size(215, 42);
+            btnEliminarEvento.TabIndex = 45;
+            btnEliminarEvento.Text = "Eliminar evento";
+            btnEliminarEvento.UseVisualStyleBackColor = false;
+            btnEliminarEvento.Click += btnEliminarEvento_Click;
             // 
-            // dgvLocales
+            // dgvEventos
             // 
-            dgvLocales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvLocales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dgvLocales.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            dgvLocales.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dgvLocales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLocales.Cursor = System.Windows.Forms.Cursors.Hand;
-            dgvLocales.Location = new System.Drawing.Point(8, 109);
-            dgvLocales.Name = "dgvLocales";
-            dgvLocales.RowHeadersWidth = 51;
-            dgvLocales.Size = new System.Drawing.Size(876, 233);
-            dgvLocales.TabIndex = 44;
+            dgvEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvEventos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dgvEventos.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            dgvEventos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEventos.Cursor = System.Windows.Forms.Cursors.Hand;
+            dgvEventos.Location = new System.Drawing.Point(12, 115);
+            dgvEventos.Name = "dgvEventos";
+            dgvEventos.RowHeadersWidth = 51;
+            dgvEventos.Size = new System.Drawing.Size(876, 233);
+            dgvEventos.TabIndex = 44;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Nirmala UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label2.Location = new System.Drawing.Point(138, 9);
+            label2.Location = new System.Drawing.Point(32, 9);
             label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(233, 62);
@@ -83,50 +85,87 @@
             btnVolver.BackColor = System.Drawing.Color.White;
             btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             btnVolver.ForeColor = System.Drawing.Color.FromArgb(164, 165, 169);
-            btnVolver.Location = new System.Drawing.Point(326, 395);
+            btnVolver.Location = new System.Drawing.Point(394, 401);
             btnVolver.Margin = new System.Windows.Forms.Padding(2);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new System.Drawing.Size(121, 33);
             btnVolver.TabIndex = 42;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
-            // label1
+            // lblNombre
             // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Nirmala UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
-            label1.Location = new System.Drawing.Point(390, 9);
-            label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(422, 62);
-            label1.TabIndex = 46;
-            label1.Text = "[NOMBRE LOCAL]";
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new System.Drawing.Font("Nirmala UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblNombre.ForeColor = System.Drawing.Color.FromArgb(116, 86, 174);
+            lblNombre.Location = new System.Drawing.Point(294, 9);
+            lblNombre.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new System.Drawing.Size(358, 62);
+            lblNombre.TabIndex = 46;
+            lblNombre.Text = "(Nombre local)";
+            // 
+            // btnAgregarEvento
+            // 
+            btnAgregarEvento.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
+            btnAgregarEvento.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnAgregarEvento.FlatAppearance.BorderSize = 0;
+            btnAgregarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAgregarEvento.ForeColor = System.Drawing.Color.White;
+            btnAgregarEvento.Location = new System.Drawing.Point(348, 354);
+            btnAgregarEvento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            btnAgregarEvento.Name = "btnAgregarEvento";
+            btnAgregarEvento.Size = new System.Drawing.Size(215, 42);
+            btnAgregarEvento.TabIndex = 47;
+            btnAgregarEvento.Text = "Agregar evento";
+            btnAgregarEvento.UseVisualStyleBackColor = false;
+            btnAgregarEvento.Click += btnAgregarEvento_Click;
+            // 
+            // btnModificarEvento
+            // 
+            btnModificarEvento.BackColor = System.Drawing.Color.FromArgb(116, 86, 174);
+            btnModificarEvento.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnModificarEvento.FlatAppearance.BorderSize = 0;
+            btnModificarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnModificarEvento.ForeColor = System.Drawing.Color.White;
+            btnModificarEvento.Location = new System.Drawing.Point(622, 354);
+            btnModificarEvento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            btnModificarEvento.Name = "btnModificarEvento";
+            btnModificarEvento.Size = new System.Drawing.Size(215, 42);
+            btnModificarEvento.TabIndex = 48;
+            btnModificarEvento.Text = "Modificar evento";
+            btnModificarEvento.UseVisualStyleBackColor = false;
             // 
             // frmEventosLocal
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(893, 438);
-            Controls.Add(label1);
-            Controls.Add(btnNuevoEventoLocal);
-            Controls.Add(dgvLocales);
+            Controls.Add(btnModificarEvento);
+            Controls.Add(btnAgregarEvento);
+            Controls.Add(lblNombre);
+            Controls.Add(btnEliminarEvento);
+            Controls.Add(dgvEventos);
             Controls.Add(label2);
             Controls.Add(btnVolver);
             Name = "frmEventosLocal";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "EventosLocal";
-            ((System.ComponentModel.ISupportInitialize)dgvLocales).EndInit();
+            Text = "frmRegistrarEvento";
+            Load += frmRegistrarEvento_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvEventos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnNuevoEventoLocal;
-        private System.Windows.Forms.DataGridView dgvLocales;
+        private System.Windows.Forms.Button btnEliminarEvento;
+        private System.Windows.Forms.DataGridView dgvEventos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnAgregarEvento;
+        private System.Windows.Forms.Button btnModificarEvento;
     }
 }

@@ -47,26 +47,6 @@ namespace Negocio
         {
             cliente = new Cliente { Nombre = nombre, Apellido = apellido, Mail = mail, Contraseña = contraseña }; clientes.Add(cliente);
         }
-        public bool EncontrarUsuario(string usuario)
-        {
-            Cliente cliente1 = null;
-            foreach (var c in clientes)
-            {
-                if (c.Mail == usuario)
-                {
-                    cliente1 = c;
-                    break;
-                }
-            }
-            if (cliente1 == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
         public bool EncontrarContraseña(string contraseña, string mail)
         {
             Cliente cliente1 = null;

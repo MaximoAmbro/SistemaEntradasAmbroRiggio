@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace Visual.Vendedor
 {
-    public partial class frmRegistrarEvento: Form
+    public partial class AgregarSectorEvento: Form
     {
-        public string Mail { get; set; }
-        public string EventoSeleccionado { get; set; }
-        public frmRegistrarEvento()
+        public AgregarSectorEvento()
         {
             InitializeComponent();
         }

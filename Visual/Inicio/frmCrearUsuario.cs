@@ -1,4 +1,5 @@
 ﻿using Negocio;
+using Repositorio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +14,18 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Visual
 {
-    public partial class frmCrearCliente : Form
+    public partial class frmCrearUsuario : Form
     {
-        int checkcount = 0;
-
-        public frmCrearCliente()
+        public frmCrearUsuario()
         {
             InitializeComponent();
 
         }
         private void frmCrearUsuario_Load(object sender, EventArgs e)
         {
-            txtUsuario.Focus();
+
             txtmail.Text="A";
-            txtUsuario.Text = "A";
+            txtApellido.Text = "A";
             txtNombre.Text = "A";
             TxtPassword.Text = "A";
             TxtConfirmpassword.Text = "A";
@@ -56,21 +55,13 @@ namespace Visual
         {
             if (RevisarTextbox()== true)
             {
-
-                if(ValidarLista(txtUsuario.Text, txtmail.Text) == true)
-                {
-                    string nombre = txtNombre.Text;
-                    string usuario = txtUsuario.Text;
-                    string correo = txtmail.Text;
-                    string contraseña = TxtPassword.Text;
-                    string confirmarContraseña = TxtConfirmpassword.Text;
-                }
+                ValidarLista(txtmail.Text);
             }
             else { return; }
         }
         private bool RevisarTextbox()
         {
-            if (string.IsNullOrEmpty(txtUsuario.Text))
+            if (string.IsNullOrEmpty(txtmail.Text))
             {
                 MessageBox.Show("Ingrese nombre: ");
                 return false;
@@ -108,34 +99,49 @@ namespace Visual
                 return true;
             }
         }
-        public bool ValidarLista(string usuario, string mail)
+        public void ValidarLista(string mail)
         {
-            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-            if (gestorClientes.EncontrarMail(mail) == true)
+            if (cbTipoUsuario.Text == "Cliente")
             {
-                MessageBox.Show("Mail: " +mail + " ya está registrado");
-                return false;
+                if (GestorClientes.Instance.EncontrarMail(mail) == true)
+                {
+                    MessageBox.Show("Mail: " + mail + " ya está registrado");
+                }
+                if (GestorPropietario.Instance.EncontrarMail(mail) == true)
+                {
+                    MessageBox.Show("Mail: " + mail + " ya está registrado como propietario");
+                }
+
+                else
+                {
+                    GestorClientes.Instance.AgregarCliente(txtNombre.Text, txtApellido.Text, txtmail.Text, TxtPassword.Text);
+                    MessageBox.Show("Usuario creado");
+                    frmInicio frm = new frmInicio();
+                    frm.Show();
+                    this.Hide();
+                }
             }
-            else if (gestorClientes.EncontrarUsuario(usuario) == true)
+            if (cbTipoUsuario.Text == "Propietario")
             {
-                MessageBox.Show("Usuario: "+usuario + " ya está registrado");
-                return false;
-            }
-            else
-            {
-                AgregarUsuario(txtNombre.Text,txtApellido.Text, txtUsuario.Text, txtmail.Text,  TxtPassword.Text);
-                MessageBox.Show("Usuario creado");
-                frmInicio frm = new frmInicio();
-                frm.Show();
-                this.Hide();
-                return true;
+                if (GestorPropietario.Instance.EncontrarMail(mail) == true)
+                {
+                    MessageBox.Show("Mail: " + mail + " ya está registrado");
+                }
+                if (GestorClientes.Instance.EncontrarMail(mail) == true)
+                {
+                    MessageBox.Show("Mail: " + mail + " ya está registrado como cliente");
+                }
+                else
+                {
+                    GestorPropietario.Instance.AgregarPropietario(txtNombre.Text, txtApellido.Text, txtmail.Text, TxtPassword.Text);
+                    MessageBox.Show("Usuario creado");
+                    frmInicio frm = new frmInicio();
+                    frm.Show();
+                    this.Hide();
+                }
             }
         }
-        public void AgregarUsuario(string nombre,string apellido, string usuario, string mail, string contraseña)
-        {
-            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-            gestorClientes.AgregarCliente(nombre, apellido, mail, contraseña);
-        }
+
     }
 }
     

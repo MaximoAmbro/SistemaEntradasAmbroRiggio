@@ -90,7 +90,7 @@ namespace Negocio
                         "SECTOR: " + NombreSector + "\n" +
                         "PRECIO: " + c.Sectores.Find(x => x.Nombre == NombreSector).Precio.ToString() + "$\n" +
                         "HORARIO: " + hora + "\n" +
-                        "LUGAR: " + c.Locacion + "\n" +
+                        "LUGAR: " + c.Ubicacion + "\n" +
                         "FECHA: " + c.Fecha.ToString();
                     
                     string contenidoQR = "CÓDIGO: " + CodigoEvento;
@@ -130,7 +130,7 @@ namespace Negocio
             {
                 Nombre = "Ratones Paraonoicos",
                 Capacidad = 1500,
-                Locacion = "Complejo Vorterix",
+                Ubicacion = "Complejo Vorterix",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(21, 0, 0),
                 Sectores = new List<Sector>
@@ -145,7 +145,7 @@ namespace Negocio
             {
                 Nombre = "Bersuit Vergarabat",
                 Capacidad = 1500,
-                Locacion = "Salón Metropolitano",
+                Ubicacion = "Salón Metropolitano",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(22, 0, 0),
                 Sectores = new List<Sector>
@@ -160,7 +160,7 @@ namespace Negocio
             {
                 Nombre = "La Renga",
                 Capacidad = 1200,
-                Locacion = "Salón El Circulo",
+                Ubicacion = "Salón El Circulo",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(20, 0, 0),
                 Sectores = new List<Sector>
@@ -174,7 +174,7 @@ namespace Negocio
             {
                 Nombre = "Otto",
                 Capacidad = 1800,
-                Locacion = "Brown 3126",
+                Ubicacion = "Brown 3126",
                 Fecha = DateTime.Parse("14/12/2025"),
                 Hora = new TimeSpan(22, 30, 0),
                 Sectores = new List<Sector>
@@ -189,7 +189,7 @@ namespace Negocio
             {
                 Nombre = "LOVA",
                 Capacidad = 700,
-                Locacion = "Brown 3126",
+                Ubicacion = "Brown 3126",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(00, 30, 0),
                 Sectores = new List<Sector>

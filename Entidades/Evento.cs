@@ -13,14 +13,8 @@ namespace Entidades
         public TimeSpan Hora { get; set; }
         public int Capacidad { get; set; }
         public DateTime Fecha { get; set; }
-        public string Locacion { get; set; }
+        public string Ubicacion { get; set; }
         public int Id { get; set; }
-        public class Sector
-        {
-            public string Nombre { get; set; }
-            public decimal Precio { get; set; }
-            public int Capacidad { get; set; }
-        }
         public List<Sector> Sectores { get; set; }
 
     }

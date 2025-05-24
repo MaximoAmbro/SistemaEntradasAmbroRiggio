@@ -1,6 +1,6 @@
 ﻿namespace Visual
 {
-    partial class frmCrearCliente
+    partial class frmCrearUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -34,16 +34,15 @@
             TxtPassword = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
             txtNombre = new System.Windows.Forms.TextBox();
-            label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
-            txtUsuario = new System.Windows.Forms.TextBox();
             lblmail = new System.Windows.Forms.Label();
             txtmail = new System.Windows.Forms.TextBox();
             lblyatengocuen = new System.Windows.Forms.Label();
             btnregistrarse = new System.Windows.Forms.Button();
             label5 = new System.Windows.Forms.Label();
             txtApellido = new System.Windows.Forms.TextBox();
+            cbTipoUsuario = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // checkbxShowPass
@@ -51,7 +50,7 @@
             checkbxShowPass.AutoSize = true;
             checkbxShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
             checkbxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            checkbxShowPass.Location = new System.Drawing.Point(291, 593);
+            checkbxShowPass.Location = new System.Drawing.Point(314, 492);
             checkbxShowPass.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             checkbxShowPass.Name = "checkbxShowPass";
             checkbxShowPass.Size = new System.Drawing.Size(131, 23);
@@ -65,7 +64,7 @@
             TxtConfirmpassword.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             TxtConfirmpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             TxtConfirmpassword.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtConfirmpassword.Location = new System.Drawing.Point(98, 542);
+            TxtConfirmpassword.Location = new System.Drawing.Point(98, 441);
             TxtConfirmpassword.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             TxtConfirmpassword.Name = "TxtConfirmpassword";
             TxtConfirmpassword.Size = new System.Drawing.Size(252, 27);
@@ -74,7 +73,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(98, 506);
+            label4.Location = new System.Drawing.Point(98, 405);
             label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(156, 19);
@@ -86,7 +85,7 @@
             TxtPassword.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
             TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             TxtPassword.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TxtPassword.Location = new System.Drawing.Point(98, 448);
+            TxtPassword.Location = new System.Drawing.Point(98, 347);
             TxtPassword.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             TxtPassword.Name = "TxtPassword";
             TxtPassword.PasswordChar = '*';
@@ -96,7 +95,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(98, 413);
+            label3.Location = new System.Drawing.Point(98, 312);
             label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(84, 19);
@@ -112,16 +111,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new System.Drawing.Size(252, 27);
             txtNombre.TabIndex = 34;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(98, 325);
-            label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(60, 19);
-            label2.TabIndex = 17;
-            label2.Text = "Usuario";
             // 
             // label1
             // 
@@ -143,17 +132,6 @@
             label6.Size = new System.Drawing.Size(65, 19);
             label6.TabIndex = 27;
             label6.Text = "Nombre";
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
-            txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtUsuario.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
-            txtUsuario.Location = new System.Drawing.Point(98, 351);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new System.Drawing.Size(252, 27);
-            txtUsuario.TabIndex = 33;
             // 
             // lblmail
             // 
@@ -181,7 +159,7 @@
             lblyatengocuen.AutoSize = true;
             lblyatengocuen.Cursor = System.Windows.Forms.Cursors.Hand;
             lblyatengocuen.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblyatengocuen.Location = new System.Drawing.Point(163, 744);
+            lblyatengocuen.Location = new System.Drawing.Point(163, 628);
             lblyatengocuen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblyatengocuen.Name = "lblyatengocuen";
             lblyatengocuen.Size = new System.Drawing.Size(121, 20);
@@ -196,7 +174,7 @@
             btnregistrarse.FlatAppearance.BorderSize = 0;
             btnregistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnregistrarse.ForeColor = System.Drawing.Color.White;
-            btnregistrarse.Location = new System.Drawing.Point(98, 661);
+            btnregistrarse.Location = new System.Drawing.Point(98, 545);
             btnregistrarse.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnregistrarse.Name = "btnregistrarse";
             btnregistrarse.Size = new System.Drawing.Size(252, 53);
@@ -224,19 +202,29 @@
             txtApellido.Size = new System.Drawing.Size(252, 27);
             txtApellido.TabIndex = 36;
             // 
+            // cbTipoUsuario
+            // 
+            cbTipoUsuario.FormattingEnabled = true;
+            cbTipoUsuario.Items.AddRange(new object[] { "Cliente", "Propietario" });
+            cbTipoUsuario.Location = new System.Drawing.Point(146, 492);
+            cbTipoUsuario.Name = "cbTipoUsuario";
+            cbTipoUsuario.Size = new System.Drawing.Size(151, 27);
+            cbTipoUsuario.TabIndex = 37;
+            cbTipoUsuario.Text = "Cliente";
+            // 
             // frmCrearUsuario
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(459, 804);
+            ClientSize = new System.Drawing.Size(459, 671);
+            Controls.Add(cbTipoUsuario);
             Controls.Add(label5);
             Controls.Add(txtApellido);
             Controls.Add(btnregistrarse);
             Controls.Add(lblyatengocuen);
             Controls.Add(txtmail);
             Controls.Add(lblmail);
-            Controls.Add(txtUsuario);
             Controls.Add(label6);
             Controls.Add(checkbxShowPass);
             Controls.Add(TxtConfirmpassword);
@@ -244,7 +232,6 @@
             Controls.Add(TxtPassword);
             Controls.Add(label3);
             Controls.Add(txtNombre);
-            Controls.Add(label2);
             Controls.Add(label1);
             Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ForeColor = System.Drawing.Color.FromArgb(164, 165, 169);
@@ -266,15 +253,14 @@
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblmail;
         private System.Windows.Forms.TextBox txtmail;
         private System.Windows.Forms.Label lblyatengocuen;
         private System.Windows.Forms.Button btnregistrarse;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.ComboBox cbTipoUsuario;
     }
 }

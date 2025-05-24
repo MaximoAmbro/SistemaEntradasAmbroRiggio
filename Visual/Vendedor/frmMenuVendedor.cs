@@ -35,7 +35,7 @@ namespace Visual
         }
         private void frmMenuVendedor_Load(object sender, EventArgs e)
         {
-            GestorVendedores.Instance.DevolverNombre(Mail, out string NombreUsuario);
+            GestorPropietario.Instance.DevolverNombre(Mail, out string NombreUsuario);
             lblNombre.Text = NombreUsuario;
         }
         private void lblvolver_Click(object sender, EventArgs e)

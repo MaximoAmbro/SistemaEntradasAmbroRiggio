@@ -15,12 +15,10 @@ namespace Visual
     public partial class frmHistorialCliente : Form
     {
         public string Mail { get; set; }
-        public List<Evento> ListaEventos { get; set; }
         public frmHistorialCliente()
         {
             InitializeComponent();
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             frmMenuCliente frm = new frmMenuCliente();
@@ -31,11 +29,6 @@ namespace Visual
         }
         private void frmHistorial_Load(object sender, EventArgs e)
         {
-            
-            ListaEventos = GestorClientes.Instance.ObtenerListaEventos(Mail);
-            dgvHistorial.DataSource = GestorClientes.Instance.ObtenerListaEventos(Mail);
-
-             ListaEventos = GestorClientes.Instance.ObtenerListaEventos(Mail);
              dgvHistorial.DataSource = GestorClientes.Instance.ObtenerListaEventos(Mail);
              dgvHistorial.Refresh();
              DataGridViewColumn columnaNombre = new DataGridViewColumn();

@@ -20,7 +20,7 @@ namespace Visual
         {
             InitializeComponent();
             GestorClientes.Instance.CargarLista();
-            GestorVendedores.Instance.CargarLista();
+            GestorPropietario.Instance.CargarLista();
         }
         private void frmInicio_Load(object sender, EventArgs e)
         {
@@ -47,7 +47,7 @@ namespace Visual
         }
         private void lblcrearcuenta_Click(object sender, EventArgs e)
         {
-            frmCrearCliente frm = new frmCrearCliente();
+            frmCrearUsuario frm = new frmCrearUsuario();
             frm.Show();
             this.Hide();
         }
@@ -69,7 +69,6 @@ namespace Visual
                                   MessageBoxIcon.Warning);
                     return;
                 }
-
                 else
                 {
                     ValidarLista(TxtUsername.Text, TxtPassword.Text);
@@ -79,36 +78,24 @@ namespace Visual
         {
             if (GestorClientes.Instance.EncontrarMail(mail))
             {
-                if (GestorClientes.Instance.EncontrarMail(mail))
+                if (GestorClientes.Instance.EncontrarContraseña(contraseña, mail))
                 {
-                    if (GestorClientes.Instance.EncontrarContraseña(contraseña, mail))
-                    {
-                        frmMenuCliente frm = new frmMenuCliente();
-                        frm.Mail = mail;
-                        frm.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Contraseña incorrecta",
-                                          "Error",
-                                          MessageBoxButtons.OK,
-                                          MessageBoxIcon.Error);
-                    }
+                    frmMenuCliente frm = new frmMenuCliente();
+                    frm.Mail = mail;
+                    frm.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario no registrado",
+                    MessageBox.Show("Contraseña incorrecta",
                                       "Error",
                                       MessageBoxButtons.OK,
                                       MessageBoxIcon.Error);
                 }
             }
-            if (GestorVendedores.Instance.EncontrarMail(mail))
+            else if (GestorPropietario.Instance.EncontrarMail(mail))
             {
-                if (GestorVendedores.Instance.EncontrarMail(mail))
-                {
-                    if (GestorVendedores.Instance.EncontrarContraseña(contraseña, mail))
+                    if (GestorPropietario.Instance.EncontrarContraseña(contraseña, mail))
                     {
                         frmMenuVendedor frm = new frmMenuVendedor();
                         frm.Mail = mail;
@@ -122,14 +109,13 @@ namespace Visual
                                           MessageBoxButtons.OK,
                                           MessageBoxIcon.Error);
                     }
-                }
-                    else
-                {
-                    MessageBox.Show("Usuario no registrado",
-                                      "Error",
-                                      MessageBoxButtons.OK,
-                                      MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Usuario no registrado",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
             }
         }
     }
