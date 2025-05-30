@@ -10,15 +10,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Entidades;
+using iText;
+using iText.IO.Image;
+using iText.Kernel;
+using iText.Layout;
+using iText.Layout.Properties;
+using iText.Layout.Element;
+using QRCoder;
+using iText.Kernel.Pdf;
+using iText.Kernel.Geom;
+using iText.Layout.Element;
+using iText.Kernel.Colors;
+using iText.Kernel.Pdf.Canvas;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using iText.IO.Font;
 
 namespace Visual
 {
-    public partial class FrmCompra : Form
+    public partial class FrmCompraUsuario : Form
     {
         public string NombreEvento { get; set; }
-        public FrmCompra()
+        public string NombreUsuario { get; set; }
+        GestorEntradas gestorE = new GestorEntradas();
+        GestorClientes gestorC = GestorClientes.Instance;
+        public FrmCompraUsuario()
         {
-            frmEventos frm = new frmEventos();
+            frmEventosUsuario frm = new frmEventosUsuario();
 
             InitializeComponent();
         }
@@ -43,7 +61,8 @@ namespace Visual
         }
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
-            frmEventos frm = new frmEventos();
+            frmEventosUsuario frm = new frmEventosUsuario();
+            frm.NombreUsuario= NombreUsuario;
             frm.Show();
             this.Hide();
         }
@@ -53,12 +72,10 @@ namespace Visual
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            GestorEntradas gestorE = new GestorEntradas();
-            GestorClientes gestorC = new GestorClientes();
             gestorE.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
             CargarEntrada();
             GenerarTicket();
-            MessageBox.Show("Compra realizada con exito, capacidad disponible: " + gestorE.TotalEntradas + " Revise documentos para recibir su entrada");
+            MessageBox.Show("Compra realizada con exito,"+ "revise documentos para recibir su entrada");
         }
         public void GenerarTicket()
         {
@@ -68,48 +85,79 @@ namespace Visual
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTickets = 0;
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
+            string carpetaTickets = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\A1.Tickets EVENTAURA";
+            if (!Directory.Exists(carpetaTickets))
+            {
+                Directory.CreateDirectory(carpetaTickets);
+            }
+
             for (int i = 0; i <= CantidadTotal; i++)
             {
                 if (cantidadA > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorA.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt "+ NombreEvento+ lblSectorA.Text+ CantidadTickets; ;
+                    string Ruta = System.IO.Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorA.Text}_{CantidadTickets}.PDF" );
                     CantidadTickets++;
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    GenerarPDF(Ruta, gestor.MensajeTicket, gestor.QRCodeImage);
                     cantidadA--;
                     CantidadTotal--;
                 }
                 if (CantidadB > 0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorB.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorB.Text + CantidadTickets; ; ;
+                    string Ruta = System.IO.Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorB.Text}_{CantidadTickets}.PDF");
                     CantidadTickets++;
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    GenerarPDF(Ruta, gestor.MensajeTicket, gestor.QRCodeImage);
                     CantidadB--;
                     CantidadTotal--;
                 }
                 if (CantidadC>0)
                 {
                     gestor.GenerarTicket(NombreEvento, lblSectorC.Text);
-                    string Ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Ticket.txt " + NombreEvento + lblSectorC.Text + CantidadTickets; ;
-                    CantidadTickets++; 
-                    File.WriteAllText(Ruta, gestor.MensajeTicket);
+                    string Ruta =  System.IO.Path.Combine(carpetaTickets, $"Ticket_{NombreEvento}_{lblSectorC.Text}_{CantidadTickets}.PDF");
+                    CantidadTickets++;
+                    GenerarPDF(Ruta, gestor.MensajeTicket, gestor.QRCodeImage);
                     CantidadC--;
                     CantidadTotal--;
                 }
             }
         }
+        public void GenerarPDF(string ruta, string mensaje, byte[] QR )
+        {
+           PdfWriter pw = new PdfWriter(ruta);
+           PdfDocument pdf = new PdfDocument(pw);
+           Document doc = new Document(pdf, PageSize.DEFAULT);
+            // aca seteamos el color de la pagina
+            PdfPage page = pdf.AddNewPage();
+            PdfCanvas canvas = new PdfCanvas(page);
+            canvas.SetFillColor(ColorConstants.BLACK);
+            canvas.Rectangle(0, 0, PageSize.DEFAULT.GetWidth(), PageSize.DEFAULT.GetHeight());
+            canvas.Fill();
+
+            // aca seteamos el color del texto
+            doc.Add(new Paragraph(mensaje)
+               .SetFontColor(ColorConstants.WHITE)
+               .SetFontSize(12));
+            // aca seteamos la fuente
+            doc.Add(new Paragraph(mensaje)
+               .SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD))
+               .SetFontSize(12));
+
+            doc.Add(new Paragraph(mensaje));
+           var img = new iText.Layout.Element.Image(ImageDataFactory.Create(QR));
+           img.ScaleAbsolute(100, 100);
+           doc.Add(img);
+           doc.Close();
+        }
         public void CargarEntrada()
         {
-            GestorEntradas gestorE = new GestorEntradas();
-            GestorClientes gestorC = GestorClientes.Instance;
             List<Evento> listaEventos = gestorE.ObtenerListaEventos();
 
             foreach (Evento _evento in listaEventos)
             {
                 if (_evento.Nombre == NombreEvento)
                 {
-                    gestorC.AgregarEntrada(_evento);
+                    gestorC.AgregarEntrada(_evento, NombreUsuario);
                     break;
                 }
             }

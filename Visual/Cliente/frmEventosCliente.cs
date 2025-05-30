@@ -10,23 +10,25 @@ using System.Windows.Forms;
 using Entidades; using Negocio;
 namespace Visual
 {
-    public partial class frmEventos : Form
+    public partial class frmEventosCliente : Form
     {
-        private GestorEntradas gestorEventos;
+        private GestorEventos gestorEventos;
+        public string Mail { get; set; }
 
-        public frmEventos()
+        public frmEventosCliente()
         {
             InitializeComponent();
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmMenuUsuario frm = new frmMenuUsuario();
+            frmMenuCliente frm = new frmMenuCliente();
+            frm.Mail = Mail;
             frm.Show();
             this.Hide();
         }
         private void frmEventos_Load(object sender, EventArgs e)
         {
-            gestorEventos = new GestorEntradas();
+            gestorEventos = new GestorEventos();
             dgveventos.DataSource = gestorEventos.ObtenerListaEventos();
             DataGridViewColumn columnaNombre = new DataGridViewColumn();
             DataGridViewColumn columnaUbicacion = new DataGridViewColumn();
@@ -39,8 +41,9 @@ namespace Visual
             if (dgveventos.SelectedCells.Count > 0)
             {
                 string nombre = dgveventos.SelectedCells[0].Value.ToString();
-                FrmCompra frm = new FrmCompra();
+                FrmCompraCliente frm = new FrmCompraCliente();
                 frm.NombreEvento = nombre;
+                frm.Mail = Mail;
                 frm.Show();
                 this.Hide();
             }
@@ -48,8 +51,6 @@ namespace Visual
             {
                 MessageBox.Show("Debe seleccionar un evento para comprar", "Hola Pedro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-       
+        }    
     }
 }

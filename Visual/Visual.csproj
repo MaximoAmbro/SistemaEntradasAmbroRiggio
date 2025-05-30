@@ -7,12 +7,14 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="itext7" Version="9.1.0" />
+    <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.1.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos\Datos.csproj" />
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
-    <ProjectReference Include="..\Negocio\Negocio.csproj" />
+    <ProjectReference Include="..\Negocio\Repositorio.csproj" />
   </ItemGroup>
 </Project>

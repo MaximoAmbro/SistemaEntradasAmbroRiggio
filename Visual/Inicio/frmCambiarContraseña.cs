@@ -17,17 +17,15 @@ namespace Visual
         {
             InitializeComponent();
         }
-
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
-            frmInicio frm = new frmInicio();
-            frm.Show();
-            this.Hide();
+            frmInicio frmInicio = new frmInicio();
+            frmInicio.Show();
+            this.Hide();       
         }
-
         private void frmCambiarContraseña_Load(object sender, EventArgs e)
         {
-            TxtUsername.Text = "";
+            txtMail.Text = "PedroLopez@gmail.com";
             TxtPassword.Text = "";
             TxtPassword.PasswordChar = '*';
             TxtConfirmpassword.PasswordChar = '*';
@@ -51,35 +49,18 @@ namespace Visual
 
             if (ControlarTxt() == true)
             {
-                if(gestorClientes.EncontrarUsuario(TxtUsername.Text) == true)
-                {
                     if(gestorClientes.EncontrarMail(txtMail.Text) == true)
                     {
-                        gestorClientes.CambiarContraseña(TxtUsername.Text, TxtPassword.Text);
-                        MessageBox.Show("Contraseña cambiada con exito");
-                        frmInicio frm = new frmInicio();
-                        frm.Show();
-                        this.Hide();
+                        MessageBox.Show("Tengo que terminar el codigo");
                     }
+            }
                     else
                     {
-                        MessageBox.Show("Mail no encontrado");
+                        MessageBox.Show("Usuario no encontrado");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Usuario no encontrado");
-                }
-
-            }
-        }
+         }
         public bool ControlarTxt()
         {
-            if (string.IsNullOrEmpty(TxtUsername.Text))
-            {
-                MessageBox.Show("Ingrese Usuario: ");
-                return false;
-            }
             if (string.IsNullOrEmpty(TxtPassword.Text))
             {
                 MessageBox.Show("Ingrese contraseña: ");
@@ -105,6 +86,5 @@ namespace Visual
                 return true;
             }
         }
-        
     }  
 }

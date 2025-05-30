@@ -1,6 +1,6 @@
 ﻿namespace Visual
 {
-    partial class frmEventos
+    partial class frmEventosCliente
     {
         /// <summary>
         /// Required designer variable.

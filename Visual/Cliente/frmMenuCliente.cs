@@ -11,45 +11,34 @@ using Entidades; using Negocio;
 
 namespace Visual
 {
-    public partial class frmMenuUsuario : Form
+    public partial class frmMenuCliente : Form
     {
-        public frmMenuUsuario()
+        public string NombreUsuario { get; set; }
+        public string Mail { get; set; }
+        public frmMenuCliente()
         {
             InitializeComponent();
         }
-
-        private void btnVolver_Click_1(object sender, EventArgs e)
-        {
-            frmInicio frm = new frmInicio();
-            frm.Show();
-            this.Hide();
-        }
         private void frmMenuUsuario_Load(object sender, EventArgs e)
         {
-
+            GestorClientes.Instance.ObtenerNombre(Mail, out string NombreUsuario);
+            GestorClientes gestorClientes = new GestorClientes();
+            lblNombre.Text = NombreUsuario;
         }
-
-        private void btnComprar_Click(object sender, EventArgs e)
-        {
-            FrmCompra frm = new FrmCompra();
-            frm.Show();
-            this.Hide();
-        }
-
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            frmEventos frm = new frmEventos();
+            frmEventosCliente frm = new frmEventosCliente();
+            frm.Mail = Mail;
             frm.Show();
             this.Hide();
         }
-
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            frmHistorial frm = new frmHistorial();
+            frmHistorialCliente frm = new frmHistorialCliente();
+            frm.Mail = Mail;
             frm.Show();
             this.Hide();
         }
-
         private void lblvolver_Click(object sender, EventArgs e)
         {
             frmInicio frm = new frmInicio();

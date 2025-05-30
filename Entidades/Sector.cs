@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Cliente: Usuario
+    public class Sector
     {
-        public List<Evento> entradasUsuario = new List<Evento>();
+        public string Nombre { get; set; }
+        public decimal Precio { get; set; }
+        public int Capacidad { get; set; }
     }
 }

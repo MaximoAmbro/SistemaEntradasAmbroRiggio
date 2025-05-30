@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Entidades;
+using QRCoder;
 using static Entidades.Evento;
 namespace Negocio
 {
-    public partial class GestorEntradas //Lista
+    public partial class GestorEventos //Lista
     {
         List<Evento> eventos = new List<Evento>();
         public string SectorA { get; set; }
@@ -21,8 +22,9 @@ namespace Negocio
         public string PrecioC { get; set; }
         public int TotalEntradas { get; set; }
         public string MensajeTicket { get; set; }
+        public byte[] QRCodeImage { get; set; }
     }
-    public partial class GestorEntradas //Metodos
+    public partial class GestorEventos //Metodos
     {
         public bool BuscarLista(string NombreEvento)
         {
@@ -52,42 +54,35 @@ namespace Negocio
                 return true;
             }
         }
-        public void RestarEntrada(string NombreEvento, int cantidadA, int cantidadB, int cantidadC
-        ,int cantidadTotal)
-        {
-            int TotalEntradasRestantes = 0;
-            foreach (var c in eventos)
-            {
-                if (c.Nombre == NombreEvento)
-                {
-                    TotalEntradasRestantes = c.Capacidad;
-                    c.Sectores[0].Capacidad -= cantidadA;
-                    c.Sectores[1].Capacidad -= cantidadB;
-                    c.Sectores[2].Capacidad -= cantidadC;
-                    c.Capacidad -= cantidadTotal;
-                    TotalEntradasRestantes -= cantidadTotal;
-                    TotalEntradas = TotalEntradasRestantes;
-                    break;
-                }
-            }
-        }
         public void GenerarTicket(string NombreEvento, string NombreSector)
         {
             MensajeTicket = null;
+            QRCodeImage = null;
             string hora = DateTime.Now.ToString();
             Guid idTicket = Guid.NewGuid();
             foreach (var c in eventos)
             {
                 if (c.Nombre == NombreEvento)
                 {
+                    int codigoEvento = Guid.NewGuid().GetHashCode();
+                    string CodigoEvento = codigoEvento.ToString().Substring(0, 8);
                     MensajeTicket =
-                        "ENTRADA (" + c.Nombre + ")\n" +
-                        "ID TICKET: " + idTicket.ToString() + "\n" +
+                        "ENTRADA " + c.Nombre + "\n" +
                         "SECTOR: " + NombreSector + "\n" +
                         "PRECIO: " + c.Sectores.Find(x => x.Nombre == NombreSector).Precio.ToString() + "$\n" +
                         "HORARIO: " + hora + "\n" +
-                        "LUGAR: " + c.Locacion + "\n" +
                         "FECHA: " + c.Fecha.ToString();
+                    
+                    string contenidoQR = "CÓDIGO: " + CodigoEvento;
+
+                    using (var qrGenerator = new QRCodeGenerator())
+                    {
+                        var qrCodeData = qrGenerator.CreateQrCode(contenidoQR, QRCodeGenerator.ECCLevel.Q);
+                        using (var qrCode = new PngByteQRCode(qrCodeData))
+                        {
+                            QRCodeImage = qrCode.GetGraphic(20);
+                        }
+                    }
                     break;
                 }
             }
@@ -107,15 +102,15 @@ namespace Negocio
             }
         }
     }
-    public partial class GestorEntradas //Eventos cargados
+    public partial class GestorEventos //Eventos cargados
     {
-        public GestorEntradas()
+        /*public GestorEventos()
         {
            eventos.Add(new Evento
             {
                 Nombre = "Ratones Paraonoicos",
                 Capacidad = 1500,
-                Locacion = "Complejo Vorterix",
+                Ubicacion = "Complejo Vorterix",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(21, 0, 0),
                 Sectores = new List<Sector>
@@ -130,7 +125,7 @@ namespace Negocio
             {
                 Nombre = "Bersuit Vergarabat",
                 Capacidad = 1500,
-                Locacion = "Salón Metropolitano",
+                Ubicacion = "Salón Metropolitano",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(22, 0, 0),
                 Sectores = new List<Sector>
@@ -145,7 +140,7 @@ namespace Negocio
             {
                 Nombre = "La Renga",
                 Capacidad = 1200,
-                Locacion = "Salón El Circulo",
+                Ubicacion = "Salón El Circulo",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(20, 0, 0),
                 Sectores = new List<Sector>
@@ -157,9 +152,9 @@ namespace Negocio
             });
             eventos.Add(new Evento
             {
-                Nombre = "otto",
+                Nombre = "Otto",
                 Capacidad = 1800,
-                Locacion = "Salón City Center",
+                Ubicacion = "Brown 3126",
                 Fecha = DateTime.Parse("14/12/2025"),
                 Hora = new TimeSpan(22, 30, 0),
                 Sectores = new List<Sector>
@@ -174,7 +169,7 @@ namespace Negocio
             {
                 Nombre = "LOVA",
                 Capacidad = 700,
-                Locacion = "Brown 3126",
+                Ubicacion = "Brown 3126",
                 Fecha = DateTime.Parse("12/12/2025"),
                 Hora = new TimeSpan(00, 30, 0),
                 Sectores = new List<Sector>
@@ -183,8 +178,8 @@ namespace Negocio
             new Sector { Nombre = "Sector GENERAL", Precio = 15000, Capacidad = 400 },
             new Sector { Nombre = "Sector PERVIA", Precio = 10000, Capacidad = 400 }
         }
-            });
-        }
+            });¨
+        }*/
     }
 }
     

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Cliente: Usuario
+   public class Propietario : Usuario
     {
-        public List<Evento> entradasUsuario = new List<Evento>();
+        public List <Local> Locales { get; set; }
     }
 }

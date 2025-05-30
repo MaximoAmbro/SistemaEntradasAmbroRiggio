@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades; 
 using Negocio;
+using Repositorio;
 
 namespace Visual
 {
@@ -18,6 +19,8 @@ namespace Visual
         public frmInicio()
         {
             InitializeComponent();
+            GestorClientes.Instance.CargarLista();
+            GestorPropietario.Instance.CargarLista();
         }
         private void frmInicio_Load(object sender, EventArgs e)
         {
@@ -41,16 +44,15 @@ namespace Visual
             frmCambiarContraseña frm = new frmCambiarContraseña();
             frm.Show();
             this.Hide();
-        } //ya está
+        }
         private void lblcrearcuenta_Click(object sender, EventArgs e)
         {
             frmCrearUsuario frm = new frmCrearUsuario();
             frm.Show();
             this.Hide();
-        }// ya está
+        }
         private void btninicio_Click(object sender, EventArgs e)
         {
-            {
                 if (string.IsNullOrEmpty(TxtUsername.Text))
                 {
                     MessageBox.Show("Por favor, ingrese usuario",
@@ -67,22 +69,19 @@ namespace Visual
                                   MessageBoxIcon.Warning);
                     return;
                 }
-
                 else
                 {
                     ValidarLista(TxtUsername.Text, TxtPassword.Text);
                 }
-            }
         }
-        public void ValidarLista(string usuario, string contraseña)
+        public void ValidarLista(string mail, string contraseña)
         {
-            Negocio.GestorClientes gestorClientes = new Negocio.GestorClientes();
-
-            if (gestorClientes.EncontrarUsuario(usuario))
+            if (GestorClientes.Instance.EncontrarMail(mail))
             {
-                if (gestorClientes.EncontrarContraseña(contraseña, usuario))
+                if (GestorClientes.Instance.EncontrarContraseña(contraseña, mail))
                 {
-                    frmMenuUsuario frm = new frmMenuUsuario();
+                    frmMenuCliente frm = new frmMenuCliente();
+                    frm.Mail = mail;
                     frm.Show();
                     this.Hide();
                 }
@@ -93,6 +92,23 @@ namespace Visual
                                       MessageBoxButtons.OK,
                                       MessageBoxIcon.Error);
                 }
+            }
+            else if (GestorPropietario.Instance.EncontrarMail(mail))
+            {
+                    if (GestorPropietario.Instance.EncontrarContraseña(contraseña, mail))
+                    {
+                        frmMenuVendedor frm = new frmMenuVendedor();
+                        frm.Mail = mail;
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta",
+                                          "Error",
+                                          MessageBoxButtons.OK,
+                                          MessageBoxIcon.Error);
+                    }
             }
             else
             {
