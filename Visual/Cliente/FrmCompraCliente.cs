@@ -73,7 +73,6 @@ namespace Visual
             int CantidadB = Convert.ToInt32(NumSegundo.Text);
             int CantidadC = Convert.ToInt32(NumTercero.Text);
             int CantidadTotal = cantidadA + CantidadB + CantidadC;
-            gestorE.RestarEntrada(NombreEvento, cantidadA, CantidadB, CantidadC, CantidadTotal);
             CargarEntrada();
             GenerarTicket();
             MessageBox.Show("Compra realizada con exito,"+ "revise documentos para recibir su entrada");

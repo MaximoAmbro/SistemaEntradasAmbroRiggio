@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label5 = new System.Windows.Forms.Label();
-            txtHora = new System.Windows.Forms.TextBox();
             btnVolver = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -40,30 +38,11 @@
             btnAgregarSector = new System.Windows.Forms.Button();
             btnEliminarSector = new System.Windows.Forms.Button();
             btnRegistrar = new System.Windows.Forms.Button();
-            dtFecha = new System.Windows.Forms.DateTimePicker();
+            dtpFechaHora = new System.Windows.Forms.DateTimePicker();
             button1 = new System.Windows.Forms.Button();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)dgvSectores).BeginInit();
             SuspendLayout();
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(37, 167);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(42, 20);
-            label5.TabIndex = 49;
-            label5.Text = "Hora";
-            // 
-            // txtHora
-            // 
-            txtHora.BackColor = System.Drawing.Color.FromArgb(230, 231, 233);
-            txtHora.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtHora.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtHora.Location = new System.Drawing.Point(37, 203);
-            txtHora.Name = "txtHora";
-            txtHora.Size = new System.Drawing.Size(252, 27);
-            txtHora.TabIndex = 50;
             // 
             // btnVolver
             // 
@@ -72,7 +51,7 @@
             btnVolver.FlatAppearance.BorderSize = 0;
             btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnVolver.ForeColor = System.Drawing.Color.White;
-            btnVolver.Location = new System.Drawing.Point(23, 518);
+            btnVolver.Location = new System.Drawing.Point(36, 390);
             btnVolver.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new System.Drawing.Size(119, 53);
@@ -86,14 +65,14 @@
             label6.AutoSize = true;
             label6.Location = new System.Drawing.Point(37, 100);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(64, 20);
+            label6.Size = new System.Drawing.Size(138, 20);
             label6.TabIndex = 44;
-            label6.Text = "Nombre";
+            label6.Text = "Nombre del evento";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(37, 233);
+            label3.Location = new System.Drawing.Point(37, 165);
             label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(47, 20);
@@ -140,7 +119,7 @@
             dgvSectores.Location = new System.Drawing.Point(312, 136);
             dgvSectores.Name = "dgvSectores";
             dgvSectores.RowHeadersWidth = 51;
-            dgvSectores.Size = new System.Drawing.Size(523, 444);
+            dgvSectores.Size = new System.Drawing.Size(523, 307);
             dgvSectores.TabIndex = 53;
             // 
             // btnAgregarSector
@@ -150,7 +129,7 @@
             btnAgregarSector.FlatAppearance.BorderSize = 0;
             btnAgregarSector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnAgregarSector.ForeColor = System.Drawing.Color.White;
-            btnAgregarSector.Location = new System.Drawing.Point(37, 318);
+            btnAgregarSector.Location = new System.Drawing.Point(37, 250);
             btnAgregarSector.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnAgregarSector.Name = "btnAgregarSector";
             btnAgregarSector.Size = new System.Drawing.Size(105, 53);
@@ -165,7 +144,7 @@
             btnEliminarSector.FlatAppearance.BorderSize = 0;
             btnEliminarSector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnEliminarSector.ForeColor = System.Drawing.Color.White;
-            btnEliminarSector.Location = new System.Drawing.Point(37, 377);
+            btnEliminarSector.Location = new System.Drawing.Point(37, 309);
             btnEliminarSector.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnEliminarSector.Name = "btnEliminarSector";
             btnEliminarSector.Size = new System.Drawing.Size(105, 53);
@@ -180,7 +159,7 @@
             btnRegistrar.FlatAppearance.BorderSize = 0;
             btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnRegistrar.ForeColor = System.Drawing.Color.White;
-            btnRegistrar.Location = new System.Drawing.Point(165, 518);
+            btnRegistrar.Location = new System.Drawing.Point(178, 390);
             btnRegistrar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new System.Drawing.Size(111, 53);
@@ -189,12 +168,12 @@
             btnRegistrar.UseVisualStyleBackColor = false;
             btnRegistrar.Click += btnRegistrar_Click;
             // 
-            // dtFecha
+            // dtpFechaHora
             // 
-            dtFecha.Location = new System.Drawing.Point(37, 274);
-            dtFecha.Name = "dtFecha";
-            dtFecha.Size = new System.Drawing.Size(252, 27);
-            dtFecha.TabIndex = 58;
+            dtpFechaHora.Location = new System.Drawing.Point(37, 206);
+            dtpFechaHora.Name = "dtpFechaHora";
+            dtpFechaHora.Size = new System.Drawing.Size(252, 27);
+            dtpFechaHora.TabIndex = 58;
             // 
             // button1
             // 
@@ -203,7 +182,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(165, 318);
+            button1.Location = new System.Drawing.Point(165, 250);
             button1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(112, 53);
@@ -227,17 +206,15 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(859, 592);
+            ClientSize = new System.Drawing.Size(859, 455);
             Controls.Add(label2);
             Controls.Add(button1);
-            Controls.Add(dtFecha);
+            Controls.Add(dtpFechaHora);
             Controls.Add(btnRegistrar);
             Controls.Add(btnEliminarSector);
             Controls.Add(btnAgregarSector);
             Controls.Add(dgvSectores);
             Controls.Add(lblNombre);
-            Controls.Add(label5);
-            Controls.Add(txtHora);
             Controls.Add(btnVolver);
             Controls.Add(label6);
             Controls.Add(label3);
@@ -264,7 +241,7 @@
         private System.Windows.Forms.Button btnAgregarSector;
         private System.Windows.Forms.Button btnEliminarSector;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.DateTimePicker dtFecha;
+        private System.Windows.Forms.DateTimePicker dtpFechaHora;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
     }

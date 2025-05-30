@@ -11,9 +11,7 @@ namespace Entidades
     {
         public string Nombre { get; set; }
         public TimeSpan Hora { get; set; }
-        public int Capacidad { get; set; }
         public DateTime Fecha { get; set; }
-        public string Ubicacion { get; set; }
         public int Id { get; set; }
         public List<Sector> Sectores { get; set; }
 

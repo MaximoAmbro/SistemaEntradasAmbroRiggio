@@ -54,25 +54,6 @@ namespace Negocio
                 return true;
             }
         }
-        public void RestarEntrada(string NombreEvento, int cantidadA, int cantidadB, int cantidadC
-        ,int cantidadTotal)
-        {
-            int TotalEntradasRestantes = 0;
-            foreach (var c in eventos)
-            {
-                if (c.Nombre == NombreEvento)
-                {
-                    TotalEntradasRestantes = c.Capacidad;
-                    c.Sectores[0].Capacidad -= cantidadA;
-                    c.Sectores[1].Capacidad -= cantidadB;
-                    c.Sectores[2].Capacidad -= cantidadC;
-                    c.Capacidad -= cantidadTotal;
-                    TotalEntradasRestantes -= cantidadTotal;
-                    TotalEntradas = TotalEntradasRestantes;
-                    break;
-                }
-            }
-        }
         public void GenerarTicket(string NombreEvento, string NombreSector)
         {
             MensajeTicket = null;
@@ -90,7 +71,6 @@ namespace Negocio
                         "SECTOR: " + NombreSector + "\n" +
                         "PRECIO: " + c.Sectores.Find(x => x.Nombre == NombreSector).Precio.ToString() + "$\n" +
                         "HORARIO: " + hora + "\n" +
-                        "LUGAR: " + c.Ubicacion + "\n" +
                         "FECHA: " + c.Fecha.ToString();
                     
                     string contenidoQR = "CÓDIGO: " + CodigoEvento;
@@ -124,7 +104,7 @@ namespace Negocio
     }
     public partial class GestorEventos //Eventos cargados
     {
-        public GestorEventos()
+        /*public GestorEventos()
         {
            eventos.Add(new Evento
             {
@@ -198,8 +178,8 @@ namespace Negocio
             new Sector { Nombre = "Sector GENERAL", Precio = 15000, Capacidad = 400 },
             new Sector { Nombre = "Sector PERVIA", Precio = 10000, Capacidad = 400 }
         }
-            });
-        }
+            });¨
+        }*/
     }
 }
     

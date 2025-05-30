@@ -34,7 +34,11 @@ namespace Visual.Vendedor
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            DateTime fechaHora = dtpFechaHora.Value;
+            DateTime fecha = fechaHora.Date;
+            TimeSpan hora = fechaHora.TimeOfDay;
             NombreEvento = txtNombre.Text;
+            GestorPropietario.Instance.AgregarEventoLocal(Mail, NombreLocal, txtNombre.Text, hora, fecha);
             CargarDGV();
         }
         public void CargarDGV()

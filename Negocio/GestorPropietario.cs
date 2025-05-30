@@ -31,7 +31,29 @@ namespace Repositorio
         {
             Propietario propietario = new Propietario { Nombre = nombre, Apellido = apellido, Mail = mail, Contraseña = contraseña }; propietarios.Add(propietario);
         }
+        public void AgregarEventoLocal(string mail, string nombreLocal, string nombreEvento, TimeSpan hora , DateTime fecha)
+        {
 
+            foreach (var c in propietarios)
+            {
+                if (c.Mail == mail)
+                {
+                  foreach (var l in c.Locales)
+                    {
+                        if (l.Nombre == nombreLocal)
+                        {
+                            l.Eventos.Add(new Evento
+                            {
+                                Nombre = "Evento",
+                                Hora = new TimeSpan(10, 0, 0),
+                                Fecha = DateTime.Now
+                                , Id = 1
+                            });
+                        }
+                    }
+                }
+            }
+        }
         public bool EncontrarMail(string mail)
         {
             Propietario cliente1 = null;
@@ -130,7 +152,6 @@ namespace Repositorio
             }
             return null;
         }
-
         public void DevolverNombre(string mail, out string nombre)
         {
             nombre = "";
