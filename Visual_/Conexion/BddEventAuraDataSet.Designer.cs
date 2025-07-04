@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Visual_ {
+namespace Visual_.Conexion {
     
     
     /// <summary>
@@ -3074,7 +3074,7 @@ namespace Visual_ {
         }
     }
 }
-namespace Visual_.BddEventAuraDataSetTableAdapters {
+namespace Visual_.Conexion.BddEventAuraDataSetTableAdapters {
     
     
     /// <summary>
